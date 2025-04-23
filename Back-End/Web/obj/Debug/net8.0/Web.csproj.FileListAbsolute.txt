@@ -2221,10 +2221,10 @@ C:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\staticwebassets\msbu
 C:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Web.props
 C:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Web.props
 C:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\Web.csproj.Up2Date
 C:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\Web.dll
 C:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\refint\Web.dll
 C:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\Web.pdb
 C:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\Web.genruntimeconfig.cache
 C:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\ref\Web.dll
+c:\Users\SENA\Desktop\Angular\Back-End\Web\obj\Debug\net8.0\Web.sourcelink.json

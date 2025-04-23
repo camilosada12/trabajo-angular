@@ -195,3 +195,4 @@ C:\Users\SENA\Desktop\Angular\Back-End\Utilities\obj\Debug\net8.0\Utilities.dll
 C:\Users\SENA\Desktop\Angular\Back-End\Utilities\obj\Debug\net8.0\refint\Utilities.dll
 C:\Users\SENA\Desktop\Angular\Back-End\Utilities\obj\Debug\net8.0\Utilities.pdb
 C:\Users\SENA\Desktop\Angular\Back-End\Utilities\obj\Debug\net8.0\ref\Utilities.dll
+c:\Users\SENA\Desktop\Angular\Back-End\Utilities\obj\Debug\net8.0\Utilities.sourcelink.json

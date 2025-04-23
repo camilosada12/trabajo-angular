@@ -205,3 +205,4 @@ C:\Users\SENA\Desktop\Angular\Back-End\Entity\obj\Debug\net8.0\refint\Entity.dll
 C:\Users\SENA\Desktop\Angular\Back-End\Entity\obj\Debug\net8.0\Entity.pdb
 C:\Users\SENA\Desktop\Angular\Back-End\Entity\obj\Debug\net8.0\Entity.genruntimeconfig.cache
 C:\Users\SENA\Desktop\Angular\Back-End\Entity\obj\Debug\net8.0\ref\Entity.dll
+c:\Users\SENA\Desktop\Angular\Back-End\Entity\obj\Debug\net8.0\Entity.sourcelink.json

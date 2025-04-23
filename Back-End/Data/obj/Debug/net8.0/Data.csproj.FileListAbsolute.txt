@@ -243,3 +243,4 @@ C:\Users\SENA\Desktop\Angular\Back-End\Data\obj\Debug\net8.0\refint\Data.dll
 C:\Users\SENA\Desktop\Angular\Back-End\Data\obj\Debug\net8.0\Data.pdb
 C:\Users\SENA\Desktop\Angular\Back-End\Data\obj\Debug\net8.0\Data.genruntimeconfig.cache
 C:\Users\SENA\Desktop\Angular\Back-End\Data\obj\Debug\net8.0\ref\Data.dll
+c:\Users\SENA\Desktop\Angular\Back-End\Data\obj\Debug\net8.0\Data.sourcelink.json
