@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Web\\Web.csproj": {}
+    "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Web\\Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\Business.csproj": {
+    "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\Business.csproj",
+        "projectUniqueName": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\Business.csproj",
+        "projectPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\obj\\",
+        "outputPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj"
+              "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj": {
+                "projectPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj"
               },
-              "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\Utilities.csproj"
+              "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\Utilities.csproj": {
+                "projectPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\Utilities.csproj"
               }
             }
           }
@@ -82,14 +82,14 @@
         }
       }
     },
-    "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj": {
+    "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj",
+        "projectUniqueName": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj",
+        "projectPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\obj\\",
+        "outputPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -110,8 +110,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj"
+              "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj": {
+                "projectPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj"
               }
             }
           }
@@ -159,14 +159,14 @@
         }
       }
     },
-    "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj": {
+    "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj",
+        "projectUniqueName": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj",
+        "projectPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\obj\\",
+        "outputPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -258,14 +258,14 @@
         }
       }
     },
-    "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\Utilities.csproj": {
+    "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\Utilities.csproj",
+        "projectUniqueName": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\Utilities.csproj",
         "projectName": "Utilities",
-        "projectPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\Utilities.csproj",
+        "projectPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\Utilities.csproj",
         "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\obj\\",
+        "outputPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -286,8 +286,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj"
+              "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj": {
+                "projectPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Entity\\Entity.csproj"
               }
             }
           }
@@ -327,14 +327,14 @@
         }
       }
     },
-    "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Web\\Web.csproj": {
+    "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Web\\Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Web\\Web.csproj",
+        "projectUniqueName": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Web\\Web.csproj",
         "projectName": "Web",
-        "projectPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Web\\Web.csproj",
+        "projectPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Web\\Web.csproj",
         "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Web\\obj\\",
+        "outputPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -355,11 +355,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\Business.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\Business.csproj"
+              "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\Business.csproj": {
+                "projectPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Business\\Business.csproj"
               },
-              "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj"
+              "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj": {
+                "projectPath": "c:\\Users\\SENA\\Desktop\\Angular\\Back-End\\Data\\Data.csproj"
               }
             }
           }

@@ -10,19 +10,19 @@ using MySqlConnector;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Leer el origen permitido desde appsettings.json
-var origenPermitido = builder.Configuration["Cors:OrigenPermitido"];
-
 // Configurar CORS
+var origenPermitido = builder.Configuration.GetValue<string>("Cors:OrigenPermitido");
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("PoliticaCors", policy =>
     {
-        policy.WithOrigins(origenPermitido)
+        policy.WithOrigins(origenPermitido)  // Lee el valor desde appSettings.json
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
 });
+
 
 // Add services to the container.
 builder.Services.AddControllers();
