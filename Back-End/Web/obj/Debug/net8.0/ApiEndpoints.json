@@ -848,7 +848,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Web.Controllers.GenericController\u00601[[Entity.DTOs.UserDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "ContainingType": "Web.Controllers.UserController",
     "Method": "GetAll",
     "RelativePath": "api/User",
     "HttpMethod": "GET",

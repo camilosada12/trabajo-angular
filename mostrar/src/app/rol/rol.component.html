@@ -1,0 +1,64 @@
+<!-- Botón de Crear -->
+<div class="boton-container" *ngIf="!showRol">
+    <button mat-raised-button color="primary" class="ButtonCenter" (click)="toggleRol('create')">Crear</button>
+</div>
+
+<!-- Tabla, visible solo cuando showRol sea false -->
+<div *ngIf="!showRol">
+    <div class="table-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rol of rols">
+                    <td>{{ rol.name }}</td>
+                    <td>{{ rol.description }}</td>
+                    <td>
+                        <div class="botones-acciones">
+                            <button mat-raised-button color="primary" (click)="editRol(rol)">Editar</button>
+                            <button mat-raised-button color="warn" (click)="deleteRolLogic(rol.id)">Eliminar
+                                Logico</button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Formulario combinado para crear y actualizar -->
+<div *ngIf="showRol" class="form-container">
+    <form (ngSubmit)="submitRol()" #formElement="ngForm">
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" [(ngModel)]="currentRol.name" name="name" required #name="ngModel" />
+            <div *ngIf="name.invalid && name.touched" class="error-message">
+                El campo de nombre es obligatorio.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" id="description" [(ngModel)]="currentRol.description" name="description" required
+                #description="ngModel" />
+            <div *ngIf="description.invalid && description.touched" class="error-message">
+                El campo de nombre es obligatorio.
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <button mat-raised-button color="primary" type="submit" [disabled]="formElement.invalid">
+                {{ isEditing ? 'Actualizar' : 'Crear' }}
+            </button>
+            <button mat-raised-button type="button" (click)="cancelRol()">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>

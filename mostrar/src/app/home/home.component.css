@@ -37,8 +37,8 @@
   }
   
   /* Estilo para el router outlet */
-  router-outlet {
-    margin-left: 250px;
+ .correr{
+    margin-left: 100px;
     padding: 20px;
   }
   

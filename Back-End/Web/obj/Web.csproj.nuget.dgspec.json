@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Web\\Web.csproj": {}
+    "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Web\\Web.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Business\\Business.csproj": {
+    "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Business\\Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Business\\Business.csproj",
+        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Business\\Business.csproj",
         "projectName": "Business",
-        "projectPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Business\\Business.csproj",
+        "projectPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Business\\Business.csproj",
         "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Business\\obj\\",
+        "outputPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,18 +26,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Data\\Data.csproj"
+              "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Data\\Data.csproj"
               },
-              "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Utilities\\Utilities.csproj"
+              "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Utilities\\Utilities.csproj"
               }
             }
           }
@@ -51,7 +50,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -78,18 +78,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Data\\Data.csproj": {
+    "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Data\\obj\\",
+        "outputPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -104,15 +104,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Entity\\Entity.csproj"
+              "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Entity\\Entity.csproj"
               }
             }
           }
@@ -126,7 +125,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -155,18 +155,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Entity\\Entity.csproj": {
+    "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -181,7 +181,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -199,7 +198,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -254,18 +254,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Utilities\\Utilities.csproj": {
+    "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Utilities\\Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Utilities\\Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Utilities\\Utilities.csproj",
         "projectName": "Utilities",
-        "projectPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Utilities\\Utilities.csproj",
+        "projectPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Utilities\\Utilities.csproj",
         "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Utilities\\obj\\",
+        "outputPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -280,15 +280,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Entity\\Entity.csproj"
+              "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Entity\\Entity.csproj"
               }
             }
           }
@@ -302,7 +301,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -323,18 +323,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Web\\Web.csproj": {
+    "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Web\\Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Web\\Web.csproj",
+        "projectUniqueName": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Web\\Web.csproj",
         "projectName": "Web",
-        "projectPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Web\\Web.csproj",
+        "projectPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Web\\Web.csproj",
         "packagesPath": "C:\\Users\\SENA\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Web\\obj\\",
+        "outputPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -349,18 +349,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Business\\Business.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Business\\Business.csproj"
+              "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Business\\Business.csproj": {
+                "projectPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Business\\Business.csproj"
               },
-              "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Data\\Data.csproj": {
-                "projectPath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Data\\Data.csproj"
+              "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Data\\Data.csproj"
               }
             }
           }
@@ -374,7 +373,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -432,7 +432,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

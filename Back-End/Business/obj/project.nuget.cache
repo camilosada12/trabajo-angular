@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ApBtS+bccqc=",
+  "dgSpecHash": "KSkTvka2t6s=",
   "success": true,
-  "projectFilePath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Business\\Business.csproj",
+  "projectFilePath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SENA\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\SENA\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

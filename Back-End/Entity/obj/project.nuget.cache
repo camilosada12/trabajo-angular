@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZzFvQsxwPP8=",
+  "dgSpecHash": "BI48xv1RwTg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\SENA\\Desktop\\Front-Angular-corredor\\Back-End\\Entity\\Entity.csproj",
+  "projectFilePath": "C:\\Users\\SENA\\Desktop\\repoAngular\\trabajo-angular\\Back-End\\Entity\\Entity.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SENA\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\SENA\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

@@ -13,5 +13,6 @@ namespace Entity.DTOs
         public string Email { get; set; }
         public string Password { get; set; }
         public int PersonId { get; set; }
+        public string PersonName { get; set; }
     }
 }

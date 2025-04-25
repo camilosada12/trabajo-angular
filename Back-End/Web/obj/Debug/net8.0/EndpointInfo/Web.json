@@ -1618,6 +1618,9 @@
           "rolName": {
             "type": "string",
             "nullable": true
+          },
+          "isdeleted": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -1644,6 +1647,10 @@
           "personId": {
             "type": "integer",
             "format": "int32"
+          },
+          "personName": {
+            "type": "string",
+            "nullable": true
           }
         },
         "additionalProperties": false

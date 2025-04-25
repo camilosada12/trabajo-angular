@@ -1,0 +1,133 @@
+
+ 
+  /*Tabla*/
+
+  .table-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Cambiado de center a flex-start */
+    text-align: center;
+    height: auto; /* Cambiado de 70vh a auto para mejor adaptabilidad */
+    width: 100%;
+    margin-left: 16vh !important;
+    padding-top: 20px; /* Espacio entre el botón y la tabla */
+  }
+  
+/* Estilo para los encabezados de la tabla */
+th {
+  background-color: #007bff; /* Color de fondo azul */
+  color: white; /* Color de texto blanco */
+  padding: 10px; /* Espaciado alrededor del texto */
+  font-size: 16px; /* Tamaño de la fuente */
+}
+
+/* Estilo para las celdas de la tabla */
+td {
+  padding: 10px; /* Espaciado alrededor del texto */
+}
+
+tr:hover {
+  background-color: #f1f1f1; /* Color de fondo cuando pasas el ratón por encima de la fila */
+}
+
+/* Estilo general para la tabla */
+.table-striped {
+  width: 80%;
+  max-width: 100%;
+  border-radius: 8px; /* Bordes redondeados para la tabla */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más fuerte para la tabla */
+}
+
+/* Aplica los estilos solo a los botones con la clase 'custom-button' */
+.custom-button {
+  width: auto !important;  /* Ajustar el tamaño del botón */
+  height: 4vh;
+  font-size: 14px;         /* Ajustar el tamaño de la fuente */
+  padding: 6px 12px;       /* Ajustar el relleno */
+}
+
+.boton-container {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: right; /* Cambiado de center a right */
+
+  margin-right: 72%; /* Añadido margen derecho para no pegarlo al extremo */
+  margin-top: 80px;
+}
+.ButtonCenter {
+  padding: 10px 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Contenedor general del formulario */
+.form-container {
+  width: 60%;
+  margin: 40px auto; /* Centrado horizontal y separado del top */
+  padding: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo general para cada grupo de entrada */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Etiquetas del formulario */
+.form-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Inputs del formulario */
+.form-container input[type="text"],
+.form-container input[type="checkbox"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Checkbox: mantenerlo alineado */
+.form-container input[type="checkbox"] {
+  width: auto;
+  transform: scale(1.2);
+  margin-top: 5px;
+}
+
+/* Botón de crear */
+.form-container button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 24px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.table-striped th,
+.table-striped td {
+  width: 33.33%;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.botones-acciones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  

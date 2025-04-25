@@ -48,6 +48,7 @@ builder.Services.AddScoped(typeof(IGenericService<PersonDto>), typeof(GenericSer
 builder.Services.AddScoped(typeof(IGenericService<PermissionDto>), typeof(GenericService<PermissionDto, Permission>));
 builder.Services.AddScoped(typeof(IGenericService<RolFormPermissionDto>), typeof(GenericService<RolFormPermissionDto, RolFormPermission>));
 
+
 // Automapper
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
@@ -55,6 +56,7 @@ builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 builder.Services.AddScoped<RolUserRepository>();
 builder.Services.AddScoped<RolFormPermissionRepository>();
 builder.Services.AddScoped<FormModuleRepository>();
+builder.Services.AddScoped<UserRepository>();
 
 // Configuración de Base de Datos
 string databaseProvider = builder.Configuration["DatabaseProvider"];

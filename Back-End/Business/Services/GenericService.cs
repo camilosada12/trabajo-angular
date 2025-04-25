@@ -33,7 +33,7 @@ namespace Business.Services
             return entity == null ? default : _mapper.Map<TDto>(entity);
         }
 
-        public async Task<TDto> CreateAsync(TDto dto)
+        public async Task<TDto?> CreateAsync(TDto dto)
         {
             var entity = _mapper.Map<TEntity>(dto);
             var created = await _repository.CreateAsync(entity);

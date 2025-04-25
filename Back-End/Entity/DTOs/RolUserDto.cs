@@ -14,6 +14,8 @@ namespace Entity.DTOs
         public int RolId { get; set; }
         public string RolName { get; set; }
 
+        public bool isdeleted { get; set; }
+
     }
 
 
