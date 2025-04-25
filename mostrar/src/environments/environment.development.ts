@@ -1,4 +1,4 @@
 export const environment = {
-    apiUrl: 'http://localhost:5271/api'  // normalmente pondrías aquí la URL real del back
+    apiUrl: 'https://localhost:7205/api'  // normalmente pondrías aquí la URL real del back
   };
   

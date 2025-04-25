@@ -700,10 +700,7 @@
           "Entity": "1.0.0"
         },
         "runtime": {
-          "Data.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Data.dll": {}
         }
       },
       "Entity/1.0.0": {
@@ -715,10 +712,7 @@
           "Pomelo.EntityFrameworkCore.MySql": "9.0.0-preview.3.efcore.9.0.0"
         },
         "runtime": {
-          "Entity.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Entity.dll": {}
         }
       },
       "Utilities/1.0.0": {
@@ -726,10 +720,7 @@
           "Entity": "1.0.0"
         },
         "runtime": {
-          "Utilities.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "Utilities.dll": {}
         }
       }
     }
