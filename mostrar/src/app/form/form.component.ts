@@ -63,20 +63,20 @@ export class FormTableComponent implements OnInit {
 
   editForm(form: Form): void {
     this.isEditing = true;
-    this.currentForm = { ...form };
-    this.showForm = true;
-  }
+    this.currentForm = { ...form }; // Copia del objeto para no modificar directamente
+    this.showForm = true;           // Muestra el formulario
+  }  
 
   updateForm(): void {
-    this.formService.put<Form>('FormControllerPrueba', this.currentForm.id, this.currentForm).subscribe({
-      next: updatedForm => {
-        const index = this.forms.findIndex(f => f.id === updatedForm.id);
-        if (index > -1) this.forms[index] = updatedForm;
+    this.formService.put<Form>('FormControllerPrueba', this.currentForm).subscribe({
+      next: () => {
+        this.loadForms();
         this.resetForm();
       },
       error: err => console.error('Error al actualizar formulario', err)
     });
   }
+  
 
   deleteForm(id: number): void {
     this.formService.delete<Form>('FormControllerPrueba', id).subscribe({
@@ -91,6 +91,7 @@ export class FormTableComponent implements OnInit {
       error: err => console.error('Error al eliminar lógicamente', err)
     });
   }
+  
 
   toggleForm(mode: 'create' | 'edit'): void {
     if (mode === 'create') {

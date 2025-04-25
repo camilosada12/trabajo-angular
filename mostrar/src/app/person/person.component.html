@@ -1,0 +1,78 @@
+<!-- Botón de Crear -->
+<div class="boton-container" *ngIf="!showPerson">
+    <button mat-raised-button color="primary" class="ButtonCenter" (click)="togglePerson('create')">Crear</button>
+  </div>
+  
+  <!-- Tabla, visible solo cuando showPerson sea false -->
+  <div *ngIf="!showPerson">
+    <div class="table-container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>PhoneNumber</th>
+            <th>Active</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of Persons">
+            <td>{{ person.firstName }}</td>
+            <td>{{ person.lastName }}</td>
+            <td>{{ person.phonenumber }}</td>
+            <td>{{ person.active ? 'Yes' : 'No' }}</td>
+            <td>
+              <button mat-raised-button color="primary"  (click)="editPerson(person)">Editar</button>
+              <button mat-raised-button color="warn" (click)="deletePersonLogic(person.id)">Eliminar Logico</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Formulario combinado para crear y actualizar -->
+  <div *ngIf="showPerson" class="form-container">
+    <form (ngSubmit)="submitPerson()" #formElement="ngForm">
+
+      <div class="form-group">
+        <label for="firstName">FirstName</label>
+        <input type="text" id="firstName" [(ngModel)]="currentPerson.firstName" name="firstName" required #firstName="ngModel" />
+        <div *ngIf="firstName.invalid && firstName.touched" class="error-message">
+          El campo de nombre es obligatorio.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="lastName">LastName</label>
+        <input type="text" id="lastName" [(ngModel)]="currentPerson.lastName" name="lastName" required #lastName="ngModel" />
+        <div *ngIf="lastName.invalid && lastName.touched" class="error-message">
+          El campo de nombre es obligatorio.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="phoneNumber">PhoneNumber</label>
+        <input type="text" id="phoneNumber" [(ngModel)]="currentPerson.phonenumber" name="phoneNumber" required #phoneNumber="ngModel" />
+        <div *ngIf="phoneNumber.invalid && phoneNumber.touched" class="error-message">
+          El campo de nombre es obligatorio.
+        </div>
+      </div>
+  
+  
+      <div class="form-group">
+        <label for="active">Active</label>
+        <input type="checkbox" id="active" [(ngModel)]="currentPerson.active" name="active" />
+      </div>
+  
+      <div class="buttons-container">
+        <button mat-raised-button color="primary" type="submit" [disabled]="formElement.invalid">
+          {{ isEditing ? 'Actualizar' : 'Crear' }}
+        </button>
+        <button mat-raised-button type="button" (click)="cancelPerson()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>

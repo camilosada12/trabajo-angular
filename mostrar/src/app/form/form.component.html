@@ -21,8 +21,8 @@
           <td>{{ form.description }}</td>
           <td>{{ form.active ? 'Yes' : 'No' }}</td>
           <td>
-            <button mat-raised-button color="primary" (click)="editForm(form)">Editar</button>
-            <button mat-raised-button color="warn" (click)="deleteForm(form.id)">Eliminar</button>
+            <button mat-raised-button color="primary"  (click)="editForm(form)">Editar</button>
+            <button mat-raised-button color="warn" (click)="deleteFormLogic(form.id)">Eliminar Logico</button>
           </td>
         </tr>
       </tbody>

@@ -1,1 +1,66 @@
-<p>module works!</p>
+<!-- Botón de Crear -->
+<div class="boton-container" *ngIf="!showModule">
+    <button mat-raised-button color="primary" class="ButtonCenter" (click)="toggleForm('create')">Crear</button>
+  </div>
+  
+  <!-- Tabla, visible solo cuando showModule sea false -->
+  <div *ngIf="!showModule">
+    <div class="table-container">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Active</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let module of Modules">
+            <td>{{ module.name }}</td>
+            <td>{{ module.description }}</td>
+            <td>{{ module.active ? 'Yes' : 'No' }}</td>
+            <td>
+              <button mat-raised-button color="primary"  (click)="editModule(module)">Editar</button>
+              <button mat-raised-button color="warn" (click)="deleteModuleLogic(module.id)">Eliminar Logico</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Formulario combinado para crear y actualizar -->
+  <div *ngIf="showModule" class="form-container">
+    <form (ngSubmit)="submitModule()" #formElement="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" id="name" [(ngModel)]="currentModule.name" name="name" required #name="ngModel" />
+        <div *ngIf="name.invalid && name.touched" class="error-message">
+          El campo de nombre es obligatorio.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" id="description" [(ngModel)]="currentModule.description" name="description" required #description="ngModel" />
+        <div *ngIf="description.invalid && description.touched" class="error-message">
+          El campo de descripción es obligatorio.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="active">Active</label>
+        <input type="checkbox" id="active" [(ngModel)]="currentModule.active" name="active" />
+      </div>
+  
+      <div class="buttons-container">
+        <button mat-raised-button color="primary" type="submit" [disabled]="formElement.invalid">
+          {{ isEditing ? 'Actualizar' : 'Crear' }}
+        </button>
+        <button mat-raised-button type="button" (click)="cancelForm()">
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
