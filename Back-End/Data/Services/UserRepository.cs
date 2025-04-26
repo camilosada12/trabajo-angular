@@ -17,7 +17,7 @@ public class UserRepository : Repository<User>
             .Where(u => EF.Property<bool>(u, "isdeleted") == false)
             .Select(u => new UserDto
             {
-                Id = u.id,
+                id = u.id,
                 UserName = u.username,
                 Email = u.email,
                 Password = u.password,

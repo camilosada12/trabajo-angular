@@ -1,0 +1,90 @@
+<!-- Botón de Crear -->
+<div class="boton-container" *ngIf="!showUser">
+    <button mat-raised-button color="primary" class="ButtonCenter" (click)="togglePerson('create')">Crear</button>
+</div>
+
+<!-- Tabla, visible solo cuando showUser sea false -->
+<div *ngIf="!showUser">
+    <div class="table-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>PersonId</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let User of users" [class.deleted]="User.isDeleted">
+                    <td>{{ User.userName }}</td>
+                    <td>{{ User.email }}</td>
+                    <td>{{ User.password }}</td>
+                    <td>{{ User.personId }}</td>
+                    <td>
+                        <button mat-raised-button (click)="editPerson(User)">Editar</button>
+                        <button mat-raised-button (click)="deleteUserLogic(User.id)"
+                            [disabled]="User.isDeleted">Eliminar Lógico</button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+<!-- Formulario combinado para crear y actualizar -->
+<div *ngIf="showUser" class="form-container">
+    <form (ngSubmit)="submitUser()" #formElement="ngForm">
+
+        <div class="form-group">
+            <label for="userName">UserName</label>
+            <input type="text" id="userName" [(ngModel)]="currentUser.userName" name="userName" required
+                #userName="ngModel" />
+            <div *ngIf="userName.invalid && userName.touched" class="error-message">
+                El campo de nombre es obligatorio.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" [(ngModel)]="currentUser.email" name="email" required #email="ngModel" />
+            <div *ngIf="email.invalid && email.touched" class="error-message">
+                El campo de nombre es obligatorio.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" [(ngModel)]="currentUser.password" name="password" required
+                #password="ngModel"/>
+            <div *ngIf="password.invalid && password.touched" class="error-message">
+                El campo de nombre es obligatorio.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="personid">Persona</label>
+            <select id="personid" [(ngModel)]="currentUser.personId" name="personid" required #personid="ngModel">
+              <option value="">Seleccione una persona</option>
+              <option *ngFor="let person of persons" [value]="person.id">{{ person.name }}</option>
+            </select>
+            <div *ngIf="personid.invalid && personid.touched" class="error-message">
+              El campo de persona es obligatorio.
+            </div>
+          </div>
+          
+          
+
+
+        <div class="buttons-container">
+            <button mat-raised-button color="primary" type="submit" [disabled]="formElement.invalid">
+                {{ isEditing ? 'Actualizar' : 'Crear' }}
+            </button>
+            <button mat-raised-button type="button" (click)="cancelPerson()">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>
