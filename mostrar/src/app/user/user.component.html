@@ -12,7 +12,7 @@
                     <th>Username</th>
                     <th>Email</th>
                     <th>Password</th>
-                    <th>PersonId</th>
+                    <th>Person</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -21,7 +21,7 @@
                     <td>{{ User.userName }}</td>
                     <td>{{ User.email }}</td>
                     <td>{{ User.password }}</td>
-                    <td>{{ User.personId }}</td>
+                    <td>{{ getPersonName(User.personId) }}</td>
                     <td>
                         <button mat-raised-button (click)="editPerson(User)">Editar</button>
                         <button mat-raised-button (click)="deleteUserLogic(User.id)"

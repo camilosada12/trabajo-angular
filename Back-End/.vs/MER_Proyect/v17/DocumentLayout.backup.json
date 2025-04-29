@@ -1,62 +1,62 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\",
+  "WorkspaceRootPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3865FF69-7A12-433C-9745-BC47EE60C7CF}|Data\\Data.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\data\\services\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3865FF69-7A12-433C-9745-BC47EE60C7CF}|Data\\Data.csproj|solutionrelative:data\\services\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\dtos\\formmoduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\dtos\\formmoduledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\entity\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\model\\formmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\model\\formmodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D301ADB2-597E-436E-B9B5-C1BF5713EB77}|Business\\Business.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\business\\services\\genericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D301ADB2-597E-436E-B9B5-C1BF5713EB77}|Business\\Business.csproj|solutionrelative:business\\services\\genericservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\ddl\\mysql.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\ddl\\mysql.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\web\\controllers\\genericcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\controllers\\genericcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\ddl\\postgres.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\ddl\\postgres.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\web\\controllers\\formcontrollerprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\controllers\\formcontrollerprueba.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\dtos\\roluserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\dtos\\roluserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\entity\\dtos\\permissiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\dtos\\permissiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\dtos\\rolformpermissiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\dtos\\rolformpermissiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\entity\\dtos\\roldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\dtos\\roldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\dtos\\roldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\entity\\dtos\\formdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\dtos\\formdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\web\\controllers\\modulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\controllers\\modulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3865FF69-7A12-433C-9745-BC47EE60C7CF}|Data\\Data.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\data\\repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3865FF69-7A12-433C-9745-BC47EE60C7CF}|Data\\Data.csproj|solutionrelative:data\\repository\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\model\\roluser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\model\\roluser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\web\\controllers\\rolusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\controllers\\rolusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\entity\\ddl\\sqlserver.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\ddl\\sqlserver.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
       "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\ddl\\sqlserver.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\adminsena\\desktop\\trabajo-angular\\back-end\\entity\\ddl\\sqlserver.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\ddl\\sqlserver.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,183 +66,173 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FormModule.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Model\\FormModule.cs",
+              "RelativeDocumentMoniker": "Entity\\Model\\FormModule.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Model\\FormModule.cs",
+              "RelativeToolTip": "Entity\\Model\\FormModule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T06:10:00.003Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Data\\Services\\UserRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Services\\UserRepository.cs",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Data\\Services\\UserRepository.cs*",
-              "RelativeToolTip": "Data\\Services\\UserRepository.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAARAAAAAAAAAA==",
+              "Title": "FormModuleDto.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\FormModuleDto.cs",
+              "RelativeDocumentMoniker": "Entity\\DTOs\\FormModuleDto.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\FormModuleDto.cs",
+              "RelativeToolTip": "Entity\\DTOs\\FormModuleDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T14:41:05.92Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormControllerPrueba.cs",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\FormControllerPrueba.cs",
-              "RelativeDocumentMoniker": "Web\\Controllers\\FormControllerPrueba.cs",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\FormControllerPrueba.cs",
-              "RelativeToolTip": "Web\\Controllers\\FormControllerPrueba.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T14:40:20.553Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "PermissionDto.cs",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\PermissionDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTOs\\PermissionDto.cs",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\PermissionDto.cs",
-              "RelativeToolTip": "Entity\\DTOs\\PermissionDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T14:38:43.437Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "rolDto.cs",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\rolDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTOs\\rolDto.cs",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\rolDto.cs",
-              "RelativeToolTip": "Entity\\DTOs\\rolDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T14:38:42.537Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FormDto.cs",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\FormDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTOs\\FormDto.cs",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\FormDto.cs",
-              "RelativeToolTip": "Entity\\DTOs\\FormDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T14:38:41.234Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "GenericService.cs",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Business\\Services\\GenericService.cs",
-              "RelativeDocumentMoniker": "Business\\Services\\GenericService.cs",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Business\\Services\\GenericService.cs",
-              "RelativeToolTip": "Business\\Services\\GenericService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAmwCMAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T14:38:34.018Z",
+              "WhenOpened": "2025-04-29T05:28:37.254Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "GenericController.cs",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\GenericController.cs",
-              "RelativeDocumentMoniker": "Web\\Controllers\\GenericController.cs",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\GenericController.cs",
-              "RelativeToolTip": "Web\\Controllers\\GenericController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBkAAABtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T14:18:52.294Z",
-              "EditorCaption": ""
+              "Title": "Postgres.sql",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DDL\\Postgres.sql",
+              "RelativeDocumentMoniker": "Entity\\DDL\\Postgres.sql",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DDL\\Postgres.sql",
+              "RelativeToolTip": "Entity\\DDL\\Postgres.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-04-29T03:42:33.882Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Data\\Repository\\Repository.cs",
-              "RelativeDocumentMoniker": "Data\\Repository\\Repository.cs",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Data\\Repository\\Repository.cs",
-              "RelativeToolTip": "Data\\Repository\\Repository.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwEsAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "RolFormPermissionDto.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\RolFormPermissionDto.cs",
+              "RelativeDocumentMoniker": "Entity\\DTOs\\RolFormPermissionDto.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\RolFormPermissionDto.cs",
+              "RelativeToolTip": "Entity\\DTOs\\RolFormPermissionDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T14:17:04.261Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T03:10:27.57Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "rolDto.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\rolDto.cs",
+              "RelativeDocumentMoniker": "Entity\\DTOs\\rolDto.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\rolDto.cs",
+              "RelativeToolTip": "Entity\\DTOs\\rolDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T03:10:25.544Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\UserDto.cs",
+              "RelativeDocumentMoniker": "Entity\\DTOs\\UserDto.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\UserDto.cs",
+              "RelativeToolTip": "Entity\\DTOs\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T02:44:39.321Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "ModuleController.cs",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\ModuleController.cs",
-              "RelativeDocumentMoniker": "Web\\Controllers\\ModuleController.cs",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\ModuleController.cs",
-              "RelativeToolTip": "Web\\Controllers\\ModuleController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA1AAAAAAAAAA==",
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Model\\User.cs",
+              "RelativeDocumentMoniker": "Entity\\Model\\User.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Model\\User.cs",
+              "RelativeToolTip": "Entity\\Model\\User.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T14:16:56.038Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T02:44:31.833Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\UserDto.cs",
-              "RelativeDocumentMoniker": "Entity\\DTOs\\UserDto.cs",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\UserDto.cs",
-              "RelativeToolTip": "Entity\\DTOs\\UserDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "RolUserDto.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\RolUserDto.cs",
+              "RelativeDocumentMoniker": "Entity\\DTOs\\RolUserDto.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DTOs\\RolUserDto.cs",
+              "RelativeToolTip": "Entity\\DTOs\\RolUserDto.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T12:23:58.103Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T02:44:23.815Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "SqlServer.sql ",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\DDL\\SqlServer.sql",
-              "RelativeDocumentMoniker": "Entity\\DDL\\SqlServer.sql",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\DDL\\SqlServer.sql",
-              "RelativeToolTip": "Entity\\DDL\\SqlServer.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2025-04-26T12:15:40.927Z",
-              "EditorCaption": ""
+              "DocumentIndex": 9,
+              "Title": "RolUser.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Model\\RolUser.cs",
+              "RelativeDocumentMoniker": "Entity\\Model\\RolUser.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Model\\RolUser.cs",
+              "RelativeToolTip": "Entity\\Model\\RolUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T02:43:43.453Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\appsettings.json",
-              "RelativeDocumentMoniker": "Web\\appsettings.json",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\appsettings.json",
-              "RelativeToolTip": "Web\\appsettings.json",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-26T12:14:49.06Z",
-              "EditorCaption": ""
+              "Title": "RolUserController.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\RolUserController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\RolUserController.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\RolUserController.cs",
+              "RelativeToolTip": "Web\\Controllers\\RolUserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T02:43:30.223Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MySql.sql",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DDL\\MySql.sql",
+              "RelativeDocumentMoniker": "Entity\\DDL\\MySql.sql",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DDL\\MySql.sql",
+              "RelativeToolTip": "Entity\\DDL\\MySql.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-04-29T02:14:39.892Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\appsettings.json",
+              "RelativeDocumentMoniker": "Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\appsettings.json",
+              "RelativeToolTip": "Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-29T02:14:26.923Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Program.cs",
               "RelativeDocumentMoniker": "Web\\Program.cs",
-              "ToolTip": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\Program.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Program.cs",
               "RelativeToolTip": "Web\\Program.cs",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAAEQAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-25T22:18:48.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-29T02:14:25.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SqlServer.sql",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DDL\\SqlServer.sql",
+              "RelativeDocumentMoniker": "Entity\\DDL\\SqlServer.sql",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DDL\\SqlServer.sql",
+              "RelativeToolTip": "Entity\\DDL\\SqlServer.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-04-29T01:10:04.913Z"
             }
           ]
         }

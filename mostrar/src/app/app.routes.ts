@@ -6,6 +6,8 @@ import { PersonComponent } from './person/person.component';
 import { PermissionComponent } from './permission/permission.component';
 import { RolComponent } from './rol/rol.component';
 import { UserTableComponent } from './user/user.component';
+import { RolUserTableComponent } from './rol_User/rol_user.component';
+import { FormModuleComponent } from './form-module/form-module.component';
 
 
 export const routes: Routes = [
@@ -22,7 +24,11 @@ export const routes: Routes = [
             {path: 'rol', component: RolComponent},
             {path: '', redirectTo: '', pathMatch: 'full'},
             {path: 'user',component: UserTableComponent},
-            {path: '', redirectTo: '', pathMatch: 'full'}
+            {path: '', redirectTo: '', pathMatch: 'full'},
+            {path: 'rolUser', component: RolUserTableComponent},
+            {path: '', redirectTo: '', pathMatch: 'full'},
+            {path: 'formModule' , component: FormModuleComponent},
+            {path: '', redirectTo: '',pathMatch: 'full'}
         ]
     }
 ];

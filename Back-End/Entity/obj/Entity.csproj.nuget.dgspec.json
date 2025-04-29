@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj": {}
+    "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj": {}
   },
   "projects": {
-    "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj": {
+    "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj",
-        "packagesPath": "C:\\Users\\AdminSena\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Entity\\obj\\",
+        "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj",
+        "packagesPath": "C:\\Users\\Camilo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\AdminSena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Camilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -100,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

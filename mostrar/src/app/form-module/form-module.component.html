@@ -1,0 +1,72 @@
+<!-- botón de crear -->
+<div class="boton-container" *ngIf="!showFormModule">
+    <button mat-raised-button color="primary" class="ButtonCenter" (click)="toggleFormModule('create')">
+        crear
+    </button>
+</div>
+
+<!-- tabla -->
+<div *ngIf="!showFormModule">
+    <div class="table-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>formulario</th>
+                    <th>módulo</th>
+                    <th>acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let formModule of formModules" [class.deleted]="formModule.isDeleted">
+                    <!-- Usamos directamente la propiedad formname si existe -->
+                    <td>{{ formModule.formname || getFormName(formModule.formId) }}</td>
+                    <td>{{ formModule.modulename || getModuleName(formModule.moduleId) }}</td>
+                    <td>
+                        <button mat-raised-button (click)="editFormModule(formModule)">editar</button>
+                        <button mat-raised-button
+                            (click)="formModule.id !== undefined && deleteFormModuleLogic(formModule.id)"
+                            [disabled]="formModule.isDeleted">
+                            eliminar lógico
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- formulario -->
+<div *ngIf="showFormModule" class="form-container">
+    <form (ngSubmit)="submitFormModule()" #formElement="ngForm">
+        <div class="form-group">
+            <label for="formId">formulario</label>
+            <select id="formId" [(ngModel)]="currentFormModule.formId" name="formId" required #formIdModel="ngModel">
+                <option [ngValue]="0">seleccione un formulario</option>
+                <option *ngFor="let form of availableFormModules" [ngValue]="form.id">{{ form.name }}</option>
+            </select>
+            <div *ngIf="formIdModel.invalid && formIdModel.touched" class="error-message">
+                el campo de formulario es obligatorio.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="moduleId">módulo</label>
+            <select id="moduleId" [(ngModel)]="currentFormModule.moduleId" name="moduleId" required
+                #moduleIdModel="ngModel">
+                <option [ngValue]="0">seleccione un módulo</option>
+                <option *ngFor="let module of availableModules" [ngValue]="module.id">{{ module.name }}</option>
+            </select>
+            <div *ngIf="moduleIdModel.invalid && moduleIdModel.touched" class="error-message">
+                el campo de módulo es obligatorio.
+            </div>
+        </div>
+
+
+        <div class="buttons-container">
+            <button mat-raised-button color="primary" type="submit" [disabled]="formElement.invalid">
+                {{ isEditing ? 'actualizar' : 'crear' }}
+            </button>
+            <button mat-raised-button type="button" (click)="cancelFormModule()">cancelar</button>
+        </div>
+    </form>
+</div>

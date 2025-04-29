@@ -1,0 +1,66 @@
+<!-- botón de crear -->
+<div class="boton-container" *ngIf="!showRolUser">
+    <button mat-raised-button color="primary" class="ButtonCenter" (click)="toggleRolUser('create')">crear</button>
+</div>
+
+<!-- tabla -->
+<div *ngIf="!showRolUser">
+    <div class="table-container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>usuario</th>
+                    <th>rol</th>
+                    <th>acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rolUser of rolUsers" [class.deleted]="rolUser.isdeleted">
+                    <td>{{ getUserName(rolUser.userId) }}</td>
+                    <td>{{ getRolName(rolUser.rolId) }}</td>
+                    <td>
+                        <button mat-raised-button (click)="editRolUser(rolUser)">editar</button>
+                        <button mat-raised-button (click)="rolUser.id !== undefined && deleteRolUserLogic(rolUser.id)"
+                            [disabled]="rolUser.isdeleted">eliminar lógico</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- formulario -->
+<div *ngIf="showRolUser" class="form-container">
+    <form (ngSubmit)="submitRolUser()" #formElement="ngForm">
+        <div class="form-group">
+            <label for="userId">usuario</label>
+            <select id="userId" [(ngModel)]="currentRolUser.userId" name="userId" required #userId="ngModel">
+                <option value="">seleccione un usuario</option>
+                <option *ngFor="let user of availableUsers" [value]="user.id">{{ user.name }}</option>
+              </select>              
+            <div *ngIf="userId.invalid && userId.touched" class="error-message">
+                el campo de usuario es obligatorio.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="rolId">rol</label>
+            <select id="rolId" [(ngModel)]="currentRolUser.rolId" name="rolId" required #rolId="ngModel">
+                <option value="">seleccione un rol</option>
+                <option *ngFor="let rol of roles" [value]="rol.id">{{ rol.name }}</option>
+            </select>
+            <div *ngIf="rolId.invalid && rolId.touched" class="error-message">
+                el campo de rol es obligatorio.
+            </div>
+        </div>
+
+        <div class="buttons-container">
+            <button mat-raised-button color="primary" type="submit" [disabled]="formElement.invalid">
+                {{ isEditing ? 'actualizar' : 'crear' }}
+            </button>
+            <button mat-raised-button type="button" (click)="cancelRolUser()">
+                cancelar
+            </button>
+        </div>
+    </form>
+</div>

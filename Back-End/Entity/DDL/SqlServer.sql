@@ -47,13 +47,13 @@ CREATE TABLE Rol
 CREATE TABLE [User]
 (
 	[Id] int IDENTITY(1,1) PRIMARY KEY,
-	UserName VARCHAR(100) NOT NULL,
+	UserName VARCHAR(100) NOT NULL UNIQUE,
 	Email VARCHAR(100) NOT NULL UNIQUE, 
-	[Password] VARCHAR(100) NOT NULL,
+	[Password] VARCHAR(100) NOT NULL UNIQUE,
 	CreatedDate DateTime DEFAULT CURRENT_TIMESTAMP,
 	Active bit,
 	IsDeleted bit,
-	PersonId int 
+	PersonId int UNIQUE
 
 )
 CREATE TABLE Person
@@ -61,7 +61,7 @@ CREATE TABLE Person
 	[Id] int IDENTITY(1,1) PRIMARY KEY,
 	FirstName VARCHAR(100) NOT NULL,
 	LastName VARCHAR(100) NOT NULL, 
-	PhoneNumber VARCHAR(20) NOT NULL,
+	PhoneNumber VARCHAR(20) NOT NULL UNIQUE,
 	Active bit,
 	IsDeleted bit
 

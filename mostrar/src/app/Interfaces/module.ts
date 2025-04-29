@@ -1,6 +1,6 @@
 export interface  Module{
-    id: number;
-    name : string;
-    description : string;
-    active : boolean;
+    id: number
+    name : string
+    description : string
+    active : boolean
 }

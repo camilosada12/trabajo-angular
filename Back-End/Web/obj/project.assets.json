@@ -5488,23 +5488,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\AdminSena\\.nuget\\packages\\": {},
+    "C:\\Users\\Camilo\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\Web.csproj",
+      "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\Web.csproj",
-      "packagesPath": "C:\\Users\\AdminSena\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Web\\obj\\",
+      "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Web.csproj",
+      "packagesPath": "C:\\Users\\Camilo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\AdminSena\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Camilo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5520,11 +5520,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Business\\Business.csproj"
+            "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Business\\Business.csproj"
             },
-            "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\AdminSena\\Desktop\\trabajo-angular\\Back-End\\Data\\Data.csproj"
+            "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Data\\Data.csproj"
             }
           }
         }
@@ -5597,7 +5597,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
