@@ -37,7 +37,7 @@
             <select id="userId" [(ngModel)]="currentRolUser.userId" name="userId" required #userId="ngModel">
                 <option value="">seleccione un usuario</option>
                 <option *ngFor="let user of availableUsers" [value]="user.id">{{ user.name }}</option>
-              </select>              
+            </select>
             <div *ngIf="userId.invalid && userId.touched" class="error-message">
                 el campo de usuario es obligatorio.
             </div>

@@ -109,7 +109,7 @@ export class RolUserTableComponent implements OnInit {
 
   editRolUser(rolUser: Rol_User): void {
     this.currentRolUser = {
-      ...rolUser, // copiamos todo el objeto rolUser (id, userId, rolId, etc)
+      ...rolUser // copiamos todo el objeto rolUser (id, userId, rolId, etc)
     };
     this.isEditing = true;
     this.showRolUser = true;
