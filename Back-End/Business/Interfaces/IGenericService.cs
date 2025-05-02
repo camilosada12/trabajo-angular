@@ -16,5 +16,7 @@ namespace Business.Interfaces
         Task<bool> DeleteAsyncLogic(int id);
         Task<bool> PatchAsync(int id);
 
+        Task<TDto> AddAsync(TDto entity);
+
     }
 }

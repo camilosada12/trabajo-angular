@@ -21,6 +21,8 @@ namespace Entity.Model
         public int personid { get; set; }
 
         public Person? person { get; set; }
+        public List<RolUser>? Roles { get; set; } // 👈 Relación con roles (puede ser uno o varios)
+
     }
 
 }

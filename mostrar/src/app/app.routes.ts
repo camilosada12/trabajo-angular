@@ -8,27 +8,28 @@ import { RolComponent } from './rol/rol.component';
 import { UserTableComponent } from './user/user.component';
 import { RolUserTableComponent } from './rol_User/rol_user.component';
 import { FormModuleComponent } from './form-module/form-module.component';
-
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
-    {path: 'home', component: HomeComponent,
-        children: [
-            {path: 'form', component: FormTableComponent},
-            {path: '', redirectTo: '', pathMatch: 'full'},
-            {path: 'module', component: ModuleComponent},
-            {path: '', redirectTo: '', pathMatch: 'full'},
-            {path: 'person', component: PersonComponent},
-            {path: '', redirectTo: '', pathMatch: 'full'},
-            {path: 'permission' , component: PermissionComponent},
-            {path: '', redirectTo: '', pathMatch: 'full'},
-            {path: 'rol', component: RolComponent},
-            {path: '', redirectTo: '', pathMatch: 'full'},
-            {path: 'user',component: UserTableComponent},
-            {path: '', redirectTo: '', pathMatch: 'full'},
-            {path: 'rolUser', component: RolUserTableComponent},
-            {path: '', redirectTo: '', pathMatch: 'full'},
-            {path: 'formModule' , component: FormModuleComponent},
-            {path: '', redirectTo: '',pathMatch: 'full'}
-        ]
-    }
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+
+  {
+    path: 'home',
+    component: HomeComponent,
+    canActivate: [AuthGuard], // protege el acceso
+    children: [
+      { path: '', redirectTo: 'form', pathMatch: 'full' },
+      { path: 'form', component: FormTableComponent },
+      { path: 'module', component: ModuleComponent },
+      { path: 'person', component: PersonComponent },
+      { path: 'permission', component: PermissionComponent },
+      { path: 'rol', component: RolComponent },
+      { path: 'user', component: UserTableComponent },
+      { path: 'rolUser', component: RolUserTableComponent },
+      { path: 'formModule', component: FormModuleComponent },
+    ]
+  },
+  { path: '**', redirectTo: 'login' } // para rutas no válidas
 ];

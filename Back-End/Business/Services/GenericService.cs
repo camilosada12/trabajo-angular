@@ -59,5 +59,14 @@ namespace Business.Services
         {
             return await _repository.PatchAsync(id);
         }
+
+        // Implementación de AddAsync
+        public async Task<TDto> AddAsync(TDto dto)
+        {
+            var entity = _mapper.Map<TEntity>(dto); // Mapea el DTO a la entidad
+            var addedEntity = await _repository.CreateAsync(entity); // Guarda la entidad en la base de datos
+
+            return _mapper.Map<TDto>(addedEntity); // Retorna el DTO del nuevo objeto guardado
+        }
     }
 }

@@ -1,11 +1,13 @@
 ﻿using Business.Interfaces;
 using Data.Services;
 using Entity.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Web.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
 
     public class UserController : GenericController<UserDto> 
     {

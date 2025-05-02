@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 using Web.Controllers;
 using Business.Services;
 using Data.Services;
+using Microsoft.AspNetCore.Authorization;
 
 [Route("api/[controller]")]
+[Authorize]
 public class RolUserController : GenericController<RolUserDto>
 {
     private readonly RolUserRepository _extendedService;

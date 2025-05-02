@@ -2976,3 +2976,5 @@ C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\refint\Web
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\Web.pdb
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\Web.genruntimeconfig.cache
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\ref\Web.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll

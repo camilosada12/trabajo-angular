@@ -1,3 +1,4 @@
+using System.Text;
 using Business.Interfaces;
 using Business.Services;
 using Data.Interfaces;
@@ -5,8 +6,10 @@ using Data.Services;
 using Entity.Context;
 using Entity.DTOs;
 using Entity.Model;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using MySqlConnector;
+using Microsoft.IdentityModel.Tokens;
+using Web.Custom;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,16 +26,32 @@ builder.Services.AddCors(options =>
     });
 });
 
-
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Configuración de JWT
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(config =>
+    {
+        config.RequireHttpsMetadata = false;  // Cambia a true en producción
+        config.SaveToken = true;
+        config.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(
+                Encoding.UTF8.GetBytes(builder.Configuration["JWT:key"])),
+            ValidateIssuer = true,
+            ValidIssuer = builder.Configuration["JWT:Issuer"],
+            ValidateAudience = true,
+            ValidAudience = builder.Configuration["JWT:Audience"],
+            ValidateLifetime = true,
+            ClockSkew = TimeSpan.FromMinutes(5)  // Añade un pequeño margen para diferencias de reloj
+        };
+    });
 
-
-
-
+builder.Services.AddAuthorization();
 
 // REGISTRO DE DEPENDENCIAS GENERALES
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -48,7 +67,6 @@ builder.Services.AddScoped(typeof(IGenericService<PersonDto>), typeof(GenericSer
 builder.Services.AddScoped(typeof(IGenericService<PermissionDto>), typeof(GenericService<PermissionDto, Permission>));
 builder.Services.AddScoped(typeof(IGenericService<RolFormPermissionDto>), typeof(GenericService<RolFormPermissionDto, RolFormPermission>));
 
-
 // Automapper
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
@@ -57,6 +75,10 @@ builder.Services.AddScoped<RolUserRepository>();
 builder.Services.AddScoped<RolFormPermissionRepository>();
 builder.Services.AddScoped<FormModuleRepository>();
 builder.Services.AddScoped<UserRepository>();
+
+
+// ⬅️ Agrega esta línea para registrar utilidades
+builder.Services.AddScoped<utilidades>();
 
 // Configuración de Base de Datos
 string databaseProvider = builder.Configuration["DatabaseProvider"];
@@ -88,9 +110,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 // Usar CORS
 app.UseCors("PoliticaCors");
+
+// Habilitar HTTPS Redirection si lo necesitas
 app.UseHttpsRedirection();
+
+// Autenticación y autorización
+app.UseAuthentication();
 app.UseAuthorization();
+
+// Rutas
 app.MapControllers();
+
 app.Run();
