@@ -43,8 +43,10 @@ public class CrearToken
         var jwtConfig = new JwtSecurityToken
         (
             claims: claims,
-            expires: DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["Jwt:Expiration"]))
+            expires: DateTime.Now.AddMinutes(Convert.ToDouble(_configuration["Jwt:Expiration"])),
+            signingCredentials: credentials
         );
+
 
         return new JwtSecurityTokenHandler().WriteToken(jwtConfig);
     }

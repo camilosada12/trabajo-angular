@@ -16,6 +16,7 @@ namespace Web.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public override async Task<IActionResult> GetAll()
         {
             var result = await _extendedService.GetAllJoinAsync();
