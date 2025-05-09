@@ -9,6 +9,6 @@ public class Module
     public bool active { get; set; }
     public bool isdeleted { get; set; }
 
-    public virtual ICollection<FormModule> FormModules { get; set; } = new List<FormModule>();
+    public ICollection<FormModule> FormModules { get; set; }
 
 }

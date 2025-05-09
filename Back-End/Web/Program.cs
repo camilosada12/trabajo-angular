@@ -1,6 +1,7 @@
 using System.Text;
 using Business.Interfaces;
 using Business.Services;
+using Business.Token;
 using Data.Interfaces;
 using Data.Services;
 using Entity.Context;
@@ -9,49 +10,13 @@ using Entity.Model;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using Web.Custom;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Configurar CORS
-var origenPermitido = builder.Configuration.GetValue<string>("Cors:OrigenPermitido");
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("PoliticaCors", policy =>
-    {
-        policy.WithOrigins(origenPermitido)  // Lee el valor desde appSettings.json
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
-});
 
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-// Configuración de JWT
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer(config =>
-    {
-        config.RequireHttpsMetadata = false;  // Cambia a true en producción
-        config.SaveToken = true;
-        config.TokenValidationParameters = new TokenValidationParameters
-        {
-            ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["JWT:key"])),
-            ValidateIssuer = true,
-            ValidIssuer = builder.Configuration["JWT:Issuer"],
-            ValidateAudience = true,
-            ValidAudience = builder.Configuration["JWT:Audience"],
-            ValidateLifetime = true,
-            ClockSkew = TimeSpan.FromMinutes(5)  // Añade un pequeño margen para diferencias de reloj
-        };
-    });
-
-builder.Services.AddAuthorization();
 
 // REGISTRO DE DEPENDENCIAS GENERALES
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -75,10 +40,43 @@ builder.Services.AddScoped<RolUserRepository>();
 builder.Services.AddScoped<RolFormPermissionRepository>();
 builder.Services.AddScoped<FormModuleRepository>();
 builder.Services.AddScoped<UserRepository>();
+builder.Services.AddScoped<CrearToken>();
 
+// Configurar CORS
+var origenPermitido = builder.Configuration.GetValue<string>("Cors:OrigenPermitido");
 
-// ⬅️ Agrega esta línea para registrar utilidades
-builder.Services.AddScoped<utilidades>();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PoliticaCors", policy =>
+    {
+        policy.WithOrigins(origenPermitido)  
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
+// configuración JWT
+builder.Services.AddAuthentication(config =>
+{
+    config.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    config.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(config =>
+{
+    config.RequireHttpsMetadata = false;
+    config.SaveToken = true;
+    config.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        ValidateIssuer = false,
+        ValidateAudience = false,
+        ValidateLifetime = true,
+        ClockSkew = TimeSpan.Zero,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
+    };
+});
+
+builder.Services.AddAuthorization();
 
 // Configuración de Base de Datos
 string databaseProvider = builder.Configuration["DatabaseProvider"];
@@ -111,11 +109,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// Usar CORS
-app.UseCors("PoliticaCors");
+
 
 // Habilitar HTTPS Redirection si lo necesitas
 app.UseHttpsRedirection();
+
+// Usar CORS
+app.UseCors("PoliticaCors");
 
 // Autenticación y autorización
 app.UseAuthentication();

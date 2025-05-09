@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Web.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize(Roles = "Admin")]
     public class FormModuleController : GenericController<FormModuleDto>
     {
         private readonly FormModuleRepository _extendedService;

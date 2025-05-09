@@ -12,8 +12,10 @@ namespace Data.Services
 {
     public class FormModuleRepository : Repository<FormModule>
     {
+        private readonly ApplicationDbContext _context;
         public FormModuleRepository(ApplicationDbContext context) : base(context)
         {
+            _context = context;
         }
 
 

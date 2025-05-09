@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Web.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     public class FormControllerPrueba : GenericController<FormDto>
     {
         public FormControllerPrueba(IGenericService<FormDto> service) : base(service)

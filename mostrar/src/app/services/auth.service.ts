@@ -4,68 +4,43 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
 
-
-
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:7205/api/Auth/login';  // Asegúrate de que esta URL apunte al backend correcto
-  private currentUserSubject: BehaviorSubject<any>;
-  public currentUser: Observable<any>;
-  private tokenExpirationTimer: any;
+  private tokenKey = 'token';
 
-  constructor(private http: HttpClient, private router: Router) {
-    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(localStorage.getItem('currentUser')!));
-    this.currentUser = this.currentUserSubject.asObservable();
+  constructor(private route: Router){}
 
-    // valida el token al recargar
-    this.checkTokenExpiration();
+  SetToken(token : string){
+    localStorage.setItem(this.tokenKey,token)
   }
 
-  login(credentials: { username: string, password: string }): Observable<any> {
-    return this.http.post<any>(this.apiUrl, credentials).pipe(
-      tap(response => {
-        // Guardar tanto el token como los datos del usuario en localStorage
-        localStorage.setItem('currentUser', JSON.stringify({
-          user: response.person,
-          token: response.token
-        }));
-        this.currentUserSubject.next({
-          user: response.person,
-          token: response.token
-        });
-      })
-    );
+  getToken():string | null{
+    return localStorage.getItem(this.tokenKey)
   }
 
-  logout() {
-    localStorage.removeItem('currentUser');
-    this.currentUserSubject.next(null);
-    this.router.navigate(['/login']);
+  cerrarSesion(){
+    localStorage.removeItem(this.tokenKey);
+    this.route.navigate(['/login'])
   }
 
-  autoLogout(expirationDuration: number) {
-    this.tokenExpirationTimer = setTimeout(() => {
-      this.logout();
-    }, expirationDuration);
-  }
-
-  private checkTokenExpiration() {
-    const currentUser = JSON.parse(localStorage.getItem('currentUser')!);
-    if (currentUser?.token) {
-      const decoded: any = jwtDecode(currentUser.token);
-      const expirationDate = new Date(decoded.exp * 1000);
-
-      if (expirationDate <= new Date()) {
-        this.logout();
-      } else {
-        this.autoLogout(expirationDate.getTime() - new Date().getTime());
-      }
+  private validarToken(token : string): boolean {
+    try{
+      const decode:any = jwtDecode(token)
+      const expiracion = decode.exp;
+      return Date.now() < expiracion * 1000;
+    }catch{
+      return false
     }
   }
-
-  get currentUserValue() {
-    return this.currentUserSubject.value;
+  
+  public validarCredenciales(): boolean{
+    const token = this.getToken();
+    if(!token || !this.validarToken(token)){
+      return false; 
+    }else{
+      return true
+    }
   }
 }

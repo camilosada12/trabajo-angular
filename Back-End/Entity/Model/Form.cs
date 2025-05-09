@@ -17,8 +17,8 @@ namespace Entity.Model
         public bool active { get; set; }
         public bool isdeleted { get; set; }
 
-        public virtual ICollection<FormModule> FormModules { get; set; } = new List<FormModule>();
-        public virtual ICollection<RolFormPermission> RolFormPermission { get; set; } = new List<RolFormPermission>();
+        public ICollection<FormModule> FormModules { get; set; } 
+        public ICollection<RolFormPermission> RolFormPermission { get; set; }
 
     }
 }

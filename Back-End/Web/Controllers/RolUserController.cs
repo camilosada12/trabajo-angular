@@ -7,7 +7,6 @@ using Data.Services;
 using Microsoft.AspNetCore.Authorization;
 
 [Route("api/[controller]")]
-[Authorize]
 public class RolUserController : GenericController<RolUserDto>
 {
     private readonly RolUserRepository _extendedService;

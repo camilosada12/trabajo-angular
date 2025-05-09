@@ -1,28 +1,43 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+
+import { CommonModule } from '@angular/common';
+import { Route, Router, Routes } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { FormsModule } from '@angular/forms'; // 👈 Importar FormsModule  // El servicio que crearemos a continuación
+import { GeneralService } from '../enpoint/general.service';
 
 @Component({
   selector: 'app-login',
-  imports : [FormsModule],
+  standalone: true,
+  imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  loginData = { username: '', password: '' };
+  loginForm: FormGroup;
 
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private fb: FormBuilder, private ApiService: GeneralService, private router: Router, private auth: AuthService) {
+    this.loginForm = fb.group({
+      username: ['', Validators.required],
+      password: ['', Validators.required]
+    })
+  }
 
-  onLogin(): void {
-    this.authService.login(this.loginData).subscribe({
-      next: (response: any) => {
-        this.router.navigate(['/home']);  // Redirigir a la página de inicio
-      },
-      error: (error) => {
-        console.error('Error en el login', error);
-        alert('Credenciales incorrectas, por favor intente nuevamente.');
-      }
-    });
+  login() {
+    if (this.loginForm.valid) {
+      const credenciales = this.loginForm.value;
+
+      this.ApiService.login(credenciales).subscribe({
+        next: (data) => {
+          this.auth.SetToken(data.token); // guarda el token (asegúrate que lo hace correctamente)
+          this.router.navigate(['/home']); // redirige a /user
+        },
+        error: (err) => {
+          console.error('error al iniciar sesión', err);
+          // puedes mostrar un mensaje de error aquí si quieres
+        }
+      });
+    }
+
   }
 }

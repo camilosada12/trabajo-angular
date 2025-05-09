@@ -9,7 +9,8 @@ import { UserTableComponent } from './user/user.component';
 import { RolUserTableComponent } from './rol_User/rol_user.component';
 import { FormModuleComponent } from './form-module/form-module.component';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './guards/auth.guard';
+import { authGuard } from './guards/auth.guard';
+
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -18,17 +19,16 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
-    canActivate: [AuthGuard], // protege el acceso
     children: [
       { path: '', redirectTo: 'form', pathMatch: 'full' },
-      { path: 'form', component: FormTableComponent },
-      { path: 'module', component: ModuleComponent },
-      { path: 'person', component: PersonComponent },
-      { path: 'permission', component: PermissionComponent },
-      { path: 'rol', component: RolComponent },
-      { path: 'user', component: UserTableComponent },
-      { path: 'rolUser', component: RolUserTableComponent },
-      { path: 'formModule', component: FormModuleComponent },
+      { path: 'form', component: FormTableComponent , canActivate: [authGuard]},
+      { path: 'module', component: ModuleComponent, canActivate: [authGuard]},
+      { path: 'person', component: PersonComponent ,  canActivate: [authGuard]},
+      { path: 'permission', component: PermissionComponent, canActivate: [authGuard] },
+      { path: 'rol', component: RolComponent , canActivate: [authGuard]},
+      { path: 'user', component: UserTableComponent , canActivate: [authGuard] },
+      { path: 'rolUser', component: RolUserTableComponent , canActivate: [authGuard]},
+      { path: 'formModule', component: FormModuleComponent , canActivate: [authGuard]},
     ]
   },
   { path: '**', redirectTo: 'login' } // para rutas no válidas

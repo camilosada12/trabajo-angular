@@ -15,5 +15,6 @@ namespace Entity.Model
 
         public virtual Form Form { get; set; }
         public virtual Module Module { get; set; }
+
     }
 }

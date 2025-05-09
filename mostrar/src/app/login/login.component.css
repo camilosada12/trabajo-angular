@@ -1,82 +1,159 @@
-/* Estilos generales */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+:host {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background: linear-gradient(150deg, #667eea, #764ba2);
   }
   
-  .login-container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+  .container {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 90%;
   }
   
-  h2 {
+  .header {
     text-align: center;
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+    margin-bottom: 40px;
+  
+    h1 {
+      color: #333;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+  
+    p {
+      color: #777;
+      font-size: 16px;
+    }
   }
   
-  form {
-    display: flex;
-    flex-direction: column;
+  .form-group {
+    margin-bottom: 25px;
+    position: relative;
+  
+    label {
+      display: block;
+      color: #555;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+  
+    input {
+      width: 100%;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+  
+      &:focus {
+        border-color: #764ba2;
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.2);
+      }
+    }
+  
+    .error-message {
+      color: #dc3545;
+      font-size: 14px;
+      margin-top: 5px;
+    }
   }
   
-  form div {
-    margin-bottom: 15px;
+  .password-container {
+    position: relative;
   }
   
-  label {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 5px;
-    display: block;
-  }
-  
-  input {
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-  }
-  
-  button {
-    padding: 12px;
-    font-size: 16px;
-    color: #fff;
-    background-color: #007bff;
-    border: none;
-    border-radius: 4px;
+  .password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    color: #777;
   }
   
-  button:hover {
-    background-color: #0056b3;
+  .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
   }
   
-  button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
+  .remember-me {
+    display: flex;
+    align-items: center;
+  
+    input {
+      margin-right: 8px;
+    }
   }
   
+  .forgot-password {
+    color: #764ba2;
+    text-decoration: none;
+    font-size: 14px;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .login-btn {
+    width: 100%;
+    background: linear-gradient(to right, #764ba2, #667eea);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+  
+    &:hover:not([disabled]) {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+    }
+  
+    &[disabled] {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+  
+  .spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  
+  .signup-link {
+    text-align: center;
+    margin-top: 25px;
+    color: #555;
+    font-size: 14px;
+  
+    a {
+      color: #764ba2;
+      text-decoration: none;
+      font-weight: 600;
+  
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }

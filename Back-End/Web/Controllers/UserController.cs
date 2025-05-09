@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Web.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
 
     public class UserController : GenericController<UserDto> 
     {

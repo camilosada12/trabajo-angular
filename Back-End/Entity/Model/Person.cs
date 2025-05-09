@@ -14,6 +14,6 @@ namespace Entity.Model
         public string phonenumber { get; set; }
         public bool active { get; set; }
         public bool isdeleted { get; set; }
-        public User User { get; set; }
+        public ICollection<User> User { get; set; }
     }
 }

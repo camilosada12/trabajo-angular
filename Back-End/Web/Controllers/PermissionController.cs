@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace Web.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize]
     public class PermissionController : GenericController<PermissionDto>
     {
         public PermissionController(IGenericService<PermissionDto> service) : base(service)

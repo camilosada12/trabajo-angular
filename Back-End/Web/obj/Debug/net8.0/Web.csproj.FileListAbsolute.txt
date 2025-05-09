@@ -2946,11 +2946,9 @@ C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\runtimes\w
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Business.dll
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Data.dll
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Entity.dll
-C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Utilities.dll
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Business.pdb
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Data.pdb
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Entity.pdb
-C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Utilities.pdb
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\Web.csproj.AssemblyReference.cache
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\Web.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\Web.AssemblyInfoInputs.cache

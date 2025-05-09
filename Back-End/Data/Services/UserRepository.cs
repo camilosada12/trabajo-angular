@@ -6,8 +6,10 @@ using Microsoft.EntityFrameworkCore;
 
 public class UserRepository : Repository<User>
 {
+    private readonly ApplicationDbContext _context;
     public UserRepository(ApplicationDbContext context) : base(context)
     {
+        _context = context;
     }
 
     public async Task<IEnumerable<UserDto>> GetAllWithPersonAsync()
@@ -25,5 +27,19 @@ public class UserRepository : Repository<User>
                 PersonName = u.person.firstname + " " + u.person.lastname
             })
             .ToListAsync();
+    }
+
+    public async Task<User> validacionUser(LoginRequestDto dto)
+    {
+        bool sucess = false;
+
+        var user = await _context.Set<User>().FirstOrDefaultAsync(u =>
+            u.username == dto.UserName &&
+            u.password == dto.Password 
+        );
+
+        sucess = (user != null) ? true : throw new UnauthorizedAccessException("credenciales Incorrectas");
+
+        return user;
     }
 }

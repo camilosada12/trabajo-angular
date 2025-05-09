@@ -55,14 +55,14 @@ namespace Entity.Context
         /// <param name="modelBuilder">Constructor del modelo de base de datos.</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<User>()
+                .HasOne(u => u.person) // un usuario tiene una persona
+                .WithMany(p => p.User) // una persona tiene muchos usuarios
+                .HasForeignKey(u => u.personid); // clave foránea en la tabla User
 
-            modelBuilder.Entity<Person>()
-           .HasOne(p => p.User)
-           .WithOne(u => u.person)
-           .HasForeignKey<User>(u => u.personid); // Especifica la clave foránea
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
         /// <summary>
