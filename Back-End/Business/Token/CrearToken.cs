@@ -33,8 +33,7 @@ public class CrearToken
             {
                 new Claim(ClaimTypes.NameIdentifier, user.id.ToString()),
                 new Claim(ClaimTypes.Name, user.username),
-                new Claim(ClaimTypes.Name, user.password)  
-
+                new Claim("email", user.email), // si necesitas el correo en el token
             };
 
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:key"]!));

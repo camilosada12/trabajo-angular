@@ -42,4 +42,24 @@ public class UserRepository : Repository<User>
 
         return user;
     }
+
+    public async Task<User?> getByEmail(string email)
+    {
+        return await _context.user.FirstOrDefaultAsync(u => u.email == email);
+    }
+
+    public async Task<User> createGoogleUser(string email, string name)
+    {
+        var newUser = new User
+        {
+            username = name,
+            email = email,
+            password = "", // dejar vacío porque viene de google
+        };
+
+        _context.user.Add(newUser);
+        await _context.SaveChangesAsync();
+
+        return newUser;
+    }
 }

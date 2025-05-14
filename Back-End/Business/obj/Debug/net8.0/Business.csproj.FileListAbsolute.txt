@@ -354,3 +354,5 @@ C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Business\obj\Debug\net8.0\Busin
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Business\obj\Debug\net8.0\refint\Business.dll
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Business\obj\Debug\net8.0\Business.pdb
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Business\obj\Debug\net8.0\ref\Business.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Business\bin\Debug\net8.0\Utilities.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Business\bin\Debug\net8.0\Utilities.pdb

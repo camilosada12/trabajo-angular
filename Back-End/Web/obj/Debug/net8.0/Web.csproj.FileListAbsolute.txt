@@ -2976,3 +2976,14 @@ C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\Web.genrun
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\ref\Web.dll
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Microsoft.Bcl.Memory.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\BouncyCastle.Crypto.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Utilities.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Utilities.pdb
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\System.Management.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\package-lock.json
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\package.json

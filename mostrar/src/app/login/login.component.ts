@@ -1,26 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { CommonModule } from '@angular/common';
-import { Route, Router, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { GeneralService } from '../enpoint/general.service';
+import { GoogleLoginComponentComponent } from '../google-login-component/google-login-component.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule, CommonModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule, GoogleLoginComponentComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
   loginForm: FormGroup;
 
+  @ViewChild('googleLogin') googleLoginComponent!: GoogleLoginComponentComponent;
+
   constructor(private fb: FormBuilder, private ApiService: GeneralService, private router: Router, private auth: AuthService) {
     this.loginForm = fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
-    })
+    });
   }
 
   login() {
@@ -29,8 +32,8 @@ export class LoginComponent {
 
       this.ApiService.login(credenciales).subscribe({
         next: (data) => {
-          this.auth.SetToken(data.token); // guarda el token (asegúrate que lo hace correctamente)
-          this.router.navigate(['/home']); // redirige a /user
+          this.auth.SetToken(data.token); // guarda el token
+          this.router.navigate(['/home']); // redirige a /home
         },
         error: (err) => {
           console.error('error al iniciar sesión', err);
@@ -38,6 +41,13 @@ export class LoginComponent {
         }
       });
     }
+  }
 
+  onGoogleSignInClick() {
+    if (this.googleLoginComponent) {
+      this.googleLoginComponent.onGoogleSignIn();
+    } else {
+      console.error('GoogleLoginComponent no está cargado');
+    }
   }
 }

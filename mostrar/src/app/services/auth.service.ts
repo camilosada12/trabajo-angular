@@ -25,7 +25,7 @@ export class AuthService {
     this.route.navigate(['/login'])
   }
 
-  private validarToken(token : string): boolean {
+  private validarTimeToken(token : string): boolean {
     try{
       const decode:any = jwtDecode(token)
       const expiracion = decode.exp;
@@ -37,7 +37,7 @@ export class AuthService {
   
   public validarCredenciales(): boolean{
     const token = this.getToken();
-    if(!token || !this.validarToken(token)){
+    if(!token || !this.validarTimeToken(token)){
       return false; 
     }else{
       return true

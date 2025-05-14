@@ -8,13 +8,13 @@ namespace Entity.DTOs
 {
     public class UserDto
     {
-        public int id { get; set; }
-        public string UserName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public int PersonId { get; set; }
+        public int? id { get; set; }
+        public string? UserName { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public int? PersonId { get; set; }
         public string? PersonName { get; set; }
-        public string? RolName { get; set; } // 👈 Para que puedas incluir el nombre del rol en el JWT
+        public string? RolName { get; set; } 
 
     }
 }

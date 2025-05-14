@@ -32,6 +32,8 @@ namespace Entity.Context
             _configuration = configuration;
         }
 
+
+
         ///
         /// DB SETS
         ///

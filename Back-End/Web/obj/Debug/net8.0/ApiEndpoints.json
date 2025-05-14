@@ -228,6 +228,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Web.Controllers.LoginController",
+    "Method": "GoogleLogin",
+    "RelativePath": "api/Login/google",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tokenDto",
+        "Type": "Entity.DTOs.GoogleTokenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Web.Controllers.GenericController\u00601[[ModuleDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
     "Method": "GetAll",
     "RelativePath": "api/Module",
