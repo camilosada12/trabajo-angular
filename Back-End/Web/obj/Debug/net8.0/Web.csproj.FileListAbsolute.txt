@@ -2967,7 +2967,6 @@ C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\staticweba
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Web.props
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Web.props
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\Web.csproj.Up2Date
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\Web.dll
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\refint\Web.dll
@@ -2987,3 +2986,7 @@ C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\System.Man
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\package-lock.json
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\package.json
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Email.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Email.pdb
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Web\bin\Debug\net8.0\Telegram.Bot.dll

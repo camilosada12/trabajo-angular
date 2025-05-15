@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "a1XtVn086y0=",
+  "dgSpecHash": "cSgePontQTc=",
   "success": true,
   "projectFilePath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Web.csproj",
   "expectedPackageFiles": [
@@ -99,7 +99,19 @@
     "C:\\Users\\Camilo\\.nuget\\packages\\system.text.json\\9.0.3\\system.text.json.9.0.3.nupkg.sha512",
     "C:\\Users\\Camilo\\.nuget\\packages\\system.threading.channels\\7.0.0\\system.threading.channels.7.0.0.nupkg.sha512",
     "C:\\Users\\Camilo\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\Camilo\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\Camilo\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Camilo\\.nuget\\packages\\telegram.bot\\19.0.0\\telegram.bot.19.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Email depende de Telegram.Bot (>= 18.1.7), pero no se encontró Telegram.Bot 18.1.7. Telegram.Bot 19.0.0 se resolvió en su lugar.",
+      "libraryId": "Telegram.Bot",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

@@ -1,8 +1,9 @@
 ﻿using Business.Token;
 using Data.Services;
+using Email;
 
-namespace Web.Service_Extensions;
-
+namespace Web.Service_Extensions
+{
     public static class ServiceRepository
     {
         public static IServiceCollection AddRepositories(this IServiceCollection services)
@@ -11,9 +12,12 @@ namespace Web.Service_Extensions;
             services.AddScoped<RolFormPermissionRepository>();
             services.AddScoped<FormModuleRepository>();
             services.AddScoped<UserRepository>();
-            services.AddScoped<CrearToken>(); // Servicio extendido importante
+            services.AddScoped<CrearToken>();
+
+            services.AddScoped<IMensajeCorreo, CorreoMensaje>();
+            services.AddScoped<IMensajeTelegram, MensajeTelegram>();// ✅ Esto es lo que faltaba
 
             return services;
         }
     }
-
+}

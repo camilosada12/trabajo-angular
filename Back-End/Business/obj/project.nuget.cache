@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "hYGt/au4gj4=",
+  "dgSpecHash": "sMnoX388h5M=",
   "success": true,
   "projectFilePath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Business\\Business.csproj",
   "expectedPackageFiles": [
@@ -40,6 +40,7 @@
     "C:\\Users\\Camilo\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
     "C:\\Users\\Camilo\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\Camilo\\.nuget\\packages\\mysqlconnector\\2.4.0\\mysqlconnector.2.4.0.nupkg.sha512",
+    "C:\\Users\\Camilo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Camilo\\.nuget\\packages\\npgsql\\9.0.3\\npgsql.9.0.3.nupkg.sha512",
     "C:\\Users\\Camilo\\.nuget\\packages\\npgsql.entityframeworkcore.postgresql\\9.0.4\\npgsql.entityframeworkcore.postgresql.9.0.4.nupkg.sha512",
     "C:\\Users\\Camilo\\.nuget\\packages\\pomelo.entityframeworkcore.mysql\\9.0.0-preview.3.efcore.9.0.0\\pomelo.entityframeworkcore.mysql.9.0.0-preview.3.efcore.9.0.0.nupkg.sha512",
@@ -67,7 +68,19 @@
     "C:\\Users\\Camilo\\.nuget\\packages\\system.text.encodings.web\\9.0.3\\system.text.encodings.web.9.0.3.nupkg.sha512",
     "C:\\Users\\Camilo\\.nuget\\packages\\system.text.json\\9.0.3\\system.text.json.9.0.3.nupkg.sha512",
     "C:\\Users\\Camilo\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\Camilo\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512"
+    "C:\\Users\\Camilo\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Camilo\\.nuget\\packages\\telegram.bot\\19.0.0\\telegram.bot.19.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1603",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Email depende de Telegram.Bot (>= 18.1.7), pero no se encontró Telegram.Bot 18.1.7. Telegram.Bot 19.0.0 se resolvió en su lugar.",
+      "libraryId": "Telegram.Bot",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

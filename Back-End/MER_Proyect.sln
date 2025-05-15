@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utilities", "Utilities\Utilities.csproj", "{78E4354E-49FE-4E9B-89AB-25F4389B5D49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Email", "Email\Email.csproj", "{75F76117-5CA7-489B-895A-A1AC548A8BD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{78E4354E-49FE-4E9B-89AB-25F4389B5D49}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78E4354E-49FE-4E9B-89AB-25F4389B5D49}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78E4354E-49FE-4E9B-89AB-25F4389B5D49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75F76117-5CA7-489B-895A-A1AC548A8BD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75F76117-5CA7-489B-895A-A1AC548A8BD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75F76117-5CA7-489B-895A-A1AC548A8BD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75F76117-5CA7-489B-895A-A1AC548A8BD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

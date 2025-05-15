@@ -1,15 +1,22 @@
 ﻿using Data.Services;
+using Email;
 using Entity.Context;
 using Entity.DTOs;
 using Entity.Model;
 using Microsoft.EntityFrameworkCore;
 
+
 public class UserRepository : Repository<User>
 {
     private readonly ApplicationDbContext _context;
-    public UserRepository(ApplicationDbContext context) : base(context)
+    private readonly IMensajeCorreo _mensaje;
+    private readonly IMensajeTelegram _mensajeTelegram;
+
+    public UserRepository(ApplicationDbContext context, IMensajeCorreo mensaje, IMensajeTelegram mensajeTelegram) : base(context)
     {
         _context = context;
+        _mensaje = mensaje;
+        _mensajeTelegram = mensajeTelegram;
     }
 
     public async Task<IEnumerable<UserDto>> GetAllWithPersonAsync()
@@ -48,18 +55,17 @@ public class UserRepository : Repository<User>
         return await _context.user.FirstOrDefaultAsync(u => u.email == email);
     }
 
-    public async Task<User> createGoogleUser(string email, string name)
+    public async Task NotificarPorCorreo(string email)
     {
-        var newUser = new User
-        {
-            username = name,
-            email = email,
-            password = "", // dejar vacío porque viene de google
-        };
+        string asunto = "Notificación importante";
+        string contenido = "<h1>Hola, esto es un correo de prueba</h1>";
 
-        _context.user.Add(newUser);
-        await _context.SaveChangesAsync();
-
-        return newUser;
+        await _mensaje.EnviarAsync(email, asunto, contenido);
     }
+
+    public async Task NotificarPorTelegram(string texto)
+    {
+        await _mensajeTelegram.EnviarTelegram(texto);
+    }
+
 }

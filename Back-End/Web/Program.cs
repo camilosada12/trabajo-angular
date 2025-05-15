@@ -38,6 +38,8 @@ builder.Services.AddAuthorization();
 // Injectamos la Base de Datos
 builder.Services.AddDatabaseProvider(builder.Configuration);
 
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

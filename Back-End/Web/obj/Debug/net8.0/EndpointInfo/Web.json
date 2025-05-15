@@ -5,6 +5,37 @@
     "version": "1.0"
   },
   "paths": {
+    "/api/Email/enviar-correo": {
+      "post": {
+        "tags": [
+          "Email"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/FormControllerPrueba": {
       "get": {
         "tags": [
@@ -376,6 +407,37 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/GoogleTokenDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/mensajeTelegram/telegram": {
+      "post": {
+        "tags": [
+          "mensajeTelegram"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "type": "string"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "type": "string"
               }
             }
           }

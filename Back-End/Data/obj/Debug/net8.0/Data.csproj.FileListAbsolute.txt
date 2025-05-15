@@ -318,3 +318,5 @@ C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Data\obj\Debug\net8.0\Data.genr
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Data\obj\Debug\net8.0\ref\Data.dll
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Data\bin\Debug\net8.0\Utilities.dll
 C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Data\bin\Debug\net8.0\Utilities.pdb
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Data\bin\Debug\net8.0\Email.dll
+C:\Users\Camilo\Desktop\trabajo-angular\Back-End\Data\bin\Debug\net8.0\Email.pdb

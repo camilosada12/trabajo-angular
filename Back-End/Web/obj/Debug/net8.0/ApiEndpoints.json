@@ -1,5 +1,21 @@
 [
   {
+    "ContainingType": "Web.Controllers.EmailController",
+    "Method": "EnviarCorreo",
+    "RelativePath": "api/Email/enviar-correo",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Web.Controllers.GenericController\u00601[[Entity.DTOs.FormDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
     "Method": "GetAll",
     "RelativePath": "api/FormControllerPrueba",
@@ -238,6 +254,22 @@
       {
         "Name": "tokenDto",
         "Type": "Entity.DTOs.GoogleTokenDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Web.Controllers.mensajeTelegram",
+    "Method": "EnviarMensajeTelegram",
+    "RelativePath": "api/mensajeTelegram/telegram",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "mensaje",
+        "Type": "System.String",
         "IsRequired": true
       }
     ],
