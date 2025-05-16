@@ -3,32 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\context\\applicationdbcontext .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\context\\applicationdbcontext .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\web\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\controllers\\emailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\relacionesmodel\\relacionesrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\relacionesmodel\\relacionesrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3865FF69-7A12-433C-9745-BC47EE60C7CF}|Data\\Data.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\data\\services\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3865FF69-7A12-433C-9745-BC47EE60C7CF}|Data\\Data.csproj|solutionrelative:data\\services\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\relacionesmodel\\relacionperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\relacionesmodel\\relacionperson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\web\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\relacionesmodel\\relacionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\relacionesmodel\\relacionform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{75F76117-5CA7-489B-895A-A1AC548A8BD4}|Email\\Email.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\email\\interfaz\\imensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75F76117-5CA7-489B-895A-A1AC548A8BD4}|Email\\Email.csproj|solutionrelative:email\\interfaz\\imensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\datainit\\roldatainit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\datainit\\roldatainit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{75F76117-5CA7-489B-895A-A1AC548A8BD4}|Email\\Email.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\email\\mensajes\\correomensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75F76117-5CA7-489B-895A-A1AC548A8BD4}|Email\\Email.csproj|solutionrelative:email\\mensajes\\correomensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\datainit\\formdatainit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\datainit\\formdatainit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{75F76117-5CA7-489B-895A-A1AC548A8BD4}|Email\\Email.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\email\\mensajes\\mensajetelegram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{75F76117-5CA7-489B-895A-A1AC548A8BD4}|Email\\Email.csproj|solutionrelative:email\\mensajes\\mensajetelegram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\entity\\datainit\\moduledatainit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{467874F7-1E9B-4A7E-B160-A9E41BB251BF}|Entity\\Entity.csproj|solutionrelative:entity\\datainit\\moduledatainit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\web\\controllers\\mensajetelegram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\controllers\\mensajetelegram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\web\\controllers\\genericcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\controllers\\genericcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|c:\\users\\camilo\\desktop\\trabajo-angular\\back-end\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{09E1EC4E-445D-44C1-A897-59758E8C6540}|Web\\Web.csproj|solutionrelative:web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +50,136 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RelacionPerson.cs",
-              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\relacionesModel\\RelacionPerson.cs",
-              "RelativeDocumentMoniker": "Entity\\relacionesModel\\RelacionPerson.cs",
-              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\relacionesModel\\RelacionPerson.cs",
-              "RelativeToolTip": "Entity\\relacionesModel\\RelacionPerson.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAA2AAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "MensajeTelegram.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Mensajes\\MensajeTelegram.cs",
+              "RelativeDocumentMoniker": "Email\\Mensajes\\MensajeTelegram.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Mensajes\\MensajeTelegram.cs",
+              "RelativeToolTip": "Email\\Mensajes\\MensajeTelegram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T15:22:43.285Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RolDataInit.cs",
-              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DataInit\\RolDataInit.cs",
-              "RelativeDocumentMoniker": "Entity\\DataInit\\RolDataInit.cs",
-              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DataInit\\RolDataInit.cs",
-              "RelativeToolTip": "Entity\\DataInit\\RolDataInit.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T15:21:59.982Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ApplicationDbContext .cs",
-              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Context\\ApplicationDbContext .cs",
-              "RelativeDocumentMoniker": "Entity\\Context\\ApplicationDbContext .cs",
-              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Context\\ApplicationDbContext .cs",
-              "RelativeToolTip": "Entity\\Context\\ApplicationDbContext .cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAD0AAABaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T15:19:48.61Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "RelacionForm.cs",
-              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\relacionesModel\\RelacionForm.cs",
-              "RelativeDocumentMoniker": "Entity\\relacionesModel\\RelacionForm.cs",
-              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\relacionesModel\\RelacionForm.cs",
-              "RelativeToolTip": "Entity\\relacionesModel\\RelacionForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T15:19:28.167Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RelacionesRol.cs",
-              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\relacionesModel\\RelacionesRol.cs",
-              "RelativeDocumentMoniker": "Entity\\relacionesModel\\RelacionesRol.cs",
-              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\relacionesModel\\RelacionesRol.cs",
-              "RelativeToolTip": "Entity\\relacionesModel\\RelacionesRol.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABoAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T15:17:21.283Z",
+              "WhenOpened": "2025-05-16T21:57:40.042Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ModuleDataInit.cs",
-              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DataInit\\ModuleDataInit.cs",
-              "RelativeDocumentMoniker": "Entity\\DataInit\\ModuleDataInit.cs",
-              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DataInit\\ModuleDataInit.cs",
-              "RelativeToolTip": "Entity\\DataInit\\ModuleDataInit.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
+              "Title": "mensajeTelegram.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\mensajeTelegram.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\mensajeTelegram.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\mensajeTelegram.cs",
+              "RelativeToolTip": "Web\\Controllers\\mensajeTelegram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T15:16:59.945Z",
+              "WhenOpened": "2025-05-16T21:53:59.367Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormDataInit.cs",
-              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DataInit\\FormDataInit.cs",
-              "RelativeDocumentMoniker": "Entity\\DataInit\\FormDataInit.cs",
-              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\DataInit\\FormDataInit.cs",
-              "RelativeToolTip": "Entity\\DataInit\\FormDataInit.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAjAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Program.cs",
+              "RelativeDocumentMoniker": "Web\\Program.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Program.cs",
+              "RelativeToolTip": "Web\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-16T15:15:42.044Z",
+              "WhenOpened": "2025-05-16T21:53:56.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmailController.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\EmailController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\EmailController.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\EmailController.cs",
+              "RelativeToolTip": "Web\\Controllers\\EmailController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA4AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T21:53:20.503Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GenericController.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\GenericController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\GenericController.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\GenericController.cs",
+              "RelativeToolTip": "Web\\Controllers\\GenericController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T21:53:11.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Data\\Services\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Data\\Services\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Data\\Services\\UserRepository.cs",
+              "RelativeToolTip": "Data\\Services\\UserRepository.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAmwDkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T21:35:14.226Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IMensaje.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Interfaz\\IMensaje.cs",
+              "RelativeDocumentMoniker": "Email\\Interfaz\\IMensaje.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Interfaz\\IMensaje.cs",
+              "RelativeToolTip": "Email\\Interfaz\\IMensaje.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T21:43:49.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CorreoMensaje.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Mensajes\\CorreoMensaje.cs",
+              "RelativeDocumentMoniker": "Email\\Mensajes\\CorreoMensaje.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Mensajes\\CorreoMensaje.cs",
+              "RelativeToolTip": "Email\\Mensajes\\CorreoMensaje.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T21:43:32.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\appsettings.json",
+              "RelativeDocumentMoniker": "Web\\appsettings.json",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\appsettings.json",
+              "RelativeToolTip": "Web\\appsettings.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-16T21:34:48.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\LoginController.cs",
+              "ToolTip": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "Web\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAQwCQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-16T21:34:21.737Z",
               "EditorCaption": ""
             }
           ]

@@ -10,37 +10,51 @@ import { jwtDecode } from 'jwt-decode';
 export class AuthService {
   private tokenKey = 'token';
 
-  constructor(private route: Router){}
+  constructor(private route: Router) { }
 
-  SetToken(token : string){
-    localStorage.setItem(this.tokenKey,token)
+  SetToken(token: string) {
+    localStorage.setItem(this.tokenKey, token)
   }
-
-  getToken():string | null{
+    
+  getToken(): string | null {
     return localStorage.getItem(this.tokenKey)
   }
 
-  cerrarSesion(){
+  cerrarSesion() {
     localStorage.removeItem(this.tokenKey);
     this.route.navigate(['/login'])
   }
 
-  private validarTimeToken(token : string): boolean {
-    try{
-      const decode:any = jwtDecode(token)
+  private validarTimeToken(token: string): boolean {
+    try {
+      const decode: any = jwtDecode(token)
       const expiracion = decode.exp;
       return Date.now() < expiracion * 1000;
-    }catch{
+    } catch {
       return false
     }
   }
-  
-  public validarCredenciales(): boolean{
+
+  public validarCredenciales(): boolean {
     const token = this.getToken();
-    if(!token || !this.validarTimeToken(token)){
-      return false; 
-    }else{
+    if (!token || !this.validarTimeToken(token)) {
+      return false;
+    } else {
       return true
     }
   }
+
+  getUserRole(): string | null {
+    const token = this.getToken();
+    if (!token) return null;
+
+    try {
+      const decoded: any = jwtDecode(token);
+      return decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] || null;
+    } catch {
+      return null;
+    }
+  }
+
+
 }

@@ -55,17 +55,21 @@ public class UserRepository : Repository<User>
         return await _context.user.FirstOrDefaultAsync(u => u.email == email);
     }
 
-    public async Task NotificarPorCorreo(string email)
-    {
-        string asunto = "Notificación importante";
-        string contenido = "<h1>Hola, esto es un correo de prueba</h1>";
-
-        await _mensaje.EnviarAsync(email, asunto, contenido);
-    }
 
     public async Task NotificarPorTelegram(string texto)
     {
         await _mensajeTelegram.EnviarTelegram(texto);
+    }
+
+    public async Task<List<string>> GetRolesByUserId(int userId)
+    {
+        var roles = await _context.roluser
+            .Where(ru => ru.userid == userId && !ru.isdeleted)
+            .Include(ru => ru.Rol)
+            .Select(ru => ru.Rol.name)
+            .ToListAsync();
+
+        return roles;
     }
 
 }

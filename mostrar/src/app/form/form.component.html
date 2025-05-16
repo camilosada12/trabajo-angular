@@ -25,7 +25,10 @@
           <td>{{ form.active ? 'Yes' : 'No' }}</td>
           <td>
             <button mat-raised-button color="primary"  (click)="editForm(form)">Editar</button>
+
             <button mat-raised-button color="warn" (click)="deleteFormLogic(form.id)">Eliminar Logico</button>
+            <!-- Visible solo para rol admin -->
+            <button *ngIf="userRole === 'admin'" mat-raised-button color="accent" (click)="deleteForm(form.id)">Eliminar Definitivo</button>
           </td>
         </tr>
       </tbody>

@@ -23,6 +23,8 @@ namespace Web.Controllers
         [Authorize]
         public virtual async Task<IActionResult> GetAll() => Ok(await _service.GetAllAsync());
 
+
+
         [HttpGet("{id}")]
         [Authorize]
         public virtual async Task<IActionResult> GetById(int id) => Ok(await _service.GetByIdAsync(id));

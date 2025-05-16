@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { ServiceGenericService } from '../service-generic.service';
 import { Form } from '../Interfaces/form';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-form-table',
-  standalone: true, 
+  standalone: true,
   imports: [CommonModule, MatButtonModule, FormsModule],
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.css']
@@ -18,12 +19,16 @@ export class FormTableComponent implements OnInit {
   currentForm: Form = this.getEmptyForm();
   showForm: boolean = false;
   isEditing: boolean = false;
-  
-  constructor(private formService: ServiceGenericService) {}
+  userRole: string | null = null;
+
+  constructor(private formService: ServiceGenericService, private auth: AuthService) { }
 
   ngOnInit(): void {
+    this.userRole = this.auth.getUserRole();
+    console.log('ROL:', this.userRole); // ← Verifica si imprime "admin"
     this.loadForms();
   }
+
 
   // Helper para crear un formulario vacío
   getEmptyForm(): Form {
@@ -65,7 +70,7 @@ export class FormTableComponent implements OnInit {
     this.isEditing = true;
     this.currentForm = { ...form }; // Copia del objeto para no modificar directamente
     this.showForm = true;           // Muestra el formulario
-  }  
+  }
 
   updateForm(): void {
     this.formService.put<Form>('FormControllerPrueba', this.currentForm).subscribe({
@@ -76,7 +81,7 @@ export class FormTableComponent implements OnInit {
       error: err => console.error('Error al actualizar formulario', err)
     });
   }
-  
+
 
   deleteForm(id: number): void {
     this.formService.delete<Form>('FormControllerPrueba', id).subscribe({
@@ -91,7 +96,7 @@ export class FormTableComponent implements OnInit {
       error: err => console.error('Error al eliminar lógicamente', err)
     });
   }
-  
+
 
   toggleForm(mode: 'create' | 'edit'): void {
     if (mode === 'create') {

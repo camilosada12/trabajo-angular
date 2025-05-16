@@ -33,7 +33,8 @@ export class LoginComponent {
       this.ApiService.login(credenciales).subscribe({
         next: (data) => {
           this.auth.SetToken(data.token); // guarda el token
-          this.router.navigate(['/home']); // redirige a /home
+          this.router.navigate(['/home']); // redirige a /home7
+          console.log(data.token)
         },
         error: (err) => {
           console.error('error al iniciar sesión', err);

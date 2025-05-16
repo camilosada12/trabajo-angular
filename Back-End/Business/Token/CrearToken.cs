@@ -26,12 +26,21 @@ public class CrearToken
             throw new UnauthorizedAccessException("credenciales incorrectas");
         }
 
+        // Obtener los roles asignados al usuario
+        var roles = await _user.GetRolesByUserId(user.id.Value);
+
         var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.id.ToString()),
                 new Claim(ClaimTypes.Name, user.username),
-                new Claim("email", user.email), // si necesitas el correo en el token
+                new Claim("email", user.email),
             };
+
+        // Agregar cada rol como un claim
+        foreach (var rol in roles)
+        {
+            claims.Add(new Claim(ClaimTypes.Role, rol));
+        }
 
         var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:key"]!));
         var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256Signature);
