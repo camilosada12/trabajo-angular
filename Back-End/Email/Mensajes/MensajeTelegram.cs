@@ -1,9 +1,10 @@
 ﻿using System.Threading.Tasks;
+using Email.Interfaz;
 using Microsoft.Extensions.Configuration;
 using Telegram.Bot;
 using Telegram.Bot.Types.Enums;
 
-namespace Email
+namespace Email.Mensajes
 {
     public class MensajeTelegram : IMensajeTelegram
     {

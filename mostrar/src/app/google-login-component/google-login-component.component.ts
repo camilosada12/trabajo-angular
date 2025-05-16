@@ -3,11 +3,11 @@ import { ServicesService } from '../ServicesLogin/services.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 
-declare global {
-  interface Window {
-    google: any;
+  declare global {
+    interface Window {
+      google: any;
+    }
   }
-}
 
 @Component({
   selector: 'app-google-login-component',
@@ -50,7 +50,6 @@ export class GoogleLoginComponentComponent implements OnInit {
     });
   }
 
-  // Inicializar Google Identity Services
   // Inicializar Google Identity Services
   initGoogleSignIn() {
     if (!window.google || !window.google.accounts) {

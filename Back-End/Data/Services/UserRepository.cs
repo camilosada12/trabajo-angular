@@ -1,5 +1,5 @@
 ﻿using Data.Services;
-using Email;
+using Email.Interfaz;
 using Entity.Context;
 using Entity.DTOs;
 using Entity.Model;

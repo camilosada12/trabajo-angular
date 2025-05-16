@@ -1,8 +1,9 @@
 ﻿using System.Net.Mail;
 using System.Net;
 using Microsoft.Extensions.Configuration;
+using Email.Interfaz;
 
-namespace Email
+namespace Email.Mensajes
 {
     public class CorreoMensaje : IMensajeCorreo
     {

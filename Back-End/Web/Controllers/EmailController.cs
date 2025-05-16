@@ -1,4 +1,4 @@
-﻿using Email;
+﻿using Email.Interfaz;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

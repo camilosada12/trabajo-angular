@@ -2,8 +2,8 @@
 using Entity.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -17,53 +17,73 @@ namespace Entity.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "9.0.3")
-                .HasAnnotation("Relational:MaxIdentifierLength", 64);
+                .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("Entity.Model.Form", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<bool>("active")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("description")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(250)
+                        .HasColumnType("character varying(250)");
 
                     b.Property<bool>("isdeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.HasKey("id");
 
-                    b.ToTable("form");
+                    b.ToTable("Forms", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            active = true,
+                            description = "Formulario principal del sistema",
+                            isdeleted = false,
+                            name = "Formulario Principal"
+                        },
+                        new
+                        {
+                            id = 2,
+                            active = true,
+                            description = "Formulario secundario",
+                            isdeleted = false,
+                            name = "Formulario Secundario"
+                        });
                 });
 
             modelBuilder.Entity("Entity.Model.FormModule", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<int>("formid")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<bool>("isdeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<int>("moduleid")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.HasKey("id");
 
@@ -71,86 +91,145 @@ namespace Entity.Migrations
 
                     b.HasIndex("moduleid");
 
-                    b.ToTable("formmodule");
+                    b.ToTable("FormModules", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            formid = 1,
+                            isdeleted = false,
+                            moduleid = 1
+                        },
+                        new
+                        {
+                            id = 2,
+                            formid = 2,
+                            isdeleted = false,
+                            moduleid = 1
+                        });
                 });
 
             modelBuilder.Entity("Entity.Model.Permission", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<bool>("active")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("description")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(250)
+                        .HasColumnType("character varying(250)");
 
                     b.Property<bool>("isdeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.HasKey("id");
 
-                    b.ToTable("permission");
+                    b.ToTable("Permissions", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            active = true,
+                            description = "Permiso para lectura",
+                            isdeleted = false,
+                            name = "Leer"
+                        },
+                        new
+                        {
+                            id = 2,
+                            active = true,
+                            description = "Permiso para escritura",
+                            isdeleted = false,
+                            name = "Escribir"
+                        });
                 });
 
             modelBuilder.Entity("Entity.Model.Person", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<bool>("active")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("firstname")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<bool>("isdeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("lastname")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("phonenumber")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
 
                     b.HasKey("id");
 
-                    b.ToTable("person");
+                    b.ToTable("Persons", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            active = true,
+                            firstname = "Juan",
+                            isdeleted = false,
+                            lastname = "Pérez",
+                            phonenumber = "1234567890"
+                        },
+                        new
+                        {
+                            id = 2,
+                            active = true,
+                            firstname = "Sara",
+                            isdeleted = false,
+                            lastname = "sofia",
+                            phonenumber = "312312314"
+                        });
                 });
 
             modelBuilder.Entity("Entity.Model.RolFormPermission", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<int>("formid")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<bool>("isdeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<int>("permissionid")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<int>("rolid")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.HasKey("id");
 
@@ -160,25 +239,43 @@ namespace Entity.Migrations
 
                     b.HasIndex("rolid");
 
-                    b.ToTable("rolformpermission");
+                    b.ToTable("RolFormPermissions", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            formid = 1,
+                            isdeleted = false,
+                            permissionid = 1,
+                            rolid = 1
+                        },
+                        new
+                        {
+                            id = 2,
+                            formid = 1,
+                            isdeleted = false,
+                            permissionid = 2,
+                            rolid = 2
+                        });
                 });
 
             modelBuilder.Entity("Entity.Model.RolUser", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<bool>("isdeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<int>("rolid")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<int>("userid")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.HasKey("id");
 
@@ -186,91 +283,172 @@ namespace Entity.Migrations
 
                     b.HasIndex("userid");
 
-                    b.ToTable("roluser");
+                    b.ToTable("RolUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            isdeleted = false,
+                            rolid = 1,
+                            userid = 1
+                        },
+                        new
+                        {
+                            id = 2,
+                            isdeleted = false,
+                            rolid = 2,
+                            userid = 2
+                        });
                 });
 
             modelBuilder.Entity("Entity.Model.User", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<bool?>("active")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("email")
-                        .HasColumnType("longtext");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
 
                     b.Property<bool?>("isdeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("password")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<int?>("personid")
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
                     b.Property<string>("username")
-                        .HasColumnType("longtext");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.HasKey("id");
 
                     b.HasIndex("personid");
 
-                    b.ToTable("user");
+                    b.ToTable("Users", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            active = true,
+                            email = "camilo@gmail.com",
+                            isdeleted = false,
+                            password = "admin123",
+                            personid = 1,
+                            username = "camilosada12"
+                        },
+                        new
+                        {
+                            id = 2,
+                            active = true,
+                            email = "sarita@gmail.com",
+                            isdeleted = false,
+                            password = "sara12312",
+                            personid = 2,
+                            username = "sara12312"
+                        });
                 });
 
             modelBuilder.Entity("Entity.Model.rol", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<string>("description")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
 
                     b.Property<bool>("isdeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(50)
+                        .HasColumnType("character varying(50)");
 
                     b.HasKey("id");
 
-                    b.ToTable("rol");
+                    b.ToTable("Roles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            description = "Rol con todos los permisos",
+                            isdeleted = false,
+                            name = "Administrador"
+                        },
+                        new
+                        {
+                            id = 2,
+                            description = "Rol estándar para usuarios normales",
+                            isdeleted = false,
+                            name = "Usuario"
+                        });
                 });
 
             modelBuilder.Entity("Module", b =>
                 {
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("integer");
 
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("id"));
 
                     b.Property<bool>("active")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("description")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(250)
+                        .HasColumnType("character varying(250)");
 
                     b.Property<bool>("isdeleted")
-                        .HasColumnType("tinyint(1)");
+                        .HasColumnType("boolean");
 
                     b.Property<string>("name")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.HasKey("id");
 
-                    b.ToTable("module");
+                    b.ToTable("Modules", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            active = true,
+                            description = "Módulo para administración general",
+                            isdeleted = false,
+                            name = "Módulo Administrativo"
+                        },
+                        new
+                        {
+                            id = 2,
+                            active = true,
+                            description = "Módulo encargado de generar reportes",
+                            isdeleted = false,
+                            name = "Módulo de Reportes"
+                        });
                 });
 
             modelBuilder.Entity("Entity.Model.FormModule", b =>
@@ -278,14 +456,16 @@ namespace Entity.Migrations
                     b.HasOne("Entity.Model.Form", "Form")
                         .WithMany("FormModules")
                         .HasForeignKey("formid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("FK_FormModule_Form");
 
                     b.HasOne("Module", "Module")
                         .WithMany("FormModules")
                         .HasForeignKey("moduleid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("FK_Module_FormModules");
 
                     b.Navigation("Form");
 
@@ -297,20 +477,23 @@ namespace Entity.Migrations
                     b.HasOne("Entity.Model.Form", "Form")
                         .WithMany("RolFormPermission")
                         .HasForeignKey("formid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("FK_RolFormPermission_Form");
 
                     b.HasOne("Entity.Model.Permission", "Permission")
                         .WithMany("RolFormPermission")
                         .HasForeignKey("permissionid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("FK_RolFormPermission_Permission");
 
                     b.HasOne("Entity.Model.rol", "Rol")
-                        .WithMany()
+                        .WithMany("RolFormPermission")
                         .HasForeignKey("rolid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("FK_RolFormPermission_Rol");
 
                     b.Navigation("Form");
 
@@ -324,14 +507,16 @@ namespace Entity.Migrations
                     b.HasOne("Entity.Model.rol", "Rol")
                         .WithMany("RolUser")
                         .HasForeignKey("rolid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("FK_RolUser_Rol");
 
                     b.HasOne("Entity.Model.User", "User")
                         .WithMany("Roles")
                         .HasForeignKey("userid")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired()
+                        .HasConstraintName("FK_RolUser_User");
 
                     b.Navigation("Rol");
 
@@ -342,7 +527,9 @@ namespace Entity.Migrations
                 {
                     b.HasOne("Entity.Model.Person", "person")
                         .WithMany("User")
-                        .HasForeignKey("personid");
+                        .HasForeignKey("personid")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .HasConstraintName("FK_Person_User");
 
                     b.Navigation("person");
                 });
@@ -371,6 +558,8 @@ namespace Entity.Migrations
 
             modelBuilder.Entity("Entity.Model.rol", b =>
                 {
+                    b.Navigation("RolFormPermission");
+
                     b.Navigation("RolUser");
                 });
 

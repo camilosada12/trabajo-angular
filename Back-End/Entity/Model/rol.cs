@@ -14,5 +14,7 @@ namespace Entity.Model
         public bool isdeleted { get; set; }
 
         public ICollection<RolUser> RolUser { get; set; }
+
+        public ICollection<RolFormPermission> RolFormPermission { get; set; }
     }
 }

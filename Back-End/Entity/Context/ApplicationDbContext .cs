@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using Entity.DataInit;
 using Entity.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -57,14 +58,19 @@ namespace Entity.Context
         /// <param name="modelBuilder">Constructor del modelo de base de datos.</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<User>()
-                .HasOne(u => u.person) // un usuario tiene una persona
-                .WithMany(p => p.User) // una persona tiene muchos usuarios
-                .HasForeignKey(u => u.personid); // clave foránea en la tabla User
-
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            modelBuilder.seedPerson();
+            modelBuilder.SeetUser();
+            modelBuilder.SeedRol();
+            modelBuilder.SeedRolUser();
+            modelBuilder.SeedForm();
+            modelBuilder.SeedModule();
+            modelBuilder.SeedFormModule();
+            modelBuilder.SeedPermission();
+            modelBuilder.SeedRolFormPermission();  // Agrega el seed aquí
         }
 
         /// <summary>
