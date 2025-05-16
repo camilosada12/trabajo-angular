@@ -13,7 +13,7 @@ namespace Entity.relacionesModel
     {
         public void Configure(EntityTypeBuilder<Permission> builder)
         {
-            builder.ToTable("Permissions");
+            builder.ToTable("permission");
 
             builder.HasKey(p => p.id);
 

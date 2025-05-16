@@ -10,6 +10,7 @@ using Entity.Model;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using Web.FactoryDataBase;
 using Web.Service_Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -36,9 +37,7 @@ builder.Services.AddJwtAuthentication(builder.Configuration);
 builder.Services.AddAuthorization();
 
 // Injectamos la Base de Datos
-builder.Services.AddDatabaseProvider(builder.Configuration);
-
-
+builder.Services.AddDatabaseFactory(builder.Configuration);
 
 var app = builder.Build();
 

@@ -13,7 +13,7 @@ namespace Entity.relacionesModel
     {
         public void Configure(EntityTypeBuilder<FormModule> builder)
         {
-            builder.ToTable("FormModules");
+            builder.ToTable("formmodule");
 
             builder.HasKey(fm => fm.id);
 

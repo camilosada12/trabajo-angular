@@ -12,7 +12,7 @@ namespace Entity.relacionesModel
     {
         public void Configure(EntityTypeBuilder<Module> builder)
         {
-            builder.ToTable("Modules");
+            builder.ToTable("module");
 
             builder.HasKey(m => m.id);
 

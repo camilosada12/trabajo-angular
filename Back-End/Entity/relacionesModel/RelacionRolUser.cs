@@ -13,7 +13,7 @@ namespace Entity.relacionesModel
     {
         public void Configure(EntityTypeBuilder<RolUser> builder)
         {
-            builder.ToTable("RolUsers");
+            builder.ToTable("roluser");
 
             builder.HasKey(ru => ru.id);
 

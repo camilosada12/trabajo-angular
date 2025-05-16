@@ -11,8 +11,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Entity.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250516004417_PosgretsSQL")]
-    partial class PosgretsSQL
+    [Migration("20250516150847_PostgreSql")]
+    partial class PostgreSql
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -50,7 +50,7 @@ namespace Entity.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Forms", (string)null);
+                    b.ToTable("form", (string)null);
 
                     b.HasData(
                         new
@@ -94,7 +94,7 @@ namespace Entity.Migrations
 
                     b.HasIndex("moduleid");
 
-                    b.ToTable("FormModules", (string)null);
+                    b.ToTable("formmodule", (string)null);
 
                     b.HasData(
                         new
@@ -139,7 +139,7 @@ namespace Entity.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Permissions", (string)null);
+                    b.ToTable("permission", (string)null);
 
                     b.HasData(
                         new
@@ -191,7 +191,7 @@ namespace Entity.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Persons", (string)null);
+                    b.ToTable("person", (string)null);
 
                     b.HasData(
                         new
@@ -242,7 +242,7 @@ namespace Entity.Migrations
 
                     b.HasIndex("rolid");
 
-                    b.ToTable("RolFormPermissions", (string)null);
+                    b.ToTable("rolformpermission", (string)null);
 
                     b.HasData(
                         new
@@ -286,7 +286,7 @@ namespace Entity.Migrations
 
                     b.HasIndex("userid");
 
-                    b.ToTable("RolUsers", (string)null);
+                    b.ToTable("roluser", (string)null);
 
                     b.HasData(
                         new
@@ -340,7 +340,7 @@ namespace Entity.Migrations
 
                     b.HasIndex("personid");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("user", (string)null);
 
                     b.HasData(
                         new
@@ -388,7 +388,7 @@ namespace Entity.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Roles", (string)null);
+                    b.ToTable("rol", (string)null);
 
                     b.HasData(
                         new
@@ -433,7 +433,7 @@ namespace Entity.Migrations
 
                     b.HasKey("id");
 
-                    b.ToTable("Modules", (string)null);
+                    b.ToTable("module", (string)null);
 
                     b.HasData(
                         new

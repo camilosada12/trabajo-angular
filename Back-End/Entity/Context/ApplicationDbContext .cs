@@ -27,10 +27,9 @@ namespace Entity.Context
         /// </summary>
         /// <param name="options">Opciones de configuración para el contexto de base de datos.</param>
         /// <param name="configuration">Instancia de IConfiguration para acceder a la configuración de la aplicación.</param>
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IConfiguration configuration)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
         {
-            _configuration = configuration;
         }
 
 

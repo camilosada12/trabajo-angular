@@ -14,7 +14,7 @@ namespace Entity.relacionesModel
         public void Configure(EntityTypeBuilder<Form> builder)
         {
             // Tabla (opcional)
-            builder.ToTable("Forms");
+            builder.ToTable("form");
 
             // Clave primaria
             builder.HasKey(f => f.id);

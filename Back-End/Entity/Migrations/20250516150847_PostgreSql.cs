@@ -8,13 +8,13 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Entity.Migrations
 {
     /// <inheritdoc />
-    public partial class PosgretsSQL : Migration
+    public partial class PostgreSql : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Forms",
+                name: "form",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
@@ -26,11 +26,11 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Forms", x => x.id);
+                    table.PrimaryKey("PK_form", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Modules",
+                name: "module",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
@@ -42,11 +42,11 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Modules", x => x.id);
+                    table.PrimaryKey("PK_module", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Permissions",
+                name: "permission",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
@@ -58,11 +58,11 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Permissions", x => x.id);
+                    table.PrimaryKey("PK_permission", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Persons",
+                name: "person",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
@@ -75,11 +75,11 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Persons", x => x.id);
+                    table.PrimaryKey("PK_person", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Roles",
+                name: "rol",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
@@ -90,11 +90,11 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Roles", x => x.id);
+                    table.PrimaryKey("PK_rol", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "FormModules",
+                name: "formmodule",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
@@ -105,23 +105,23 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_FormModules", x => x.id);
+                    table.PrimaryKey("PK_formmodule", x => x.id);
                     table.ForeignKey(
                         name: "FK_FormModule_Form",
                         column: x => x.formid,
-                        principalTable: "Forms",
+                        principalTable: "form",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Module_FormModules",
                         column: x => x.moduleid,
-                        principalTable: "Modules",
+                        principalTable: "module",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "user",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
@@ -135,17 +135,17 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.id);
+                    table.PrimaryKey("PK_user", x => x.id);
                     table.ForeignKey(
                         name: "FK_Person_User",
                         column: x => x.personid,
-                        principalTable: "Persons",
+                        principalTable: "person",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "RolFormPermissions",
+                name: "rolformpermission",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
@@ -157,29 +157,29 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RolFormPermissions", x => x.id);
+                    table.PrimaryKey("PK_rolformpermission", x => x.id);
                     table.ForeignKey(
                         name: "FK_RolFormPermission_Form",
                         column: x => x.formid,
-                        principalTable: "Forms",
+                        principalTable: "form",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_RolFormPermission_Permission",
                         column: x => x.permissionid,
-                        principalTable: "Permissions",
+                        principalTable: "permission",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_RolFormPermission_Rol",
                         column: x => x.rolid,
-                        principalTable: "Roles",
+                        principalTable: "rol",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
-                name: "RolUsers",
+                name: "roluser",
                 columns: table => new
                 {
                     id = table.Column<int>(type: "integer", nullable: false)
@@ -190,23 +190,23 @@ namespace Entity.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RolUsers", x => x.id);
+                    table.PrimaryKey("PK_roluser", x => x.id);
                     table.ForeignKey(
                         name: "FK_RolUser_Rol",
                         column: x => x.rolid,
-                        principalTable: "Roles",
+                        principalTable: "rol",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_RolUser_User",
                         column: x => x.userid,
-                        principalTable: "Users",
+                        principalTable: "user",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.InsertData(
-                table: "Forms",
+                table: "form",
                 columns: new[] { "id", "active", "description", "isdeleted", "name" },
                 values: new object[,]
                 {
@@ -215,7 +215,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Modules",
+                table: "module",
                 columns: new[] { "id", "active", "description", "isdeleted", "name" },
                 values: new object[,]
                 {
@@ -224,7 +224,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Permissions",
+                table: "permission",
                 columns: new[] { "id", "active", "description", "isdeleted", "name" },
                 values: new object[,]
                 {
@@ -233,7 +233,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Persons",
+                table: "person",
                 columns: new[] { "id", "active", "firstname", "isdeleted", "lastname", "phonenumber" },
                 values: new object[,]
                 {
@@ -242,7 +242,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Roles",
+                table: "rol",
                 columns: new[] { "id", "description", "isdeleted", "name" },
                 values: new object[,]
                 {
@@ -251,7 +251,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "FormModules",
+                table: "formmodule",
                 columns: new[] { "id", "formid", "isdeleted", "moduleid" },
                 values: new object[,]
                 {
@@ -260,7 +260,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "RolFormPermissions",
+                table: "rolformpermission",
                 columns: new[] { "id", "formid", "isdeleted", "permissionid", "rolid" },
                 values: new object[,]
                 {
@@ -269,7 +269,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Users",
+                table: "user",
                 columns: new[] { "id", "active", "email", "isdeleted", "password", "personid", "username" },
                 values: new object[,]
                 {
@@ -278,7 +278,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "RolUsers",
+                table: "roluser",
                 columns: new[] { "id", "isdeleted", "rolid", "userid" },
                 values: new object[,]
                 {
@@ -287,43 +287,43 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_FormModules_formid",
-                table: "FormModules",
+                name: "IX_formmodule_formid",
+                table: "formmodule",
                 column: "formid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_FormModules_moduleid",
-                table: "FormModules",
+                name: "IX_formmodule_moduleid",
+                table: "formmodule",
                 column: "moduleid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RolFormPermissions_formid",
-                table: "RolFormPermissions",
+                name: "IX_rolformpermission_formid",
+                table: "rolformpermission",
                 column: "formid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RolFormPermissions_permissionid",
-                table: "RolFormPermissions",
+                name: "IX_rolformpermission_permissionid",
+                table: "rolformpermission",
                 column: "permissionid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RolFormPermissions_rolid",
-                table: "RolFormPermissions",
+                name: "IX_rolformpermission_rolid",
+                table: "rolformpermission",
                 column: "rolid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RolUsers_rolid",
-                table: "RolUsers",
+                name: "IX_roluser_rolid",
+                table: "roluser",
                 column: "rolid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RolUsers_userid",
-                table: "RolUsers",
+                name: "IX_roluser_userid",
+                table: "roluser",
                 column: "userid");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Users_personid",
-                table: "Users",
+                name: "IX_user_personid",
+                table: "user",
                 column: "personid");
         }
 
@@ -331,31 +331,31 @@ namespace Entity.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "FormModules");
+                name: "formmodule");
 
             migrationBuilder.DropTable(
-                name: "RolFormPermissions");
+                name: "rolformpermission");
 
             migrationBuilder.DropTable(
-                name: "RolUsers");
+                name: "roluser");
 
             migrationBuilder.DropTable(
-                name: "Modules");
+                name: "module");
 
             migrationBuilder.DropTable(
-                name: "Forms");
+                name: "form");
 
             migrationBuilder.DropTable(
-                name: "Permissions");
+                name: "permission");
 
             migrationBuilder.DropTable(
-                name: "Roles");
+                name: "rol");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "user");
 
             migrationBuilder.DropTable(
-                name: "Persons");
+                name: "person");
         }
     }
 }

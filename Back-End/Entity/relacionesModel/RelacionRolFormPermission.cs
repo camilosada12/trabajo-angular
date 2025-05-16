@@ -13,7 +13,7 @@ namespace Entity.relacionesModel
     {
         public void Configure(EntityTypeBuilder<RolFormPermission> builder)
         {
-            builder.ToTable("RolFormPermissions");
+            builder.ToTable("rolformpermission");
 
             builder.HasKey(rfp => rfp.id);
 
