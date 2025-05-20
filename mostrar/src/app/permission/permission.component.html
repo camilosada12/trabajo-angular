@@ -22,7 +22,10 @@
             <td>{{ Permission.active ? 'Yes' : 'No' }}</td>
             <td>
               <button mat-raised-button color="primary"  (click)="editPermission(Permission)">Editar</button>
-              <button mat-raised-button color="warn" (click)="deletePermissionLogic(Permission.id)">Eliminar Logico</button>
+              <button mat-raised-button color="warn" (click)="deletePermission(Permission.id, 'Logical')">Eliminar Logico</button>
+              <button *ngIf="userRole === 'admin'" mat-raised-button color="accent"  (click)="deletePermission(Permission.id, 'fisico')">
+              Eliminar Definitivo
+            </button>
             </td>
           </tr>
         </tbody>

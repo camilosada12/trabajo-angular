@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entity.Model;
 using Microsoft.EntityFrameworkCore;
+using Entity.Model;
 
 namespace Entity.DataInit
 {
     public static class RolUserDataInit
     {
+        /// <summary>
+        /// Método de extensión para agregar datos semilla para la entidad RolUser.
+        /// </summary>
+        /// <param name="modelBuilder">Constructor del modelo EF Core.</param>
         public static void SeedRolUser(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<RolUser>().HasData(

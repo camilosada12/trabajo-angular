@@ -56,5 +56,16 @@ export class AuthService {
     }
   }
 
+  getEmailFromToken(): string | null {
+  const token = this.getToken();
+  if (!token) return null;
+
+  try {
+    const decoded: any = jwtDecode(token);
+    return decoded.email || decoded["http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"] || null;
+  } catch {
+    return null;
+  }
+}
 
 }

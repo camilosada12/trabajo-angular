@@ -20,9 +20,20 @@
                     <td>{{ getRolName(rolUser.rolId) }}</td>
                     <td>
                         <button mat-raised-button (click)="editRolUser(rolUser)">editar</button>
-                        <button mat-raised-button (click)="rolUser.id !== undefined && deleteRolUserLogic(rolUser.id)"
-                            [disabled]="rolUser.isdeleted">eliminar lógico</button>
+
+                        <!-- Eliminar lógico -->
+                        <button mat-raised-button (click)="rolUser.id !== undefined &&  deleteRolUser(rolUser.id, 'Logical')"
+                            [disabled]="rolUser.isdeleted">
+                            eliminar lógico
+                        </button>
+
+                        <!-- Eliminar definitivo, visible solo si el rol del usuario es 'admin' -->
+                        <button *ngIf="userRole === 'admin'" mat-raised-button color="accent"
+                            (click)="rolUser.id !== undefined &&  deleteRolUser(rolUser.id, 'fisico')">
+                            Eliminar Definitivo
+                        </button>
                     </td>
+
                 </tr>
             </tbody>
         </table>

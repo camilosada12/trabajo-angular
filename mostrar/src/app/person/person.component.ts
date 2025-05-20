@@ -4,6 +4,7 @@ import { Person } from '../Interfaces/person';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-person',
@@ -18,11 +19,13 @@ export class PersonComponent implements OnInit {
   currentPerson: Person = this.getEmptyPerson();
   showPerson: boolean = false;
   isEditing: boolean = false;
+  userRole : string | null =  null;
 
-  constructor(private PersonServices: ServiceGenericService) { }
+  constructor(private PersonServices: ServiceGenericService, private auth : AuthService) { }
 
   ngOnInit(): void {
     this.loadPersons();
+    this.userRole = this.auth.getUserRole();
   }
 
   // Helper para crear un formulario vacío
@@ -87,20 +90,12 @@ export class PersonComponent implements OnInit {
   }
 
 
-  deletePerson(id: number): void {
-    this.PersonServices.delete<Person>('Person', id).subscribe({
+  deletePerson(id: number, mode : 'fisico' | 'Logical' = 'fisico' ): void {
+    this.PersonServices.delete<Person>('Person', id, mode).subscribe({
       next: () => this.Persons = this.Persons.filter(f => f.id !== id),
-      error: err => console.error('Error al eliminar formulario', err)
+      error: err => console.error(`Error al eliminar (${mode})  formulario`, err)
     });
   }
-
-  deletePersonLogic(id: number): void {
-    this.PersonServices.deleteLogic<Person>('Person', id).subscribe({
-      next: () => this.Persons = this.Persons.filter(f => f.id !== id),
-      error: err => console.error('Error al eliminar lógicamente', err)
-    });
-  }
-
 
   togglePerson(mode: 'create' | 'edit'): void {
     if (mode === 'create') {

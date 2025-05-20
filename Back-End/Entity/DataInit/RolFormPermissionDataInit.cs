@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entity.Model;
 using Microsoft.EntityFrameworkCore;
+using Entity.Model;
 
 namespace Entity.DataInit
 {
+    /// <summary>
+    /// Clase estática para inicializar datos semilla para la entidad RolFormPermission.
+    /// </summary>
     public static class RolFormPermissionDataInit
     {
+        /// <summary>
+        /// Método de extensión para agregar datos iniciales (seed) para RolFormPermission.
+        /// </summary>
+        /// <param name="modelBuilder">El constructor del modelo para configuración.</param>
         public static void SeedRolFormPermission(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<RolFormPermission>().HasData(

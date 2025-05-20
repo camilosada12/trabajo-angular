@@ -5,6 +5,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { ServiceGenericService } from '../service-generic.service';
 import { Rol_User } from '../Interfaces/Rol_User';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-rol-user-table',
@@ -21,13 +22,15 @@ export class RolUserTableComponent implements OnInit {
   isEditing: boolean = false;
   users: { id: number, name: string }[] = [];
   roles: { id: number, name: string }[] = [];
+  userRole : string | null = null;
 
-  constructor(private serviceGeneric: ServiceGenericService) { }
+  constructor(private serviceGeneric: ServiceGenericService, private auth : AuthService) { }
 
   ngOnInit(): void {
     this.loadRolUsers();
     this.loadUsers();
     this.loadRoles();
+    this.userRole = this.auth.getUserRole();
   }
 
   getEmptyRolUser(): Rol_User {
@@ -126,22 +129,10 @@ export class RolUserTableComponent implements OnInit {
     });
   }
 
-  deleteRolUser(id: number): void {
-    this.serviceGeneric.delete<Rol_User>('RolUser', id).subscribe({
+  deleteRolUser(id: number, mode: 'fisico' | 'Logical' = 'fisico'): void {
+    this.serviceGeneric.delete<Rol_User>('RolUser', id, mode).subscribe({
       next: () => this.rolUsers = this.rolUsers.filter(ru => ru.id !== id),
-      error: err => console.error('error al eliminar rol_user', err)
-    });
-  }
-
-  deleteRolUserLogic(id: number): void {
-    this.serviceGeneric.deleteLogic<Rol_User>('RolUser', id).subscribe({
-      next: () => {
-        const rolUser = this.rolUsers.find(ru => ru.id === id);
-        if (rolUser) {
-          rolUser.isdeleted = true;
-        }
-      },
-      error: err => console.error('error al eliminar lógicamente rol_user', err)
+      error: err => console.error(`error al eliminar (${mode}) rol_user`, err)
     });
   }
 

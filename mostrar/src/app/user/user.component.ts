@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 
 import { ServiceGenericService } from '../service-generic.service';
 import { User } from '../Interfaces/user';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-user-table',
@@ -21,11 +22,13 @@ export class UserTableComponent implements OnInit {
   showUser: boolean = false;
   isEditing: boolean = false;
   usersList: { id: number, name: string }[] = [];
+  userRole: string | null = null
 
-  constructor(private userServices: ServiceGenericService) { }
+  constructor(private userServices: ServiceGenericService, private auth: AuthService) { }
 
   ngOnInit(): void {
     this.loadUsers();
+    this.userRole = this.auth.getUserRole();
   }
 
   getEmptyUser(): User {
@@ -118,7 +121,13 @@ export class UserTableComponent implements OnInit {
   }
 
   addUser(): void {
-    this.userServices.post<User>('User', this.currentUser).subscribe({
+    // Clonamos currentUser sin el id
+    const userToCreate = { ...this.currentUser };
+    if (userToCreate.id === 0) {
+      delete userToCreate.id; // elimina el campo id para que no se envíe
+    }
+
+    this.userServices.post<User>('User', userToCreate).subscribe({
       next: user => {
         this.users.push(user);
         this.resetUser();
@@ -127,6 +136,7 @@ export class UserTableComponent implements OnInit {
       error: err => console.error('error al agregar usuario', err)
     });
   }
+
 
   editUser(user: User): void {
     this.isEditing = true;
@@ -146,24 +156,14 @@ export class UserTableComponent implements OnInit {
     });
   }
 
-  deleteUser(id: number): void {
-    this.userServices.delete<User>('User', id).subscribe({
+  deleteUser(id: number, mode: 'fisico' | 'Logical' = 'fisico'): void {
+    this.userServices.delete<User>('User', id, mode).subscribe({
       next: () => this.users = this.users.filter(f => f.id !== id),
-      error: err => console.error('error al eliminar usuario', err)
+      error: err => console.error(`error al eliminar (${mode}) usuario`, err)
     });
   }
 
-  deleteUserLogic(id: number): void {
-    this.userServices.deleteLogic<User>('User', id).subscribe({
-      next: () => {
-        const user = this.users.find(u => u.id === id);
-        if (user) {
-          user.isDeleted = true;
-        }
-      },
-      error: err => console.error('error al eliminar lógicamente', err)
-    });
-  }
+
 
   toggleUser(mode: 'create' | 'edit'): void {
     if (mode === 'create') {

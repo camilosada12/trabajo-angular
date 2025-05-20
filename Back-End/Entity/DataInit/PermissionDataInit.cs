@@ -8,8 +8,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entity.DataInit
 {
+    /// <summary>
+    /// Clase estática para inicializar datos semilla (seed) de la entidad <see cref="Permission"/>.
+    /// </summary>
     public static class PermissionDataInit
     {
+        /// <summary>
+        /// Método de extensión para agregar datos iniciales (seed) a la entidad <see cref="Permission"/>.
+        /// </summary>
+        /// <param name="modelBuilder">Instancia de <see cref="ModelBuilder"/> usada para configurar el modelo de datos.</param>
         public static void SeedPermission(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Permission>().HasData(

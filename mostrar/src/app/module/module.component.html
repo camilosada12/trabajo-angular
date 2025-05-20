@@ -22,7 +22,8 @@
             <td>{{ module.active ? 'Yes' : 'No' }}</td>
             <td>
               <button mat-raised-button color="primary"  (click)="editModule(module)">Editar</button>
-              <button mat-raised-button color="warn" (click)="deleteModuleLogic(module.id)">Eliminar Logico</button>
+              <button mat-raised-button color="warn" (click)="deleteModule(module.id, 'Logical')">Eliminar Logico</button>
+              <button *ngIf="userRole === 'admin'" mat-raised-button color="accent" (click)="deleteModule(module.id, 'Logical')">Eliminar Definitivo</button>
             </td>
           </tr>
         </tbody>

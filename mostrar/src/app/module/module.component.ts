@@ -4,6 +4,7 @@
   import { MatButtonModule } from '@angular/material/button';
   import { CommonModule } from '@angular/common';
   import { Module } from '../Interfaces/module';
+import { AuthService } from '../services/auth.service';
 
   @Component({
     selector: 'app-module',
@@ -16,11 +17,13 @@
       currentModule: Module = this.getEmptyModule();
       showModule: boolean = false;
       isEditing: boolean = false;
+      userRole : string | null = null;
       
-      constructor(private ModuleServices: ServiceGenericService) {}
+      constructor(private ModuleServices: ServiceGenericService, private auth : AuthService) {}
     
       ngOnInit(): void {
         this.loadModule();
+        this.userRole = this.auth.getUserRole();
       }
     
       // Helper para crear un formulario vacío
@@ -76,17 +79,10 @@
       }
       
     
-      deleteModule(id: number): void {
-        this.ModuleServices.delete<Module>('Module', id).subscribe({
+      deleteModule(id: number, mode: 'fisico' | 'Logical' = 'fisico'): void {
+        this.ModuleServices.delete<Module>('Module', id, mode).subscribe({
           next: () => this.Modules = this.Modules.filter(f => f.id !== id),
-          error: err => console.error('Error al eliminar formulario', err)
-        });
-      }
-    
-      deleteModuleLogic(id: number): void {
-        this.ModuleServices.deleteLogic<Module>('Module', id).subscribe({
-          next: () => this.Modules = this.Modules.filter(f => f.id !== id),
-          error: err => console.error('Error al eliminar lógicamente', err)
+          error: err => console.error(`Error al eliminar (${mode}) formulario`, err)
         });
       }
       

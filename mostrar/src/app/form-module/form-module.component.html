@@ -22,13 +22,23 @@
                     <td>{{ formModule.formname || getFormName(formModule.formId) }}</td>
                     <td>{{ formModule.modulename || getModuleName(formModule.moduleId) }}</td>
                     <td>
-                        <button mat-raised-button (click)="editFormModule(formModule)">editar</button>
-                        <button mat-raised-button
-                            (click)="formModule.id !== undefined && deleteFormModuleLogic(formModule.id)"
+                        <button mat-raised-button color="primary" (click)="editFormModule(formModule)">
+                            Editar
+                        </button>
+
+                        <button mat-raised-button color="warn"
+                            (click)="formModule.id !== undefined && deleteFormModule(formModule.id, 'Logical')"
                             [disabled]="formModule.isDeleted">
-                            eliminar lógico
+                            Eliminar lógico
+                        </button>
+
+                        <!-- Solo visible para el rol admin -->
+                        <button *ngIf="userRole === 'admin'" mat-raised-button color="accent"
+                            (click)="formModule.id !== undefined && deleteFormModule(formModule.id, 'fisico')">
+                            Eliminar definitivo
                         </button>
                     </td>
+
                 </tr>
             </tbody>
         </table>

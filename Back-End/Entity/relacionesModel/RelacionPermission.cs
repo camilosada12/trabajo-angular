@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entity.Model;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Entity.Model;
 
 namespace Entity.relacionesModel
 {
@@ -13,10 +8,13 @@ namespace Entity.relacionesModel
     {
         public void Configure(EntityTypeBuilder<Permission> builder)
         {
-            builder.ToTable("permission");
+            // Configura la tabla y el esquema
+            builder.ToTable("permission", schema: "ModelSecurity");
 
+            // Clave primaria
             builder.HasKey(p => p.id);
 
+            // Propiedades con restricciones
             builder.Property(p => p.name)
                    .IsRequired()
                    .HasMaxLength(100);
@@ -30,11 +28,11 @@ namespace Entity.relacionesModel
             builder.Property(p => p.isdeleted)
                    .IsRequired();
 
-            // Relación Permission -> RolFormPermission (uno a muchos)
+            // Relación uno a muchos con RolFormPermission
             builder.HasMany(p => p.RolFormPermission)
-                   .WithOne(rfp => rfp.Permission)  // suponiendo que RolFormPermission tiene propiedad Permission
+                   .WithOne(rfp => rfp.Permission)
                    .HasForeignKey(rfp => rfp.permissionid)
-                   .OnDelete(DeleteBehavior.Restrict)
+                   .OnDelete(DeleteBehavior.Restrict) // Evita borrado en cascada
                    .HasConstraintName("FK_Permission_RolFormPermission");
         }
     }

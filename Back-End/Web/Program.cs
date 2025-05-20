@@ -1,4 +1,5 @@
 using System.Text;
+using System.Text.Json.Serialization;
 using Business.Interfaces;
 using Business.Services;
 using Business.Token;
@@ -40,6 +41,9 @@ builder.Services.AddAuthorization();
 builder.Services.AddDatabaseFactory(builder.Configuration);
 
 var app = builder.Build();
+
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

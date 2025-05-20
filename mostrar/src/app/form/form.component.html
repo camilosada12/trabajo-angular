@@ -1,5 +1,3 @@
-
-
 <!-- Botón de Crear -->
 <div class="boton-container" *ngIf="!showForm">
   <button mat-raised-button color="primary" class="ButtonCenter" (click)="toggleForm('create')">Crear</button>
@@ -24,12 +22,18 @@
           <td>{{ form.description }}</td>
           <td>{{ form.active ? 'Yes' : 'No' }}</td>
           <td>
-            <button mat-raised-button color="primary"  (click)="editForm(form)">Editar</button>
+            <button mat-raised-button color="primary" (click)="editForm(form)">Editar</button>
 
-            <button mat-raised-button color="warn" (click)="deleteFormLogic(form.id)">Eliminar Logico</button>
-            <!-- Visible solo para rol admin -->
-            <button *ngIf="userRole === 'admin'" mat-raised-button color="accent" (click)="deleteForm(form.id)">Eliminar Definitivo</button>
-          </td>
+            <!-- Eliminar Lógico: disponible para todos -->
+            <button mat-raised-button color="warn" (click)="deleteForm(form.id, 'Logical')">Eliminar Lógico</button>
+
+            <!-- Eliminar Físico: solo visible para admin -->
+            <button *ngIf="userRole === 'admin'" mat-raised-button color="accent"
+              (click)="deleteForm(form.id, 'fisico')">
+              Eliminar Definitivo
+            </button>
+          </td> 
+
         </tr>
       </tbody>
     </table>
@@ -49,7 +53,8 @@
 
     <div class="form-group">
       <label for="description">Description</label>
-      <input type="text" id="description" [(ngModel)]="currentForm.description" name="description" required #description="ngModel" />
+      <input type="text" id="description" [(ngModel)]="currentForm.description" name="description" required
+        #description="ngModel" />
       <div *ngIf="description.invalid && description.touched" class="error-message">
         El campo de descripción es obligatorio.
       </div>

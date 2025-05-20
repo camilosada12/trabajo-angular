@@ -21,8 +21,12 @@
                     <td>
                         <div class="botones-acciones">
                             <button mat-raised-button color="primary" (click)="editRol(rol)">Editar</button>
-                            <button mat-raised-button color="warn" (click)="deleteRolLogic(rol.id)">Eliminar
+                            <button mat-raised-button color="warn" (click)="deleteRol(rol.id, 'Logical')">Eliminar
                                 Logico</button>
+                            <button *ngIf="userRole === 'admin'" mat-raised-button color="accent"
+                                (click)="deleteRol(rol.id, 'fisico')">
+                                Eliminar Definitivo
+                            </button>
                         </div>
                     </td>
                 </tr>

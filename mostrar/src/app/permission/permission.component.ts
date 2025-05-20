@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { permission } from '../Interfaces/permission';
 import { ServiceGenericService } from '../service-generic.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-permission',
@@ -17,11 +18,13 @@ export class PermissionComponent {
   currentPermission: permission = this.getEmptyPermission();
   showPermission: boolean = false;
   isEditing: boolean = false;
+  userRole : string | null = null;
 
-  constructor(private PermissionServices: ServiceGenericService) { }
+  constructor(private PermissionServices: ServiceGenericService, private auth : AuthService) { }
 
   ngOnInit(): void {
     this.loadPermission();
+    this.userRole = this.auth.getUserRole();
   }
 
   // Helper para crear un formulario vacío
@@ -77,20 +80,12 @@ export class PermissionComponent {
   }
 
 
-  deletePermission(id: number): void {
-    this.PermissionServices.delete<permission>('Permission', id).subscribe({
+  deletePermission(id: number, mode : 'fisico' | 'Logical' = 'fisico'): void {
+    this.PermissionServices.delete<permission>('Permission', id, mode).subscribe({
       next: () => this.permissions = this.permissions.filter(f => f.id !== id),
-      error: err => console.error('Error al eliminar formulario', err)
+      error: err => console.error(`Error al eliminar (${mode}) formulario`, err)
     });
   }
-
-  deletePermissionLogic(id: number): void {
-    this.PermissionServices.deleteLogic<permission>('Permission', id).subscribe({
-      next: () => this.permissions = this.permissions.filter(f => f.id !== id),
-      error: err => console.error('Error al eliminar lógicamente', err)
-    });
-  }
-
 
   togglePermission(mode: 'create' | 'edit'): void {
     if (mode === 'create') {

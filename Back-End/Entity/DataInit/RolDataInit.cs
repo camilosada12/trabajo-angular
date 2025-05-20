@@ -8,8 +8,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entity.DataInit
 {
+    /// <summary>
+    /// Clase estática para inicializar datos semilla (seed) para la entidad <see cref="Rol"/>.
+    /// </summary>
     public static class RolDataInit
     {
+        /// <summary>
+        /// Método de extensión para agregar datos iniciales (seed) a la entidad <see cref="rol"/>.
+        /// </summary>
+        /// <param name="modelBuilder">Instancia de <see cref="ModelBuilder"/> usada para configurar el modelo de datos.</param>
         public static void SeedRol(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<rol>().HasData(

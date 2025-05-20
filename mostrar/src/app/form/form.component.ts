@@ -83,20 +83,12 @@ export class FormTableComponent implements OnInit {
   }
 
 
-  deleteForm(id: number): void {
-    this.formService.delete<Form>('FormControllerPrueba', id).subscribe({
+  deleteForm(id: number, mode: 'fisico' | 'Logical' = 'fisico'): void {
+    this.formService.delete<Form>('FormControllerPrueba', id, mode).subscribe({
       next: () => this.forms = this.forms.filter(f => f.id !== id),
-      error: err => console.error('Error al eliminar formulario', err)
+      error: err => console.error(`Error al eliminar (${mode}) formulario`, err)
     });
   }
-
-  deleteFormLogic(id: number): void {
-    this.formService.deleteLogic<Form>('FormControllerPrueba', id).subscribe({
-      next: () => this.forms = this.forms.filter(f => f.id !== id),
-      error: err => console.error('Error al eliminar lógicamente', err)
-    });
-  }
-
 
   toggleForm(mode: 'create' | 'edit'): void {
     if (mode === 'create') {

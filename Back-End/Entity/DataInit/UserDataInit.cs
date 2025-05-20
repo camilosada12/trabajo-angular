@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entity.Model;
 using Microsoft.EntityFrameworkCore;
+using Entity.Model;
 
 namespace Entity.DataInit
 {
     public static class UserDataInit
     {
-        public static void SeetUser(this ModelBuilder modelBuilder)
+        public static void SeedUser(this ModelBuilder modelBuilder) // corregí SeetUser a SeedUser
         {
             modelBuilder.Entity<User>().HasData(
                  new User
@@ -21,7 +17,7 @@ namespace Entity.DataInit
                      password = "admin123",
                      active = true,
                      isdeleted = false,
-                     personid = 1 // 👈 Relación con el Person con id 1
+                     personid = 1 // Relación con Person id 1
                  },
                  new User
                  {
@@ -31,9 +27,9 @@ namespace Entity.DataInit
                      password = "sara12312",
                      active = true,
                      isdeleted = false,
-                     personid = 2 // 👈 Relación con el Person con id 1
+                     personid = 2 // Relación con Person id 2
                  }
-                );
+            );
         }
     }
 }

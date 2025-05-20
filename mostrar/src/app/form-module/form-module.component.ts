@@ -4,6 +4,7 @@
   import { MatButtonModule } from '@angular/material/button';
   import { form_Module } from '../Interfaces/form_Module';
   import { ServiceGenericService } from '../service-generic.service';
+import { AuthService } from '../services/auth.service';
 
   @Component({
     selector: 'app-form-module',
@@ -19,13 +20,16 @@
     isEditing: boolean = false;
     forms: { id: number, name: string }[] = [];
     modules: { id: number, name: string }[] = [];
+    userRole: string | null = null;
 
-    constructor(private serviceModuleFormGeneric: ServiceGenericService) { }
+    constructor(private serviceModuleFormGeneric: ServiceGenericService, private auth: AuthService) { }
 
     ngOnInit(): void {
       this.loadFormModules();
       this.loadForm();
       this.loadModules();
+      this.userRole = this.auth.getUserRole();
+      console.log('ROL:', this.userRole);
     }
 
     getEmptyFormModule(): form_Module {
@@ -144,12 +148,8 @@
     }
 
     editFormModule(Form_Module: form_Module): void {
-      this.currentFormModule = 
-      { 
-        ...Form_Module 
-
-      };
       this.isEditing = true;
+      this.currentFormModule = {... Form_Module};
       this.showFormModule = true;
     }
     
@@ -165,24 +165,13 @@
       });
     }
 
-    deleteFormModule(id: number): void {
-      this.serviceModuleFormGeneric.delete<form_Module>('FormModule', id).subscribe({
+    deleteFormModule(id: number, mode: 'fisico' | 'Logical' = 'fisico'): void {
+      this.serviceModuleFormGeneric.delete<form_Module>('FormModule', id, mode).subscribe({
         next: () => this.formModules = this.formModules.filter(fm => fm.id !== id),
-        error: err => console.error('error al eliminar FormModule', err)
+        error: err => console.error(`error al eliminar (${mode}) FormModule`, err)
       });
     }
 
-    deleteFormModuleLogic(id: number): void {
-      this.serviceModuleFormGeneric.deleteLogic<form_Module>('FormModule', id).subscribe({
-        next: () => {
-          const formModules = this.formModules.find(fm => fm.id === id);
-          if (formModules) {
-            formModules.isDeleted = true;
-          }
-        },
-        error: err => console.error('error al eliminar lógicamente FormModule', err)
-      });
-    }
 
     toggleFormModule(mode: 'create' | 'edit'): void {
       if (mode === 'create') {

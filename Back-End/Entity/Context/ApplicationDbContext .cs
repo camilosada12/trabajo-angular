@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using Entity.DataInit;
 using Entity.Model;
+using Entity.relacionesModel;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.Extensions.Configuration;
@@ -49,6 +50,8 @@ namespace Entity.Context
         public DbSet<RolFormPermission> rolformpermission { get; set; }
         public DbSet<FormModule> formmodule { get; set; }
 
+        public DbSet<Log> Logs { get; set; }
+
 
 
         /// <summary>
@@ -57,19 +60,21 @@ namespace Entity.Context
         /// <param name="modelBuilder">Constructor del modelo de base de datos.</param>
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new RelacionesLog());
+
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             modelBuilder.seedPerson();
-            modelBuilder.SeetUser();
+            modelBuilder.SeedUser();
             modelBuilder.SeedRol();
             modelBuilder.SeedRolUser();
             modelBuilder.SeedForm();
             modelBuilder.SeedModule();
             modelBuilder.SeedFormModule();
             modelBuilder.SeedPermission();
-            modelBuilder.SeedRolFormPermission();  // Agrega el seed aquí
+            modelBuilder.SeedRolFormPermission();
         }
 
         /// <summary>

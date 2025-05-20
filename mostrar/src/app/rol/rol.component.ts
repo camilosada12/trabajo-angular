@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { rol } from '../Interfaces/rol';
 import { ServiceGenericService } from '../service-generic.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-rol',
@@ -16,11 +17,13 @@ export class RolComponent {
   currentRol: rol = this.getEmptyRol();
   showRol: boolean = false;
   isEditing: boolean = false;
+  userRole : string | null = null;
 
-  constructor(private rolServices: ServiceGenericService) { }
+  constructor(private rolServices: ServiceGenericService, private auth : AuthService) { }
 
   ngOnInit(): void {
     this.loadRol();
+    this.userRole = this.auth.getUserRole();
   }
 
   // Helper para crear un formulario vacío
@@ -78,19 +81,13 @@ export class RolComponent {
   }
 
 
-  deleteRol(id: number): void {
-    this.rolServices.delete<rol>('Rol', id).subscribe({
+  deleteRol(id: number,  mode: 'fisico' | 'Logical' = 'fisico'): void {
+    this.rolServices.delete<rol>('Rol', id, mode).subscribe({
       next: () => this.rols = this.rols.filter(f => f.id !== id),
-      error: err => console.error('Error al eliminar formulario', err)
+      error: err => console.error(`Error al eliminar (${mode}) formulario`, err)
     });
   }
 
-  deleteRolLogic(id: number): void {
-    this.rolServices.deleteLogic<rol>('Rol', id).subscribe({
-      next: () => this.rols = this.rols.filter(f => f.id !== id),
-      error: err => console.error('Error al eliminar lógicamente', err)
-    });
-  }
 
 
   toggleRol(mode: 'create' | 'edit'): void {

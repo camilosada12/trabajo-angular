@@ -4,18 +4,33 @@ using Entity.DTOs;
 using Entity.Model;
 using Microsoft.EntityFrameworkCore;
 
+/// <summary>
+/// Repositorio especializado para la gestión de relaciones entre usuarios y roles (RolUser).
+/// Hereda de la clase base Repository<RolUser>.
+/// </summary>
 public class RolUserRepository : Repository<RolUser>
 {
+    /// <summary>
+    /// Constructor que recibe el contexto de base de datos y lo pasa al repositorio base.
+    /// </summary>
+    /// <param name="context">Contexto de base de datos de la aplicación.</param>
     public RolUserRepository(ApplicationDbContext context) : base(context)
     {
     }
 
+    /// <summary>
+    /// Obtiene todos los registros de RolUser (usuario-rol) no eliminados lógicamente,
+    /// incluyendo los datos relacionados del usuario y del rol.
+    /// </summary>
+    /// <returns>
+    /// Una lista de <see cref="RolUserDto"/> con los datos del usuario y su rol.
+    /// </returns>
     public async Task<IEnumerable<RolUserDto>> GetAllJoinAsync()
     {
         return await _dbSet
-            .Include(x => x.User)
-            .Include(x => x.Rol)
-            .Where(e => EF.Property<bool>(e, "isdeleted") == false)
+            .Include(x => x.User) // Incluye los datos del usuario relacionado
+            .Include(x => x.Rol)  // Incluye los datos del rol relacionado
+            .Where(e => EF.Property<bool>(e, "isdeleted") == false) // Solo trae los que no están eliminados lógicamente
             .Select(ru => new RolUserDto
             {
                 Id = ru.id,
@@ -27,7 +42,11 @@ public class RolUserRepository : Repository<RolUser>
             .ToListAsync();
     }
 
-    // ✅ Método para obtener el nombre del rol de un usuario
+    /// <summary>
+    /// Obtiene el nombre del rol asignado a un usuario específico.
+    /// </summary>
+    /// <param name="userId">ID del usuario.</param>
+    /// <returns>Nombre del rol si existe, o null si no tiene rol o está eliminado.</returns>
     public async Task<string?> GetRolNameByUserId(int userId)
     {
         var rolUser = await _dbSet
@@ -37,6 +56,12 @@ public class RolUserRepository : Repository<RolUser>
         return rolUser?.Rol?.name;
     }
 
+    /// <summary>
+    /// Asigna un rol a un usuario creando una nueva relación RolUser.
+    /// </summary>
+    /// <param name="userId">ID del usuario.</param>
+    /// <param name="rolId">ID del rol.</param>
+    /// <returns>Una tarea asincrónica que representa la operación.</returns>
     public async Task AsignarRol(int userId, int rolId)
     {
         var nuevaRelacion = new RolUser
@@ -45,8 +70,7 @@ public class RolUserRepository : Repository<RolUser>
             rolid = rolId
         };
 
-        _context.roluser.Add(nuevaRelacion); // Usa tu contexto real
-        await _context.SaveChangesAsync();
+        _context.roluser.Add(nuevaRelacion); // Agrega la nueva relación al contexto
+        await _context.SaveChangesAsync(); // Guarda los cambios en la base de datos
     }
 }
-

@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ServicesService } from '../ServicesLogin/services.service';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { HttpClient } from '@angular/common/http';
+import { GoogleServicesService } from '../ServicesGoogle/google-services.service';
 
-  declare global {
-    interface Window {
-      google: any;
-    }
+declare global {
+  interface Window {
+    google: any;
   }
+}
 
 @Component({
   selector: 'app-google-login-component',
@@ -16,7 +18,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class GoogleLoginComponentComponent implements OnInit {
 
-  constructor(private authService: ServicesService, private router: Router, private auth: AuthService) { }
+  constructor(private authService: ServicesService, private router: Router, private auth: AuthService, private http: HttpClient, private correoService: GoogleServicesService) { }
 
   ngOnInit(): void {
     this.loadGoogleScript()
@@ -88,39 +90,49 @@ export class GoogleLoginComponentComponent implements OnInit {
 
   // Función de callback para manejar la respuesta de Google
   private handleCredentialResponse(response: any) {
-
-    // Validar que el token sea un JWT
+    // Validar que el token sea un JWT válido
     if (!response.credential || response.credential.split('.').length !== 3) {
       console.error('El token recibido no es válido:', response.credential);
       return;
     }
-    
 
-    // Enviar el token al backend
+    // Enviar el token al backend para validación e inicio de sesión
     this.authService.googleLogin({ token: response.credential }).subscribe({
       next: (data) => {
-
         if (data.isSucces) {
-          this.auth.SetToken(data.token); // guarda el token
-          this.router.navigate(['/home']); // redirige a /home
+          // Guardar el token en el localStorage
+          this.auth.SetToken(data.token);
+          console.log(data.token)
+          // ✅ Obtener el email desde el token guardado
+          const email = this.auth.getEmailFromToken();
+
+          if (email) {
+            // ✅ Enviar el correo al backend
+            this.correoService.enviarCorreo(email).subscribe({
+              next: () => console.log('Correo enviado correctamente'),
+              error: err => console.error('Error al enviar el correo', err)
+            });
+
+          }
+
+          // Redirigir al home
+          this.router.navigate(['/home']);
         } else {
-          console.warn('usuario no registrado:', data.message);
-          alert('el usuario no está registrado, por favor crea una cuenta primero.');
+          console.warn('Usuario no registrado:', data.message);
+          alert('El usuario no está registrado, por favor crea una cuenta primero.');
         }
       },
       error: (err) => {
         console.error('Error en login con Google', err);
-
         if (err.status === 404) {
-          alert('el usuario no está registrado, por favor crea una cuenta primero.');
+          alert('El usuario no está registrado, por favor crea una cuenta primero.');
         } else {
-          alert('ocurrió un error al iniciar sesión con google.');
+          alert('Ocurrió un error al iniciar sesión con Google.');
         }
       }
     });
-
-
   }
+
 
 
 

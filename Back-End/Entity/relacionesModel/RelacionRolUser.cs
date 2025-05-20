@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Entity.Model;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Entity.Model;
 
 namespace Entity.relacionesModel
 {
@@ -13,23 +8,26 @@ namespace Entity.relacionesModel
     {
         public void Configure(EntityTypeBuilder<RolUser> builder)
         {
-            builder.ToTable("roluser");
+            // Definición de tabla y esquema
+            builder.ToTable("roluser", schema: "ModelSecurity");
 
+            // Clave primaria
             builder.HasKey(ru => ru.id);
 
+            // Propiedad requerida
             builder.Property(ru => ru.isdeleted)
                    .IsRequired();
 
-            // Relación RolUser -> Rol (muchos a uno)
+            // Relación muchos a uno con Rol
             builder.HasOne(ru => ru.Rol)
-                   .WithMany(r => r.RolUser)
+                   .WithMany(r => r.RolUser)  // Debe existir la colección RolUser en la entidad Rol
                    .HasForeignKey(ru => ru.rolid)
                    .OnDelete(DeleteBehavior.Restrict)
                    .HasConstraintName("FK_RolUser_Rol");
 
-            // Relación RolUser -> User (muchos a uno)
+            // Relación muchos a uno con User
             builder.HasOne(ru => ru.User)
-                   .WithMany(u => u.Roles)
+                   .WithMany(u => u.Roles)  // Debe existir la colección Roles en la entidad User
                    .HasForeignKey(ru => ru.userid)
                    .OnDelete(DeleteBehavior.Restrict)
                    .HasConstraintName("FK_RolUser_User");

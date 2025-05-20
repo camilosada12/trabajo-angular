@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
@@ -8,21 +8,28 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Entity.Migrations
 {
     /// <inheritdoc />
-    public partial class PostgreSql : Migration
+    public partial class Log : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.EnsureSchema(
+                name: "ModelSecurity");
+
+            migrationBuilder.EnsureSchema(
+                name: "Logs");
+
             migrationBuilder.CreateTable(
                 name: "form",
+                schema: "ModelSecurity",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    description = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
-                    active = table.Column<bool>(type: "boolean", nullable: false),
-                    isdeleted = table.Column<bool>(type: "boolean", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    description = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    active = table.Column<bool>(type: "bit", nullable: false),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -30,15 +37,35 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "module",
+                name: "Log",
+                schema: "Logs",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    description = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
-                    active = table.Column<bool>(type: "boolean", nullable: false),
-                    isdeleted = table.Column<bool>(type: "boolean", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Message = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
+                    Level = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Source = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    StackTrace = table.Column<string>(type: "nvarchar(4000)", maxLength: 4000, nullable: true),
+                    UserName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Log", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "module",
+                schema: "ModelSecurity",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    description = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    active = table.Column<bool>(type: "bit", nullable: false),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -47,14 +74,15 @@ namespace Entity.Migrations
 
             migrationBuilder.CreateTable(
                 name: "permission",
+                schema: "ModelSecurity",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    name = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    description = table.Column<string>(type: "character varying(250)", maxLength: 250, nullable: false),
-                    active = table.Column<bool>(type: "boolean", nullable: false),
-                    isdeleted = table.Column<bool>(type: "boolean", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    description = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    active = table.Column<bool>(type: "bit", nullable: false),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -63,15 +91,16 @@ namespace Entity.Migrations
 
             migrationBuilder.CreateTable(
                 name: "person",
+                schema: "ModelSecurity",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    firstname = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    lastname = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    phonenumber = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: false),
-                    active = table.Column<bool>(type: "boolean", nullable: false),
-                    isdeleted = table.Column<bool>(type: "boolean", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    firstname = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    lastname = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    phonenumber = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
+                    active = table.Column<bool>(type: "bit", nullable: false),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -80,13 +109,14 @@ namespace Entity.Migrations
 
             migrationBuilder.CreateTable(
                 name: "rol",
+                schema: "ModelSecurity",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: false),
-                    description = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
-                    isdeleted = table.Column<bool>(type: "boolean", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    description = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -95,13 +125,14 @@ namespace Entity.Migrations
 
             migrationBuilder.CreateTable(
                 name: "formmodule",
+                schema: "ModelSecurity",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    formid = table.Column<int>(type: "integer", nullable: false),
-                    moduleid = table.Column<int>(type: "integer", nullable: false),
-                    isdeleted = table.Column<bool>(type: "boolean", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    formid = table.Column<int>(type: "int", nullable: false),
+                    moduleid = table.Column<int>(type: "int", nullable: false),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -109,12 +140,14 @@ namespace Entity.Migrations
                     table.ForeignKey(
                         name: "FK_FormModule_Form",
                         column: x => x.formid,
+                        principalSchema: "ModelSecurity",
                         principalTable: "form",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Module_FormModules",
                         column: x => x.moduleid,
+                        principalSchema: "ModelSecurity",
                         principalTable: "module",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
@@ -122,16 +155,17 @@ namespace Entity.Migrations
 
             migrationBuilder.CreateTable(
                 name: "user",
+                schema: "ModelSecurity",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    username = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    email = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: true),
-                    password = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
-                    active = table.Column<bool>(type: "boolean", nullable: true),
-                    isdeleted = table.Column<bool>(type: "boolean", nullable: true),
-                    personid = table.Column<int>(type: "integer", nullable: true)
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    username = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    email = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    active = table.Column<bool>(type: "bit", nullable: true),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: true),
+                    personid = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -139,6 +173,7 @@ namespace Entity.Migrations
                     table.ForeignKey(
                         name: "FK_Person_User",
                         column: x => x.personid,
+                        principalSchema: "ModelSecurity",
                         principalTable: "person",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
@@ -146,14 +181,15 @@ namespace Entity.Migrations
 
             migrationBuilder.CreateTable(
                 name: "rolformpermission",
+                schema: "ModelSecurity",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    isdeleted = table.Column<bool>(type: "boolean", nullable: false),
-                    rolid = table.Column<int>(type: "integer", nullable: false),
-                    formid = table.Column<int>(type: "integer", nullable: false),
-                    permissionid = table.Column<int>(type: "integer", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: false),
+                    rolid = table.Column<int>(type: "int", nullable: false),
+                    formid = table.Column<int>(type: "int", nullable: false),
+                    permissionid = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -161,18 +197,21 @@ namespace Entity.Migrations
                     table.ForeignKey(
                         name: "FK_RolFormPermission_Form",
                         column: x => x.formid,
+                        principalSchema: "ModelSecurity",
                         principalTable: "form",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_RolFormPermission_Permission",
                         column: x => x.permissionid,
+                        principalSchema: "ModelSecurity",
                         principalTable: "permission",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_RolFormPermission_Rol",
                         column: x => x.rolid,
+                        principalSchema: "ModelSecurity",
                         principalTable: "rol",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
@@ -180,13 +219,14 @@ namespace Entity.Migrations
 
             migrationBuilder.CreateTable(
                 name: "roluser",
+                schema: "ModelSecurity",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    rolid = table.Column<int>(type: "integer", nullable: false),
-                    userid = table.Column<int>(type: "integer", nullable: false),
-                    isdeleted = table.Column<bool>(type: "boolean", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    rolid = table.Column<int>(type: "int", nullable: false),
+                    userid = table.Column<int>(type: "int", nullable: false),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -194,18 +234,21 @@ namespace Entity.Migrations
                     table.ForeignKey(
                         name: "FK_RolUser_Rol",
                         column: x => x.rolid,
+                        principalSchema: "ModelSecurity",
                         principalTable: "rol",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_RolUser_User",
                         column: x => x.userid,
+                        principalSchema: "ModelSecurity",
                         principalTable: "user",
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.InsertData(
+                schema: "ModelSecurity",
                 table: "form",
                 columns: new[] { "id", "active", "description", "isdeleted", "name" },
                 values: new object[,]
@@ -215,6 +258,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
+                schema: "ModelSecurity",
                 table: "module",
                 columns: new[] { "id", "active", "description", "isdeleted", "name" },
                 values: new object[,]
@@ -224,6 +268,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
+                schema: "ModelSecurity",
                 table: "permission",
                 columns: new[] { "id", "active", "description", "isdeleted", "name" },
                 values: new object[,]
@@ -233,6 +278,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
+                schema: "ModelSecurity",
                 table: "person",
                 columns: new[] { "id", "active", "firstname", "isdeleted", "lastname", "phonenumber" },
                 values: new object[,]
@@ -242,6 +288,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
+                schema: "ModelSecurity",
                 table: "rol",
                 columns: new[] { "id", "description", "isdeleted", "name" },
                 values: new object[,]
@@ -251,6 +298,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
+                schema: "ModelSecurity",
                 table: "formmodule",
                 columns: new[] { "id", "formid", "isdeleted", "moduleid" },
                 values: new object[,]
@@ -260,6 +308,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
+                schema: "ModelSecurity",
                 table: "rolformpermission",
                 columns: new[] { "id", "formid", "isdeleted", "permissionid", "rolid" },
                 values: new object[,]
@@ -269,6 +318,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
+                schema: "ModelSecurity",
                 table: "user",
                 columns: new[] { "id", "active", "email", "isdeleted", "password", "personid", "username" },
                 values: new object[,]
@@ -278,6 +328,7 @@ namespace Entity.Migrations
                 });
 
             migrationBuilder.InsertData(
+                schema: "ModelSecurity",
                 table: "roluser",
                 columns: new[] { "id", "isdeleted", "rolid", "userid" },
                 values: new object[,]
@@ -288,41 +339,49 @@ namespace Entity.Migrations
 
             migrationBuilder.CreateIndex(
                 name: "IX_formmodule_formid",
+                schema: "ModelSecurity",
                 table: "formmodule",
                 column: "formid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_formmodule_moduleid",
+                schema: "ModelSecurity",
                 table: "formmodule",
                 column: "moduleid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_rolformpermission_formid",
+                schema: "ModelSecurity",
                 table: "rolformpermission",
                 column: "formid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_rolformpermission_permissionid",
+                schema: "ModelSecurity",
                 table: "rolformpermission",
                 column: "permissionid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_rolformpermission_rolid",
+                schema: "ModelSecurity",
                 table: "rolformpermission",
                 column: "rolid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_roluser_rolid",
+                schema: "ModelSecurity",
                 table: "roluser",
                 column: "rolid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_roluser_userid",
+                schema: "ModelSecurity",
                 table: "roluser",
                 column: "userid");
 
             migrationBuilder.CreateIndex(
                 name: "IX_user_personid",
+                schema: "ModelSecurity",
                 table: "user",
                 column: "personid");
         }
@@ -331,31 +390,44 @@ namespace Entity.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "formmodule");
+                name: "formmodule",
+                schema: "ModelSecurity");
 
             migrationBuilder.DropTable(
-                name: "rolformpermission");
+                name: "Log",
+                schema: "Logs");
 
             migrationBuilder.DropTable(
-                name: "roluser");
+                name: "rolformpermission",
+                schema: "ModelSecurity");
 
             migrationBuilder.DropTable(
-                name: "module");
+                name: "roluser",
+                schema: "ModelSecurity");
 
             migrationBuilder.DropTable(
-                name: "form");
+                name: "module",
+                schema: "ModelSecurity");
 
             migrationBuilder.DropTable(
-                name: "permission");
+                name: "form",
+                schema: "ModelSecurity");
 
             migrationBuilder.DropTable(
-                name: "rol");
+                name: "permission",
+                schema: "ModelSecurity");
 
             migrationBuilder.DropTable(
-                name: "user");
+                name: "rol",
+                schema: "ModelSecurity");
 
             migrationBuilder.DropTable(
-                name: "person");
+                name: "user",
+                schema: "ModelSecurity");
+
+            migrationBuilder.DropTable(
+                name: "person",
+                schema: "ModelSecurity");
         }
     }
 }

@@ -8,8 +8,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entity.DataInit
 {
+    /// <summary>
+    /// Clase estática para inicializar datos de la entidad <see cref="FormModule"/>.
+    /// </summary>
     public static class FormModuleDataInit
     {
+        /// <summary>
+        /// Método de extensión para inicializar datos semilla (seed) para la entidad <see cref="FormModule"/>.
+        /// </summary>
+        /// <param name="modelBuilder">Instancia de <see cref="ModelBuilder"/> usada para configurar el modelo de datos.</param>
         public static void SeedFormModule(this ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<FormModule>().HasData(

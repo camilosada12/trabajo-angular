@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Entity.Model;
 
 namespace Entity.relacionesModel
 {
@@ -12,10 +8,13 @@ namespace Entity.relacionesModel
     {
         public void Configure(EntityTypeBuilder<Module> builder)
         {
-            builder.ToTable("module");
+            // Configura la tabla y el esquema
+            builder.ToTable("module", schema: "ModelSecurity");
 
+            // Clave primaria
             builder.HasKey(m => m.id);
 
+            // Configura las propiedades con restricciones
             builder.Property(m => m.name)
                    .IsRequired()
                    .HasMaxLength(100);
@@ -29,11 +28,11 @@ namespace Entity.relacionesModel
             builder.Property(m => m.isdeleted)
                    .IsRequired();
 
-            // Relación: Module -> FormModules (uno a muchos)
+            // Configura la relación uno a muchos con FormModules
             builder.HasMany(m => m.FormModules)
-                   .WithOne(fm => fm.Module)  // asumiendo que FormModule tiene propiedad Module
-                   .HasForeignKey(fm => fm.moduleid)  // asumiendo fk
-                   .OnDelete(DeleteBehavior.Restrict)
+                   .WithOne(fm => fm.Module)          // Navegación inversa en FormModule
+                   .HasForeignKey(fm => fm.moduleid) // Llave foránea en FormModule
+                   .OnDelete(DeleteBehavior.Restrict) // Evita eliminación en cascada
                    .HasConstraintName("FK_Module_FormModules");
         }
     }

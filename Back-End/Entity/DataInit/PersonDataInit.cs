@@ -9,8 +9,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Entity.DataInit
 {
+    /// <summary>
+    /// Clase estática para inicializar datos semilla (seed) para la entidad <see cref="Person"/>.
+    /// </summary>
     public static class PersonDataInit
     {
+        /// <summary>
+        /// Método de extensión para agregar datos iniciales (seed) a la entidad <see cref="Person"/>.
+        /// </summary>
+        /// <param name="modelBuilder">Instancia de <see cref="ModelBuilder"/> usada para configurar el modelo de datos.</param>
         public static void seedPerson(this ModelBuilder modelBuilder)
         {
             // Seed para Person
@@ -33,7 +40,6 @@ namespace Entity.DataInit
                     active = true,
                     isdeleted = false
                 }
-
             );
         }
     }

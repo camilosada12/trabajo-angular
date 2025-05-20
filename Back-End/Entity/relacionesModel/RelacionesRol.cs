@@ -14,7 +14,7 @@ namespace Entity.relacionesModel
         public void Configure(EntityTypeBuilder<rol> builder)
         {
             // Nombre de tabla (opcional)
-            builder.ToTable("rol");
+            builder.ToTable("rol", schema: "ModelSecurity");
 
             // Clave primaria
             builder.HasKey(r => r.id);

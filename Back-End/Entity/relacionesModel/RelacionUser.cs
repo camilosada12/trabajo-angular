@@ -9,7 +9,7 @@ namespace Entity.relacionesModel
         public void Configure(EntityTypeBuilder<User> builder)
         {
             // Tabla opcionalmente puedes nombrarla explícitamente
-            builder.ToTable("user");
+            builder.ToTable("user", schema: "ModelSecurity");
 
             // Relación: User -> Person (muchos a uno)
             builder.HasOne(u => u.person)
