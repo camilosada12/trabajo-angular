@@ -155,6 +155,39 @@
             "description": "OK"
           }
         }
+      },
+      "patch": {
+        "tags": [
+          "FormControllerPrueba"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FormControllerPrueba/deleted": {
+      "get": {
+        "tags": [
+          "FormControllerPrueba"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/FormModule": {
@@ -270,6 +303,39 @@
               "$ref": "#/components/schemas/DeleteMode"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "FormModule"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FormModule/deleted": {
+      "get": {
+        "tags": [
+          "FormModule"
         ],
         "responses": {
           "200": {
@@ -490,6 +556,39 @@
             "description": "OK"
           }
         }
+      },
+      "patch": {
+        "tags": [
+          "Module"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Module/deleted": {
+      "get": {
+        "tags": [
+          "Module"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/Permission": {
@@ -605,6 +704,39 @@
               "$ref": "#/components/schemas/DeleteMode"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Permission"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Permission/deleted": {
+      "get": {
+        "tags": [
+          "Permission"
         ],
         "responses": {
           "200": {
@@ -732,6 +864,39 @@
             "description": "OK"
           }
         }
+      },
+      "patch": {
+        "tags": [
+          "Person"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Person/deleted": {
+      "get": {
+        "tags": [
+          "Person"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/Rol": {
@@ -847,6 +1012,39 @@
               "$ref": "#/components/schemas/DeleteMode"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Rol"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rol/deleted": {
+      "get": {
+        "tags": [
+          "Rol"
         ],
         "responses": {
           "200": {
@@ -974,6 +1172,39 @@
             "description": "OK"
           }
         }
+      },
+      "patch": {
+        "tags": [
+          "RolFormPermission"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RolFormPermission/deleted": {
+      "get": {
+        "tags": [
+          "RolFormPermission"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/RolUser": {
@@ -1089,6 +1320,51 @@
               "$ref": "#/components/schemas/DeleteMode"
             }
           }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "RolUser"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RolUser/deleted": {
+      "get": {
+        "tags": [
+          "RolUser"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/con-persona": {
+      "get": {
+        "tags": [
+          "User"
         ],
         "responses": {
           "200": {
@@ -1216,6 +1492,39 @@
             "description": "OK"
           }
         }
+      },
+      "patch": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/deleted": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     }
   },
@@ -1249,6 +1558,12 @@
             "type": "integer",
             "format": "int32"
           },
+          "active": {
+            "type": "boolean"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
           "name": {
             "type": "string",
             "nullable": true
@@ -1256,9 +1571,6 @@
           "description": {
             "type": "string",
             "nullable": true
-          },
-          "active": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -1268,8 +1580,13 @@
         "properties": {
           "id": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "isDeleted": {
+            "type": "boolean"
           },
           "formid": {
             "type": "integer",
@@ -1285,10 +1602,6 @@
           },
           "modulename": {
             "type": "string",
-            "nullable": true
-          },
-          "isDeleted": {
-            "type": "boolean",
             "nullable": true
           }
         },
@@ -1325,6 +1638,12 @@
             "type": "integer",
             "format": "int32"
           },
+          "active": {
+            "type": "boolean"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
           "name": {
             "type": "string",
             "nullable": true
@@ -1332,9 +1651,6 @@
           "description": {
             "type": "string",
             "nullable": true
-          },
-          "active": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -1346,6 +1662,12 @@
             "type": "integer",
             "format": "int32"
           },
+          "active": {
+            "type": "boolean"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
           "name": {
             "type": "string",
             "nullable": true
@@ -1353,9 +1675,6 @@
           "description": {
             "type": "string",
             "nullable": true
-          },
-          "active": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -1366,6 +1685,12 @@
           "id": {
             "type": "integer",
             "format": "int32"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "isDeleted": {
+            "type": "boolean"
           },
           "firstName": {
             "type": "string",
@@ -1378,9 +1703,6 @@
           "phonenumber": {
             "type": "string",
             "nullable": true
-          },
-          "active": {
-            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -1391,6 +1713,12 @@
           "id": {
             "type": "integer",
             "format": "int32"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "isDeleted": {
+            "type": "boolean"
           },
           "rolId": {
             "type": "integer",
@@ -1426,6 +1754,12 @@
             "type": "integer",
             "format": "int32"
           },
+          "active": {
+            "type": "boolean"
+          },
+          "isDeleted": {
+            "type": "boolean"
+          },
           "userId": {
             "type": "integer",
             "format": "int32"
@@ -1454,8 +1788,13 @@
         "properties": {
           "id": {
             "type": "integer",
-            "format": "int32",
-            "nullable": true
+            "format": "int32"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "isDeleted": {
+            "type": "boolean"
           },
           "userName": {
             "type": "string",
@@ -1491,6 +1830,12 @@
           "id": {
             "type": "integer",
             "format": "int32"
+          },
+          "active": {
+            "type": "boolean"
+          },
+          "isDeleted": {
+            "type": "boolean"
           },
           "name": {
             "type": "string",

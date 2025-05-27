@@ -1931,6 +1931,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "AutoMapper": "12.0.1",
           "Email": "1.0.0",
           "Entity": "1.0.0",
           "Portable.BouncyCastle": "1.9.0",
@@ -5643,11 +5644,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Web.csproj",
+      "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Web\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\Web.csproj",
+      "projectPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Web\\Web.csproj",
       "packagesPath": "C:\\Users\\Camilo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Web\\obj\\",
+      "outputPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5669,11 +5670,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Business\\Business.csproj": {
-              "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Business\\Business.csproj"
+            "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Business\\Business.csproj": {
+              "projectPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Business\\Business.csproj"
             },
-            "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Data\\Data.csproj": {
-              "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Data\\Data.csproj"
+            "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Data\\Data.csproj": {
+              "projectPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Data\\Data.csproj"
             }
           }
         }

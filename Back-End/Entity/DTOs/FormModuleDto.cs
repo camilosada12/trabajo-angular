@@ -6,14 +6,12 @@
 
     namespace Entity.DTOs
     {
-        public class FormModuleDto
+        public class FormModuleDto : BaseDto
         {
-            public int? id { get; set; }
             public int formid { get; set; }
             public string? formname { get; set; }
             public int moduleid { get; set; }
             public string? modulename { get; set; }
-            public bool? isDeleted { get; set; }
 
         }
     }

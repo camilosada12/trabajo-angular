@@ -12,7 +12,7 @@ namespace Entity.relacionesModel
             builder.ToTable("Log", schema: "Logs");
 
             // Define la clave primaria
-            builder.HasKey(l => l.Id);
+            builder.HasKey(l => l.id);
 
             // Configura las propiedades con sus restricciones
             builder.Property(l => l.Message)

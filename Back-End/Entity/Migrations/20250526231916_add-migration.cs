@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Entity.Migrations
 {
     /// <inheritdoc />
-    public partial class Log : Migration
+    public partial class addmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -41,18 +41,19 @@ namespace Entity.Migrations
                 schema: "Logs",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Timestamp = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Message = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     Level = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Source = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     StackTrace = table.Column<string>(type: "nvarchar(4000)", maxLength: 4000, nullable: true),
-                    UserName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true)
+                    UserName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Log", x => x.Id);
+                    table.PrimaryKey("PK_Log", x => x.id);
                 });
 
             migrationBuilder.CreateTable(
@@ -164,8 +165,8 @@ namespace Entity.Migrations
                     email = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     password = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     active = table.Column<bool>(type: "bit", nullable: true),
-                    isdeleted = table.Column<bool>(type: "bit", nullable: true),
-                    personid = table.Column<int>(type: "int", nullable: true)
+                    personid = table.Column<int>(type: "int", nullable: true),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -186,10 +187,10 @@ namespace Entity.Migrations
                 {
                     id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    isdeleted = table.Column<bool>(type: "bit", nullable: false),
                     rolid = table.Column<int>(type: "int", nullable: false),
                     formid = table.Column<int>(type: "int", nullable: false),
-                    permissionid = table.Column<int>(type: "int", nullable: false)
+                    permissionid = table.Column<int>(type: "int", nullable: false),
+                    isdeleted = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -273,8 +274,12 @@ namespace Entity.Migrations
                 columns: new[] { "id", "active", "description", "isdeleted", "name" },
                 values: new object[,]
                 {
-                    { 1, true, "Permiso para lectura", false, "Leer" },
-                    { 2, true, "Permiso para escritura", false, "Escribir" }
+                    { 1, true, "permiso para leer formularios", false, "Leer" },
+                    { 2, true, "permiso para crear formularios", false, "Crear" },
+                    { 3, true, "permiso para editar formularios", false, "Editar" },
+                    { 4, true, "permiso para eliminar lógicamente formularios", false, "Eliminar" },
+                    { 5, true, "permiso para ver formularios eliminados", false, "VerEliminados" },
+                    { 6, true, "permiso para recuperar formularios eliminados", false, "Recuperar" }
                 });
 
             migrationBuilder.InsertData(
@@ -313,8 +318,16 @@ namespace Entity.Migrations
                 columns: new[] { "id", "formid", "isdeleted", "permissionid", "rolid" },
                 values: new object[,]
                 {
-                    { 1, 1, false, 1, 1 },
-                    { 2, 1, false, 2, 2 }
+                    { 1, 1, false, 1, 2 },
+                    { 2, 1, false, 2, 2 },
+                    { 3, 1, false, 3, 2 },
+                    { 4, 1, false, 4, 2 },
+                    { 5, 1, false, 1, 1 },
+                    { 6, 1, false, 2, 1 },
+                    { 7, 1, false, 3, 1 },
+                    { 8, 1, false, 4, 1 },
+                    { 9, 1, false, 5, 1 },
+                    { 10, 1, false, 6, 1 }
                 });
 
             migrationBuilder.InsertData(

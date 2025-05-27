@@ -15,7 +15,7 @@ import { AuthService } from '../services/auth.service';
 })
 
 export class FormTableComponent implements OnInit {
-  forms: Form[] = [];
+  allForms: Form[] = []; // Array único para todos los formularios
   currentForm: Form = this.getEmptyForm();
   showForm: boolean = false;
   isEditing: boolean = false;
@@ -25,29 +25,40 @@ export class FormTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.userRole = this.auth.getUserRole();
-    console.log('ROL:', this.userRole); // ← Verifica si imprime "admin"
+    console.log('ROL:', this.userRole);
     this.loadForms();
   }
 
-
-  // Helper para crear un formulario vacío
   getEmptyForm(): Form {
     return {
       id: 0,
       name: '',
       description: '',
-      active: true
+      active: true,
+      isDeleted: false
     };
   }
 
   loadForms(): void {
-    this.formService.get<Form[]>('FormControllerPrueba').subscribe({
-      next: data => this.forms = data,
-      error: err => console.error('Error al cargar los formularios', err)
-    });
+    if (this.userRole === 'Administrador') {
+      // Admin ve todos los formularios (activos e inactivos)
+      this.formService.get<Form[]>('FormControllerPrueba/deleted').subscribe({
+        next: data => {
+          this.allForms = data; // Mostrar todos sin filtrar
+        },
+        error: err => console.error('Error al cargar todos los formularios', err)
+      });
+    } else {
+      // Usuario normal solo ve formularios activos
+      this.formService.get<Form[]>('FormControllerPrueba').subscribe({
+        next: data => {
+          this.allForms = data.filter(f => f.active); // Solo activos
+        },
+        error: err => console.error('Error al cargar formularios', err)
+      });
+    }
   }
 
-  // Maneja tanto la creación como la actualización
   submitForm(): void {
     if (this.isEditing) {
       this.updateForm();
@@ -59,7 +70,7 @@ export class FormTableComponent implements OnInit {
   addForm(): void {
     this.formService.post<Form>('FormControllerPrueba', this.currentForm).subscribe({
       next: form => {
-        this.forms.push(form);
+        this.allForms.push(form);
         this.resetForm();
       },
       error: err => console.error('Error al agregar formulario', err)
@@ -67,9 +78,15 @@ export class FormTableComponent implements OnInit {
   }
 
   editForm(form: Form): void {
+    // Solo permitir editar formularios activos
+    if (!form.active) {
+      console.warn('No se pueden editar formularios eliminados');
+      return;
+    }
+    
     this.isEditing = true;
-    this.currentForm = { ...form }; // Copia del objeto para no modificar directamente
-    this.showForm = true;           // Muestra el formulario
+    this.currentForm = { ...form };
+    this.showForm = true;
   }
 
   updateForm(): void {
@@ -82,13 +99,28 @@ export class FormTableComponent implements OnInit {
     });
   }
 
-
   deleteForm(id: number, mode: 'fisico' | 'Logical' = 'fisico'): void {
     this.formService.delete<Form>('FormControllerPrueba', id, mode).subscribe({
-      next: () => this.forms = this.forms.filter(f => f.id !== id),
+      next: () => {
+        this.loadForms(); // Recargar la tabla
+      },
       error: err => console.error(`Error al eliminar (${mode}) formulario`, err)
     });
   }
+
+  reactivateForm(id: number): void {
+  this.formService.patch<Form>('FormControllerPrueba', id).subscribe({
+    next: (response) => {
+      console.log('Formulario reactivado exitosamente:', response);
+      this.loadForms(); // Recargar la tabla
+    },
+    error: err => {
+      console.error('Error al reactivar formulario:', err);
+      // Opcional: mostrar mensaje de error al usuario
+      // this.showErrorMessage('No se pudo reactivar el formulario');
+    }
+  });
+}
 
   toggleForm(mode: 'create' | 'edit'): void {
     if (mode === 'create') {

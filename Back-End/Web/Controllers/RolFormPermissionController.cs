@@ -1,7 +1,7 @@
-﻿using Business.Interfaces;
-using Business.Services;
+﻿using Business.Services;
 using Data.Services;
 using Entity.DTOs;
+using Entity.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +12,7 @@ namespace Web.Controllers
     /// Hereda de GenericController para operaciones CRUD estándar con RolFormPermissionDto.
     /// </summary>
     [Route("api/[controller]")]
-    public class RolFormPermissionController : GenericController<RolFormPermissionDto>
+    public class RolFormPermissionController : GenericController<RolFormPermission,RolFormPermissionDto>
     {
         /// <summary>
         /// Servicio extendido específico para RolFormPermission con funcionalidades adicionales.
@@ -25,7 +25,7 @@ namespace Web.Controllers
         /// <param name="service">Servicio genérico para operaciones CRUD estándar.</param>
         /// <param name="extendedService">Servicio extendido para operaciones específicas de RolFormPermission.</param>
         /// <param name="logService">Servicio para registrar logs de la aplicación.</param>
-        public RolFormPermissionController(IGenericService<RolFormPermissionDto> service, RolFormPermissionRepository extendedService, LogService logService)
+        public RolFormPermissionController(IBaseModelBusiness<RolFormPermission,RolFormPermissionDto> service, RolFormPermissionRepository extendedService, LogService logService)
             : base(service, logService)
         {
             _extendedService = extendedService;

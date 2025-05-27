@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sMnoX388h5M=",
+  "dgSpecHash": "nXVNQscCK40=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Business\\Business.csproj",
+  "projectFilePath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Business\\Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Camilo\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Camilo\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

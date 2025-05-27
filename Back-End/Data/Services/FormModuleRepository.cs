@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 using Entity.Context;
 using Entity.DTOs;
 using Entity.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 namespace Data.Services
 {
@@ -14,7 +16,7 @@ namespace Data.Services
     /// Repositorio especializado para gestionar la entidad FormModule.
     /// Hereda de la clase base Repository<FormModule>.
     /// </summary>
-    public class FormModuleRepository : Repository<FormModule>
+    public class FormModuleRepository : BaseModelData<FormModule,FormModuleDto>
     {
         /// <summary>
         /// Contexto de base de datos de la aplicación.
@@ -25,7 +27,7 @@ namespace Data.Services
         /// Constructor que recibe el contexto de base de datos y lo pasa al repositorio base.
         /// </summary>
         /// <param name="context">Contexto de la base de datos.</param>
-        public FormModuleRepository(ApplicationDbContext context) : base(context)
+        public FormModuleRepository(ApplicationDbContext context, IConfiguration configuration, IMapper mapper) : base(context, configuration, mapper)
         {
             _context = context;
         }
@@ -39,13 +41,13 @@ namespace Data.Services
         /// </returns>
         public async Task<IEnumerable<FormModuleDto>> GetAllJoinAsync()
         {
-            return await _dbSet
+            return await _context.formmodule
                 .Include(x => x.Form) // Incluye la entidad relacionada Form
                 .Include(x => x.Module) // Incluye la entidad relacionada Module
                 .Where(e => EF.Property<bool>(e, "isdeleted") == false) // Filtra registros no eliminados lógicamente
                 .Select(ru => new FormModuleDto
                 {
-                    id = ru.id,
+                    Id = ru.id,
                     formid = ru.formid,
                     moduleid = ru.moduleid,
                     formname = ru.Form.name,

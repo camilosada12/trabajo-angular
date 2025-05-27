@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace Entity.Model
 {
-    public class Log
+    public class Log : BaseModel
     {
-        public int Id { get; set; }
         public DateTime Timestamp { get; set; } = DateTime.UtcNow;
         public string Message { get; set; }
         public string Level { get; set; }

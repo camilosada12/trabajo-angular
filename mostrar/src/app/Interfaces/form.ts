@@ -3,5 +3,5 @@ export interface Form {
     name : String
     description : String
     active: boolean
-
+    isDeleted: boolean;
 }

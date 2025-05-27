@@ -1,13 +1,18 @@
 ﻿using System.Threading.Tasks;
 using Data.Interfaces;
+using Entity.Model;
+using Entity.DTOs;
 
 namespace Data.Services
 {
-    public class LogicalDeleteStrategy<TEntity> : IDeleteStrategy<TEntity> where TEntity : class
+    public class LogicalDeleteStrategy<TEntity, TDto> : IDeleteStrategy<TEntity, TDto>
+        where TEntity : BaseModel
+        where TDto : BaseDto
     {
-        public async Task<bool> DeleteAsync(int id, IRepository<TEntity> repository)
+        public async Task<bool> DeleteAsync(int id, IBaseModelData<TEntity, TDto> repository)
         {
-            return await repository.DeleteLogicalAsync(id);
+            var result = await repository.DeleteLogicalAsync(id);
+            return result > 0; // suponiendo que retorna el número de filas afectadas
         }
     }
 }

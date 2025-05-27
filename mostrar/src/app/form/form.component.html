@@ -3,8 +3,7 @@
   <button mat-raised-button color="primary" class="ButtonCenter" (click)="toggleForm('create')">Crear</button>
 </div>
 
-
-<!-- Tabla, visible solo cuando showForm sea false -->
+<!-- Tabla única de formularios -->
 <div *ngIf="!showForm">
   <div class="table-container">
     <table class="table table-striped">
@@ -12,28 +11,50 @@
         <tr>
           <th>Name</th>
           <th>Description</th>
-          <th>Active</th>
+          <th>Estado</th>
           <th>Actions</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let form of forms">
+        <tr *ngFor="let form of allForms" 
+            [class.table-danger]="!form.active"
+            [class.table-success]="form.active">
           <td>{{ form.name }}</td>
           <td>{{ form.description }}</td>
-          <td>{{ form.active ? 'Yes' : 'No' }}</td>
           <td>
-            <button mat-raised-button color="primary" (click)="editForm(form)">Editar</button>
-
-            <!-- Eliminar Lógico: disponible para todos -->
-            <button mat-raised-button color="warn" (click)="deleteForm(form.id, 'Logical')">Eliminar Lógico</button>
-
-            <!-- Eliminar Físico: solo visible para admin -->
-            <button *ngIf="userRole === 'admin'" mat-raised-button color="accent"
-              (click)="deleteForm(form.id, 'fisico')">
-              Eliminar Definitivo
-            </button>
-          </td> 
-
+            <span class="badge" 
+                  [class.badge-success]="form.active" 
+                  [class.badge-secondary]="!form.active">
+              {{ form.active ? 'Activo' : 'Eliminado' }}
+            </span>
+          </td>
+          <td>
+            <!-- Botones para formularios activos -->
+            <div *ngIf="form.active">
+              <button mat-raised-button color="primary" (click)="editForm(form)" class="me-2">
+                Editar
+              </button>
+              <button mat-raised-button color="warn" (click)="deleteForm(form.id, 'Logical')" class="me-2">
+                Eliminar Lógico
+              </button>
+              <!-- Eliminar físico solo visible para admin -->
+              <button *ngIf="userRole === 'Administrador'" 
+                      mat-raised-button color="accent" 
+                      (click)="deleteForm(form.id, 'fisico')">
+                Eliminar Definitivo
+              </button>
+              <button *ngIf="userRole === 'Administrador'"  
+              mat-raised-button color="primary" 
+              (click)="reactivateForm(form.id)" class="me-2">
+                Restaurar
+              </button>
+            </div>
+            
+            <!-- Sin acciones para usuarios normales con formularios eliminados -->
+            <div *ngIf="!form.active && userRole !== 'Administrador'">
+              <span class="text-muted">Sin acciones disponibles</span>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>

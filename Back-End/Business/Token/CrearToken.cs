@@ -41,8 +41,12 @@ namespace Business.Token
                 throw new UnauthorizedAccessException("credenciales incorrectas");
             }
 
-            // Obtener los roles asignados al usuario
-            var roles = await _user.GetRolesByUserId(user.id.Value);
+            /// obtener los roles asignados al usuario
+            var roles = await _user.GetRolesByUserId(user.id);
+
+            // obtener los permisos que tiene por los roles
+            var permisos = await _user.GetPermissionsByUserId(user.id);
+
 
             // Construir claims base para el token
             var claims = new List<Claim>
@@ -57,6 +61,13 @@ namespace Business.Token
             {
                 claims.Add(new Claim(ClaimTypes.Role, rol));
             }
+
+            // agregar claims de permisos
+            foreach (var permiso in permisos)
+            {
+                claims.Add(new Claim("permission", permiso));
+            }
+
 
             // Crear llave de seguridad usando la clave secreta configurada
             var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["Jwt:key"]!));

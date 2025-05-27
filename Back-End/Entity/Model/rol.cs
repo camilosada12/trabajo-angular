@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace Entity.Model
 {
-    public class rol
+    public class rol : BaseModel
     {
-        public int id { get; set; }
         public string name { get; set; }
         public string description { get; set; }
-        public bool isdeleted { get; set; }
-
         public ICollection<RolUser> RolUser { get; set; }
 
         public ICollection<RolFormPermission> RolFormPermission { get; set; }

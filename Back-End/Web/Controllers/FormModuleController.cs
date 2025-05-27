@@ -1,7 +1,7 @@
-﻿using Business.Interfaces;
-using Business.Services;
+﻿using Business.Services;
 using Data.Services;
 using Entity.DTOs;
+using Entity.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,7 +12,7 @@ namespace Web.Controllers
     /// básica del <see cref="GenericController{T}"/> con métodos personalizados.
     /// </summary>
     [Route("api/[controller]")]
-    public class FormModuleController : GenericController<FormModuleDto>
+    public class FormModuleController : GenericController<FormModule,FormModuleDto>
     {
         private readonly FormModuleRepository _extendedService;
 
@@ -22,10 +22,7 @@ namespace Web.Controllers
         /// <param name="service">Servicio genérico para operaciones CRUD básicas.</param>
         /// <param name="extendedService">Repositorio específico con métodos extendidos para <see cref="FormModuleDto"/>.</param>
         /// <param name="logService">Servicio para registro de logs.</param>
-        public FormModuleController(
-            IGenericService<FormModuleDto> service,
-            FormModuleRepository extendedService,
-            LogService logService) : base(service, logService)
+        public FormModuleController( IBaseModelBusiness<FormModule,FormModuleDto> service,FormModuleRepository extendedService, LogService logService) : base(service, logService)
         {
             _extendedService = extendedService;
         }

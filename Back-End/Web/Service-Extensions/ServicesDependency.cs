@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using Business.Interfaces;
 using Business.Services;
 using Data.Interfaces;
+using Data.Repository;
 using Data.Services;
 using Entity.DTOs;
 using Entity.Model;
@@ -13,18 +13,18 @@ namespace Web.Service_Extensions
         public static IServiceCollection AddProjectDependencies(this IServiceCollection services)
         {
             // Repositorio genérico
-            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IBaseModelData<,>), typeof(BaseModelData<,>));
 
             // Servicios genéricos
-            services.AddScoped(typeof(IGenericService<FormDto>), typeof(GenericService<FormDto, Form>));
-            services.AddScoped(typeof(IGenericService<FormModuleDto>), typeof(GenericService<FormModuleDto, FormModule>));
-            services.AddScoped(typeof(IGenericService<ModuleDto>), typeof(GenericService<ModuleDto, Module>));
-            services.AddScoped(typeof(IGenericService<UserDto>), typeof(GenericService<UserDto, User>));
-            services.AddScoped(typeof(IGenericService<RolUserDto>), typeof(GenericService<RolUserDto, RolUser>));
-            services.AddScoped(typeof(IGenericService<rolDto>), typeof(GenericService<rolDto, rol>));
-            services.AddScoped(typeof(IGenericService<PersonDto>), typeof(GenericService<PersonDto, Person>));
-            services.AddScoped(typeof(IGenericService<PermissionDto>), typeof(GenericService<PermissionDto, Permission>));
-            services.AddScoped(typeof(IGenericService<RolFormPermissionDto>), typeof(GenericService<RolFormPermissionDto, RolFormPermission>));
+            services.AddScoped(typeof(IBaseModelBusiness<Form,FormDto>), typeof(BaseModelBusiness<Form, FormDto>));
+            services.AddScoped(typeof(IBaseModelBusiness<FormModule,FormModuleDto>), typeof(BaseModelBusiness<FormModule, FormModuleDto>));
+            services.AddScoped(typeof(IBaseModelBusiness<Module,ModuleDto>), typeof(BaseModelBusiness<Module, ModuleDto>));
+            services.AddScoped(typeof(IBaseModelBusiness<User,UserDto>), typeof(BaseModelBusiness<User, UserDto>));
+            services.AddScoped(typeof(IBaseModelBusiness<RolUser, RolUserDto>), typeof(BaseModelBusiness<RolUser,RolUserDto>));
+            services.AddScoped(typeof(IBaseModelBusiness<rol,rolDto>), typeof(BaseModelBusiness<rol, rolDto>));
+            services.AddScoped(typeof(IBaseModelBusiness<Person,PersonDto>), typeof(BaseModelBusiness<Person, PersonDto>));
+            services.AddScoped(typeof(IBaseModelBusiness<Permission,PermissionDto>), typeof(BaseModelBusiness<Permission, PermissionDto>));
+            services.AddScoped(typeof(IBaseModelBusiness<RolFormPermission,RolFormPermissionDto>), typeof(BaseModelBusiness<RolFormPermission, RolFormPermissionDto>));
 
             // Servicio de logs
             services.AddScoped<LogService>();

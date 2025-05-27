@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Email.csproj": {}
+    "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Email\\Email.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Email.csproj": {
+    "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Email\\Email.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Email.csproj",
+        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Email\\Email.csproj",
         "projectName": "Email",
-        "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Email.csproj",
+        "projectPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Email\\Email.csproj",
         "packagesPath": "C:\\Users\\Camilo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\obj\\",
+        "outputPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Email\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Entity.DTOs;
 using Entity.Model;
 using static Dapper.SqlMapper;
 
@@ -10,49 +11,55 @@ namespace Data.Interfaces
     /// Define operaciones genéricas de acceso a datos para cualquier entidad.
     /// </summary>
     /// <typeparam name="T">Tipo de entidad.</typeparam>
-    public interface IRepository<T> where T : class
+    public interface IBaseModelData<T, D> where T : BaseModel where D : BaseDto
     {
         /// <summary>
-        /// Obtiene todos los registros almacenados en la base de datos.
+        /// Obtener
         /// </summary>
-        /// <returns>Lista de entidades.</returns>
-        Task<IEnumerable<T>> GetAllAsync();
+        /// <returns></returns>
+
+        Task<IEnumerable<D>> GetAllAsync();
 
         /// <summary>
-        /// Obtiene un registro por su identificador único.
+        /// Obtener por ID
         /// </summary>
-        /// <param name="id">Identificador único del registro.</param>
-        /// <returns>La entidad encontrada, o null si no existe.</returns>
-        Task<T?> GetByIdAsync(int id);
+        /// <param name="id"></param>
+        /// <returns></returns>
+
+        Task<T> GetByIdAsync(int id);
 
         /// <summary>
-        /// Crea una nueva entidad en la base de datos.
+        /// Guardar
         /// </summary>
-        /// <param name="entity">Instancia de la entidad a crear.</param>
-        /// <returns>La entidad creada.</returns>
+        /// <param name="entity"></param>
+        /// <returns></returns>
         Task<T> CreateAsync(T entity);
 
         /// <summary>
-        /// Actualiza una entidad existente en la base de datos.
+        /// Actualizar
         /// </summary>
-        /// <param name="entity">Objeto con la información actualizada.</param>
-        /// <returns>True si la operación fue exitosa, False en caso contrario.</returns>
-        Task<bool> UpdateAsync(T entity);
+        /// <param name="id"></param>
+        /// <param name="entity"></param>
+        /// <returns></returns>
+
+        Task UpdateAsync(T entity);
 
         /// <summary>
         /// Elimina lógicamente una entidad de la base de datos.
         /// </summary>
         /// <param name="id">Identificador único de la entidad a eliminar.</param>
         /// <returns>True si la eliminación fue exitosa, False en caso contrario.</returns>
-        Task<bool> DeleteLogicalAsync(int id);
+        Task<int> DeleteLogicalAsync(int id);
 
         /// <summary>
         /// Elimina de forma persistente una entidad de la base de datos.
         /// </summary>
         /// <param name="id">Identificador único de la entidad a eliminar.</param>
         /// <returns>True si la eliminación fue exitosa, False en caso contrario.</returns>
-        Task<bool> DeleteAsync(int id);
+        Task<int> DeleteAsync(int id);
 
         Task<bool> PatchAsync(int id);
+
+        Task<IEnumerable<D>> GetDeletedAsync();
     }
 }

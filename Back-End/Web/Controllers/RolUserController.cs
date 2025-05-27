@@ -1,17 +1,17 @@
-﻿using Business.Interfaces;
-using Entity.DTOs;
+﻿using Entity.DTOs;
 using Microsoft.AspNetCore.Mvc;
 using Web.Controllers;
 using Business.Services;
 using Data.Services;
 using Microsoft.AspNetCore.Authorization;
+using Entity.Model;
 
 /// <summary>
 /// Controlador API para gestionar la relación entre roles y usuarios.
 /// Hereda de GenericController para operaciones CRUD estándar con RolUserDto.
 /// </summary>
 [Route("api/[controller]")]
-public class RolUserController : GenericController<RolUserDto>
+public class RolUserController : GenericController<RolUser,RolUserDto>
 {
     /// <summary>
     /// Servicio extendido específico para RolUser con funcionalidades adicionales.
@@ -24,7 +24,7 @@ public class RolUserController : GenericController<RolUserDto>
     /// <param name="service">Servicio genérico para operaciones CRUD estándar.</param>
     /// <param name="extendedService">Servicio extendido para operaciones específicas de RolUser.</param>
     /// <param name="logService">Servicio para registrar logs de la aplicación.</param>
-    public RolUserController(IGenericService<RolUserDto> service, RolUserRepository extendedService, LogService logService)
+    public RolUserController(IBaseModelBusiness<RolUser,RolUserDto> service, RolUserRepository extendedService, LogService logService)
         : base(service, logService)
     {
         _extendedService = extendedService;

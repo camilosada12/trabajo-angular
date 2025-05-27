@@ -1,21 +1,27 @@
-﻿using Data.Services;
+﻿using AutoMapper;
+using Data.Services;
 using Entity.Context;
 using Entity.DTOs;
 using Entity.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 
 /// <summary>
 /// Repositorio especializado para la gestión de relaciones entre usuarios y roles (RolUser).
 /// Hereda de la clase base Repository<RolUser>.
 /// </summary>
-public class RolUserRepository : Repository<RolUser>
+
+    public class RolUserRepository : BaseModelData<RolUser, RolUserDto>
 {
+    private readonly ApplicationDbContext _context;
+
     /// <summary>
     /// Constructor que recibe el contexto de base de datos y lo pasa al repositorio base.
     /// </summary>
     /// <param name="context">Contexto de base de datos de la aplicación.</param>
-    public RolUserRepository(ApplicationDbContext context) : base(context)
+    public RolUserRepository(ApplicationDbContext context, IConfiguration configuration, IMapper mapper) : base(context, configuration, mapper)
     {
+        _context = context;
     }
 
     /// <summary>
@@ -27,7 +33,7 @@ public class RolUserRepository : Repository<RolUser>
     /// </returns>
     public async Task<IEnumerable<RolUserDto>> GetAllJoinAsync()
     {
-        return await _dbSet
+        return await _context.roluser
             .Include(x => x.User) // Incluye los datos del usuario relacionado
             .Include(x => x.Rol)  // Incluye los datos del rol relacionado
             .Where(e => EF.Property<bool>(e, "isdeleted") == false) // Solo trae los que no están eliminados lógicamente
@@ -49,7 +55,7 @@ public class RolUserRepository : Repository<RolUser>
     /// <returns>Nombre del rol si existe, o null si no tiene rol o está eliminado.</returns>
     public async Task<string?> GetRolNameByUserId(int userId)
     {
-        var rolUser = await _dbSet
+        var rolUser = await _context.roluser
             .Include(ru => ru.Rol)
             .FirstOrDefaultAsync(ru => ru.userid == userId && !ru.isdeleted);
 

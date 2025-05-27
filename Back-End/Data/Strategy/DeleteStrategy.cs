@@ -1,17 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Data.Interfaces;
+using Entity.DTOs;
+using Entity.Model;
 
 namespace Data
 {
-    public class DeleteStrategy<TEntity> : IDeleteStrategy<TEntity> where TEntity : class
+    public class DeleteStrategy<TEntity, TDto> : IDeleteStrategy<TEntity, TDto>
+        where TEntity : BaseModel
+        where TDto : BaseDto
     {
-        public async Task<bool> DeleteAsync(int id, IRepository<TEntity> repository)
+        public async Task<bool> DeleteAsync(int id, IBaseModelData<TEntity, TDto> repository)
         {
-            return await repository.DeleteAsync(id);
+            await repository.DeleteAsync(id);
+            return true;
         }
     }
 }

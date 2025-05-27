@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Data\\Data.csproj": {}
+    "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Data\\Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Data\\Data.csproj": {
+    "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Data\\Data.csproj",
+        "projectPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\Camilo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Data\\obj\\",
+        "outputPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,14 +33,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Email.csproj": {
-                "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Email.csproj"
+              "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Email\\Email.csproj": {
+                "projectPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Email\\Email.csproj"
               },
-              "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj": {
-                "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj"
+              "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Entity\\Entity.csproj": {
+                "projectPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Entity\\Entity.csproj"
               },
-              "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Utilities\\Utilities.csproj": {
-                "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Utilities\\Utilities.csproj"
+              "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Utilities\\Utilities.csproj": {
+                "projectPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Utilities\\Utilities.csproj"
               }
             }
           }
@@ -61,6 +61,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -92,14 +96,14 @@
         }
       }
     },
-    "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Email.csproj": {
+    "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Email\\Email.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Email.csproj",
+        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Email\\Email.csproj",
         "projectName": "Email",
-        "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\Email.csproj",
+        "projectPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Email\\Email.csproj",
         "packagesPath": "C:\\Users\\Camilo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Email\\obj\\",
+        "outputPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Email\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -168,14 +172,14 @@
         }
       }
     },
-    "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj": {
+    "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Entity\\Entity.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj",
+        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Entity\\Entity.csproj",
         "projectName": "Entity",
-        "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\Entity.csproj",
+        "projectPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Entity\\Entity.csproj",
         "packagesPath": "C:\\Users\\Camilo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Entity\\obj\\",
+        "outputPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Entity\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -268,14 +272,14 @@
         }
       }
     },
-    "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Utilities\\Utilities.csproj": {
+    "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Utilities\\Utilities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Utilities\\Utilities.csproj",
+        "projectUniqueName": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Utilities\\Utilities.csproj",
         "projectName": "Utilities",
-        "projectPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Utilities\\Utilities.csproj",
+        "projectPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Utilities\\Utilities.csproj",
         "packagesPath": "C:\\Users\\Camilo\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Camilo\\Desktop\\trabajo-angular\\Back-End\\Utilities\\obj\\",
+        "outputPath": "C:\\Users\\Camilo\\Desktop\\Trabajo-acoplamiento\\Back-End\\Utilities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

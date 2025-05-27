@@ -1,6 +1,7 @@
 ﻿using Business.Enums;
-using Business.Interfaces;
 using Business.Services;
+using Entity.DTOs;
+using Entity.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -17,9 +18,9 @@ namespace Web.Controllers
     /// <typeparam name="TDto">Tipo del DTO que manejará el controlador.</typeparam>
     [ApiController]
     [Route("api/[controller]")]
-    public class GenericController<TDto> : ControllerBase where TDto : class
+    public class GenericController<TEntity,TDto> : ControllerBase where TEntity : BaseModel where TDto : BaseDto
     {
-        private readonly IGenericService<TDto> _service;
+        private readonly IBaseModelBusiness<TEntity, TDto> _service;
         private readonly LogService _logService;
 
         /// <summary>
@@ -27,7 +28,7 @@ namespace Web.Controllers
         /// </summary>
         /// <param name="service">Servicio genérico para las operaciones CRUD.</param>
         /// <param name="logService">Servicio para registrar logs de la aplicación.</param>
-        public GenericController(IGenericService<TDto> service, LogService logService)
+        public GenericController(IBaseModelBusiness<TEntity, TDto> service, LogService logService)
         {
             _service = service;
             _logService = logService;
@@ -125,6 +126,7 @@ namespace Web.Controllers
         /// <param name="dto">DTO con la información del nuevo registro.</param>
         /// <returns>El registro creado.</returns>
         [HttpPost]
+        [Authorize]
         public virtual async Task<IActionResult> Create([FromBody] TDto dto)
         {
             try
@@ -167,7 +169,7 @@ namespace Web.Controllers
         {
             try
             {
-                var result = await _service.UpdateAsync(dto);
+                await _service.UpdateAsync(dto);
                 await _logService.RegistrarLog(
                     $"se actualizó un registro de tipo {typeof(TDto).Name}. contenido: {JsonSerializer.Serialize(dto)}",
                     "info",
@@ -175,7 +177,7 @@ namespace Web.Controllers
                     null,
                     User?.Identity?.Name
                 );
-                return Ok(result);
+                return Ok(); 
             }
             catch (ValidationException vex)
             {
@@ -194,12 +196,47 @@ namespace Web.Controllers
             }
         }
 
+            [HttpGet("deleted")]
+            public virtual async Task<IActionResult> GetDeleted()
+            {
+                try
+                {
+                    var result = await _service.GetDeletedAsync();
+                    await _logService.RegistrarLog(
+                        $"se consultaron los registros eliminados lógicamente de tipo {typeof(TDto).Name}.",
+                        "info",
+                        $"{typeof(TDto).Name}_GetDeleted",
+                        null,
+                        User?.Identity?.Name
+                    );
+                    return Ok(result);
+                }
+                catch (ValidationException vex)
+                {
+                    await _logService.RegistrarLog(vex.Message, "warning", $"{typeof(TDto).Name}_GetDeleted_Validation", vex.StackTrace, User?.Identity?.Name);
+                    return BadRequest(new { error = vex.Message });
+                }
+                catch (BusinessException bex)
+                {
+                    await _logService.RegistrarLog(bex.Message, "warning", $"{typeof(TDto).Name}_GetDeleted_Business", bex.StackTrace, User?.Identity?.Name);
+                    return Conflict(new { error = bex.Message });
+                }
+                catch (Exception ex)
+                {
+                    await _logService.RegistrarLog(ex.Message, "error", $"{typeof(TDto).Name}_GetDeleted", ex.StackTrace, User?.Identity?.Name);
+                    return StatusCode(500, new { error = "error interno" });
+                }
+            }
+
+
+
         /// <summary>
         /// Elimina un registro existente por su identificador.
         /// </summary>
         /// <param name="id">Identificador del registro a eliminar.</param>
         /// <param name="mode">Modo de eliminación (físico o lógico).</param>
         /// <returns>Resultado de la operación: OK si fue exitoso, NotFound si no existía el registro.</returns>
+
         [HttpDelete("{id}")]
         public virtual async Task<IActionResult> Delete(int id, [FromQuery] DeleteMode mode = DeleteMode.fisico)
         {
@@ -213,7 +250,7 @@ namespace Web.Controllers
                     null,
                     User?.Identity?.Name
                 );
-                return result ? Ok() : NotFound();
+                return Ok();
             }
             catch (ValidationException vex)
             {
@@ -228,6 +265,57 @@ namespace Web.Controllers
             catch (Exception ex)
             {
                 await _logService.RegistrarLog(ex.Message, "error", $"{typeof(TDto).Name}_Delete", ex.StackTrace, User?.Identity?.Name);
+                return StatusCode(500, new { error = "error interno" });
+            }
+        }
+
+        /// <summary>
+        /// Reactiva (desmarca como eliminado) un registro del tipo <typeparamref name="TDto"/>.
+        /// </summary>
+        /// <param name="id">ID del registro a reactivar.</param>
+        /// <returns>Resultado de la operación de reactivación.</returns>
+        [HttpPatch("{id}")]
+        public virtual async Task<IActionResult> Patch(int id)
+        {
+            try
+            {
+                var result = await _service.PatchAsync(id);
+
+                if (!result)
+                {
+                    await _logService.RegistrarLog(
+                        $"No se encontró el registro con ID {id} para reactivar de tipo {typeof(TDto).Name}.",
+                        "warning",
+                        $"{typeof(TDto).Name}_Patch_NotFound",
+                        null,
+                        User?.Identity?.Name
+                    );
+                    return NotFound(new { error = $"Registro con ID {id} no encontrado" });
+                }
+
+                await _logService.RegistrarLog(
+                    $"Se reactivó el registro con ID {id} de tipo {typeof(TDto).Name}.",
+                    "info",
+                    $"{typeof(TDto).Name}_Patch",
+                    null,
+                    User?.Identity?.Name
+                );
+
+                return Ok(new { message = "Registro reactivado exitosamente", id = id });
+            }
+            catch (ValidationException vex)
+            {
+                await _logService.RegistrarLog(vex.Message, "warning", $"{typeof(TDto).Name}_Patch_Validation", vex.StackTrace, User?.Identity?.Name);
+                return BadRequest(new { error = vex.Message });
+            }
+            catch (BusinessException bex)
+            {
+                await _logService.RegistrarLog(bex.Message, "warning", $"{typeof(TDto).Name}_Patch_Business", bex.StackTrace, User?.Identity?.Name);
+                return Conflict(new { error = bex.Message });
+            }
+            catch (Exception ex)
+            {
+                await _logService.RegistrarLog(ex.Message, "error", $"{typeof(TDto).Name}_Patch", ex.StackTrace, User?.Identity?.Name);
                 return StatusCode(500, new { error = "error interno" });
             }
         }

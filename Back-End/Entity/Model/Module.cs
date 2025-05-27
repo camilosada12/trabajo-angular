@@ -1,13 +1,11 @@
 ﻿using Entity.Model;
 
-public class Module
+public class Module : BaseModel
 {
-    public int id { get; set; }
     public string name { get; set; }
     public string description { get; set; }
     //public DateTime createddate { get; set; }
     public bool active { get; set; }
-    public bool isdeleted { get; set; }
 
     public ICollection<FormModule> FormModules { get; set; }
 

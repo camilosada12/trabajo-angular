@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Entity.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250518205139_Log")]
-    partial class Log
+    [Migration("20250526231916_add-migration")]
+    partial class addmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -116,11 +116,11 @@ namespace Entity.Migrations
 
             modelBuilder.Entity("Entity.Model.Log", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
                     b.Property<string>("Level")
                         .IsRequired()
@@ -148,7 +148,10 @@ namespace Entity.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("Id");
+                    b.Property<bool>("isdeleted")
+                        .HasColumnType("bit");
+
+                    b.HasKey("id");
 
                     b.ToTable("Log", "Logs");
                 });
@@ -186,7 +189,7 @@ namespace Entity.Migrations
                         {
                             id = 1,
                             active = true,
-                            description = "Permiso para lectura",
+                            description = "permiso para leer formularios",
                             isdeleted = false,
                             name = "Leer"
                         },
@@ -194,9 +197,41 @@ namespace Entity.Migrations
                         {
                             id = 2,
                             active = true,
-                            description = "Permiso para escritura",
+                            description = "permiso para crear formularios",
                             isdeleted = false,
-                            name = "Escribir"
+                            name = "Crear"
+                        },
+                        new
+                        {
+                            id = 3,
+                            active = true,
+                            description = "permiso para editar formularios",
+                            isdeleted = false,
+                            name = "Editar"
+                        },
+                        new
+                        {
+                            id = 4,
+                            active = true,
+                            description = "permiso para eliminar lógicamente formularios",
+                            isdeleted = false,
+                            name = "Eliminar"
+                        },
+                        new
+                        {
+                            id = 5,
+                            active = true,
+                            description = "permiso para ver formularios eliminados",
+                            isdeleted = false,
+                            name = "VerEliminados"
+                        },
+                        new
+                        {
+                            id = 6,
+                            active = true,
+                            description = "permiso para recuperar formularios eliminados",
+                            isdeleted = false,
+                            name = "Recuperar"
                         });
                 });
 
@@ -291,7 +326,7 @@ namespace Entity.Migrations
                             formid = 1,
                             isdeleted = false,
                             permissionid = 1,
-                            rolid = 1
+                            rolid = 2
                         },
                         new
                         {
@@ -300,6 +335,70 @@ namespace Entity.Migrations
                             isdeleted = false,
                             permissionid = 2,
                             rolid = 2
+                        },
+                        new
+                        {
+                            id = 3,
+                            formid = 1,
+                            isdeleted = false,
+                            permissionid = 3,
+                            rolid = 2
+                        },
+                        new
+                        {
+                            id = 4,
+                            formid = 1,
+                            isdeleted = false,
+                            permissionid = 4,
+                            rolid = 2
+                        },
+                        new
+                        {
+                            id = 5,
+                            formid = 1,
+                            isdeleted = false,
+                            permissionid = 1,
+                            rolid = 1
+                        },
+                        new
+                        {
+                            id = 6,
+                            formid = 1,
+                            isdeleted = false,
+                            permissionid = 2,
+                            rolid = 1
+                        },
+                        new
+                        {
+                            id = 7,
+                            formid = 1,
+                            isdeleted = false,
+                            permissionid = 3,
+                            rolid = 1
+                        },
+                        new
+                        {
+                            id = 8,
+                            formid = 1,
+                            isdeleted = false,
+                            permissionid = 4,
+                            rolid = 1
+                        },
+                        new
+                        {
+                            id = 9,
+                            formid = 1,
+                            isdeleted = false,
+                            permissionid = 5,
+                            rolid = 1
+                        },
+                        new
+                        {
+                            id = 10,
+                            formid = 1,
+                            isdeleted = false,
+                            permissionid = 6,
+                            rolid = 1
                         });
                 });
 
@@ -360,7 +459,7 @@ namespace Entity.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<bool?>("isdeleted")
+                    b.Property<bool>("isdeleted")
                         .HasColumnType("bit");
 
                     b.Property<string>("password")
