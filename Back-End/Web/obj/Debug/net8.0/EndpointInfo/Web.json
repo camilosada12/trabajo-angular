@@ -190,6 +190,18 @@
         }
       }
     },
+    "/api/FormControllerPrueba/dynamic": {
+      "get": {
+        "tags": [
+          "FormControllerPrueba"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/FormModule": {
       "get": {
         "tags": [
@@ -333,6 +345,18 @@
       }
     },
     "/api/FormModule/deleted": {
+      "get": {
+        "tags": [
+          "FormModule"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/FormModule/dynamic": {
       "get": {
         "tags": [
           "FormModule"
@@ -591,6 +615,18 @@
         }
       }
     },
+    "/api/Module/dynamic": {
+      "get": {
+        "tags": [
+          "Module"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Permission": {
       "get": {
         "tags": [
@@ -734,6 +770,18 @@
       }
     },
     "/api/Permission/deleted": {
+      "get": {
+        "tags": [
+          "Permission"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Permission/dynamic": {
       "get": {
         "tags": [
           "Permission"
@@ -899,6 +947,18 @@
         }
       }
     },
+    "/api/Person/dynamic": {
+      "get": {
+        "tags": [
+          "Person"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Rol": {
       "get": {
         "tags": [
@@ -1042,6 +1102,18 @@
       }
     },
     "/api/Rol/deleted": {
+      "get": {
+        "tags": [
+          "Rol"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Rol/dynamic": {
       "get": {
         "tags": [
           "Rol"
@@ -1207,6 +1279,18 @@
         }
       }
     },
+    "/api/RolFormPermission/dynamic": {
+      "get": {
+        "tags": [
+          "RolFormPermission"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/RolUser": {
       "get": {
         "tags": [
@@ -1350,6 +1434,18 @@
       }
     },
     "/api/RolUser/deleted": {
+      "get": {
+        "tags": [
+          "RolUser"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/RolUser/dynamic": {
       "get": {
         "tags": [
           "RolUser"
@@ -1516,6 +1612,18 @@
       }
     },
     "/api/User/deleted": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/dynamic": {
       "get": {
         "tags": [
           "User"

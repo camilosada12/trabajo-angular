@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Threading.Tasks;
 using AutoMapper;
 using Business.Enums;
@@ -86,6 +87,15 @@ namespace Business.Services
         {
                 bool result = await _data.PatchAsync(id);
                 return result;
+        }
+
+        /// <summary>
+        /// Obtiene una lista dinámica de entidades con relaciones incluidas automáticamente.
+        /// </summary>
+        /// <returns>Lista de objetos dinámicos con propiedades en PascalCase.</returns>
+        public override async Task<List<ExpandoObject>> GetAllDynamicAsync()
+        {
+            return await _data.GetAllDynamicAsync();
         }
 
         //public async Task<List<D>> GetDeletedAsync()

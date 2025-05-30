@@ -1,11 +1,15 @@
-﻿using AutoMapper;
+﻿using System.Dynamic;
+using System.Reflection;
+using AutoMapper;
 using Data.Repository;
+using Entity.Annotations;
 using Entity.Context;
 using Entity.DTOs;
 using Entity.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Utilities.Exeptions;
+using Utilities.Helpers;
 
 public class BaseModelData<T, D> : ABaseModelData<T, D> where T : BaseModel where D : BaseDto
 {
@@ -172,5 +176,56 @@ public class BaseModelData<T, D> : ABaseModelData<T, D> where T : BaseModel wher
         {
             throw new QueryExecutionException($"Error al reactivar la entidad con ID {id}", ex);
         }
+    }
+
+    public override async Task<List<ExpandoObject>> GetAllDynamicAsync()
+    {
+        var entityType = typeof(T);
+        var query = _context.Set<T>().AsQueryable();
+
+        var foreignKeyProps = entityType
+            .GetProperties()
+            .Where(p => Attribute.IsDefined(p, typeof(ForeignIncludeAttribute)))
+            .ToList();
+
+        foreach (var prop in foreignKeyProps)
+        {
+        query: query.Include(prop.Name);
+        }
+
+        var resultList = await query.ToListAsync();
+        var dynamiclist = new List<ExpandoObject>();
+
+        foreach (var entity in resultList)
+        {
+            dynamic dyn = new ExpandoObject();
+            var dict = (IDictionary<string, object?>)dyn;
+
+            //Id Principal
+            dict["Id"] = entityType.GetProperty("Id")?.GetValue(entity);
+
+            foreach (var prop in foreignKeyProps)
+            {
+                var attr = prop.GetCustomAttribute<ForeignIncludeAttribute>()!;
+                var foreignValue = prop.GetValue(entity);
+
+                if (foreignValue == null) continue;
+
+                if (attr.SelectPath != null && attr.SelectPath.Length > 0)
+                {
+                    var value = ReflectionHelper.GetNestedPropertyValue(foreignValue, attr.SelectPath);
+                    var key = ReflectionHelper.PascalJoin(prop.Name, attr.SelectPath);
+                    dict[key] = value;
+                }
+                else
+                {
+                    dict[prop.Name] = foreignValue;
+                }
+            }
+
+
+            dynamiclist.Add(dyn);
+        }
+        return dynamiclist;
     }
 }

@@ -319,5 +319,65 @@ namespace Web.Controllers
                 return StatusCode(500, new { error = "error interno" });
             }
         }
+
+        /// <summary>
+        /// Obtiene una lista dinámica de registros.
+        /// </summary>
+        /// <returns>Lista dinámica de registros o un error si falla el proceso.</returns>
+        [HttpGet("dynamic")]
+        public virtual async Task<IActionResult> GetDynamicAsync()
+        {
+            try
+            {
+                var result = await _service.GetAllDynamicAsync();
+
+                await _logService.RegistrarLog(
+                    $"se consultaron registros dinámicos de tipo {typeof(TDto).Name}.",
+                    "info",
+                    $"{typeof(TDto).Name}_GetDynamic",
+                    null,
+                    User?.Identity?.Name
+                );
+
+                return Ok(result);
+            }
+            catch (ValidationException vex)
+            {
+                await _logService.RegistrarLog(
+                    vex.Message,
+                    "warning",
+                    $"{typeof(TDto).Name}_GetDynamic_Validation",
+                    vex.StackTrace,
+                    User?.Identity?.Name
+                );
+
+                return BadRequest(new { error = vex.Message });
+            }
+            catch (BusinessException bex)
+            {
+                await _logService.RegistrarLog(
+                    bex.Message,
+                    "warning",
+                    $"{typeof(TDto).Name}_GetDynamic_Business",
+                    bex.StackTrace,
+                    User?.Identity?.Name
+                );
+
+                return Conflict(new { error = bex.Message });
+            }
+            catch (Exception ex)
+            {
+                await _logService.RegistrarLog(
+                    ex.Message,
+                    "error",
+                    $"{typeof(TDto).Name}_GetDynamic",
+                    ex.StackTrace,
+                    User?.Identity?.Name
+                );
+
+                return StatusCode(500, new { error = "error interno" });
+            }
+        }
+
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,5 +20,11 @@ namespace Business.Services
         public abstract Task<bool> PatchAsync(int id);
 
         public abstract Task<List<D>> GetDeletedAsync();
+
+        /// <summary>
+        /// Obtiene una lista dinámica de entidades con relaciones incluidas automáticamente.
+        /// </summary>
+        /// <returns>Lista de objetos dinámicos con propiedades en PascalCase.</returns>
+        public abstract Task<List<ExpandoObject>> GetAllDynamicAsync();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,5 +23,7 @@ namespace Data.Repository
         public abstract Task<bool> PatchAsync(int id);
 
         public abstract Task<IEnumerable<D>> GetDeletedAsync();
+
+        public abstract Task<List<ExpandoObject>> GetAllDynamicAsync();
     }
 }

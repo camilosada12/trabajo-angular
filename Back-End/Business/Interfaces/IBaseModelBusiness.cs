@@ -1,4 +1,5 @@
-﻿using Business.Enums;
+﻿using System.Dynamic;
+using Business.Enums;
 using Entity.DTOs;
 using Entity.Model;
 
@@ -46,6 +47,12 @@ public interface IBaseModelBusiness<T, D> where T : BaseModel where D : BaseDto
     Task<bool> PatchAsync(int id);
 
     Task<List<D>> GetDeletedAsync();
+
+    /// <summary>
+    /// Obtiene una lista dinámica de entidades con relaciones incluidas automáticamente.
+    /// </summary>
+    /// <returns>Lista de objetos dinámicos con propiedades en PascalCase.</returns>
+    Task<List<ExpandoObject>> GetAllDynamicAsync();
 
 
 }
